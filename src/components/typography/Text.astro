@@ -1,0 +1,25 @@
+---
+interface Props {
+  text: string;
+  size?: "xs" | "sm" | "md" | "lg";
+  color?: string;
+}
+
+const { text, size = "md", color = "text-black dark:text-white" } = Astro.props;
+
+const sizes = {
+  xs: "text-xs",
+  sm: "text-sm",
+  md: "text-md",
+  lg: "text-lg",
+};
+
+const completeClass = `
+  ${sizes[size]}
+  dark:text-white
+  text-black
+  py-1
+`;
+---
+
+<p class={completeClass}>{text}</p>

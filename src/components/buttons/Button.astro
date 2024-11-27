@@ -1,0 +1,94 @@
+---
+interface Props {
+  text: string;
+  link?: string;
+  variant: "primary" | "secondary";
+  blank?: boolean;
+}
+
+const { text, link, variant, blank = false } = Astro.props;
+---
+
+<a href={link} class={`btn btn-${variant}`} target={blank ? "_blank" : "_self"}>
+  {text}
+</a>
+
+<style>
+  :root {
+    --primary-color: #ff0098;
+    --primary-white: #ebebeb;
+    --primary-black: #111111;
+  }
+  .btn {
+    display: inline-flex;
+    width: 140px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    z-index: 1;
+    position: relative;
+    transition: all ease-in-out 300ms;
+    border-radius: 9999px;
+    margin: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--primary-color);
+    color: var(--primary-white);
+    position: relative;
+  }
+
+  .btn-primary::after {
+    background: var(--primary-white);
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: all ease-in-out 300ms;
+    border-radius: 9999px;
+  }
+
+  .btn-primary:hover {
+    color: var(--primary-black);
+    border-radius: 9999px;
+  }
+
+  .btn-primary:hover::after {
+    width: 100%;
+    text-decoration: none;
+    border-radius: 9999px;
+  }
+
+  /* SECONDARY BUTTON */
+  .btn-secondary {
+    background: var(--primary-white);
+    color: var(--primary-black);
+  }
+
+  .btn-secondary::after {
+    background: var(--primary-color);
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: -1;
+    transition: all ease-in-out 300ms;
+    border-radius: 9999px 0 0 9999px;
+  }
+
+  .btn-secondary:hover {
+    color: var(--primary-white);
+  }
+
+  .btn-secondary:hover::after {
+    width: 100%;
+    text-decoration: none;
+    border-radius: 9999px;
+  }
+</style>

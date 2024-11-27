@@ -5,7 +5,7 @@ export default {
     colors: {
       white: "#ebebeb",
       black: "#111111",
-      h1: "#ff0077",
+      h1: "#ff0098",
       h2: "#ff006675",
     },
     fontFamily: {
@@ -13,7 +13,7 @@ export default {
     },
     extend: {
       colors: {
-        primary: "#ff0077",
+        primary: "#ff0098",
         secondary: "#ff006675",
         "secondary-dark": "#301622",
         "secondary-white": "#8f8f8f",

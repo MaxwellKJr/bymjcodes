@@ -1,0 +1,60 @@
+---
+interface Link {
+  name: string;
+  route: string;
+  title: string;
+}
+
+const links: Link[] = [
+  {
+    name: "Home",
+    route: "/",
+    title: "Home",
+    // icon: <RiHome6Fill className="route-icon" />,
+  },
+  {
+    name: "About",
+    route: "/about",
+    title: "Know me",
+    // icon: <RiUser3Fill className="route-icon" />,
+  },
+  {
+    name: "Services",
+    route: "/services",
+    title: "What I offer",
+    // icon: <RiMoneyDollarBoxLine className="route-icon" />,
+  },
+  {
+    name: "Blog",
+    route: "/blog",
+    title: "Read something",
+    // icon: <RiNewspaperLine className="route-icon" />,
+  },
+  {
+    name: "Projects",
+    route: "/projects",
+    title: "See my work",
+    // icon: <RiMacbookLine className="route-icon" />,
+  },
+];
+---
+
+<nav
+  class="flex flex-col justify-between items-center gap-4 bg-white text-black dark:bg-background-dark dark:text-white fixed md:relative border-r-[1px] border-primary md:min-h-screen px-2"
+>
+  <img src="/icon.png" alt="MJ Codes logo" class="w-20 h-20" />
+  <ul class="flex flex-col items-center gap-4 w-full mx-auto">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="hover:text-primary inline-flex w-full transition-all duration-300"
+            href={link.route}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

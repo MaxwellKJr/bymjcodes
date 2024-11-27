@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+  size: "sm" | "md" | "lg" | "xl" | "xxl";
+  color?: string;
+}
+
+const { text, size = "md", color = "text-black dark:text-white" } = Astro.props;
+
+const sizes = {
+  sm: "text-xl",
+  md: "text-2xl",
+  lg: "text-3xl",
+  xl: "text-5xl py-2",
+  xxl: "text-6xl py-4",
+};
+
+const completeClass = `
+  ${sizes[size]}
+  dark:text-white
+  text-black
+  py-1
+`;
+---
+
+<h1 class={`${completeClass} ${color}`}>{text}</h1>

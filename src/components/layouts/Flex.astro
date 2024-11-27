@@ -1,0 +1,22 @@
+---
+interface Props {
+  direction: "row" | "column" | "row-reverse" | "column-reverse";
+  align: "flex-start" | "flex-end" | "center" | "stretch" | "baseline";
+  justify:
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around";
+  gap: string;
+  wrap: "nowrap" | "wrap" | "wrap-reverse";
+  className?: string;
+}
+
+const { direction, align, justify, gap, wrap, className, ...props } =
+  Astro.props;
+---
+
+<div class="flex">
+  <slot />
+</div>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  text: string;
+  variant: "primary" | "secondary" | "tertiary";
+}
+const { text, variant } = Astro.props;
+
+const variants = {
+  primary: "bg-primary text-white",
+  secondary: "bg-secondary text-white",
+  tertiary: "bg-white text-secondary",
+};
+
+const completeClass = `
+  ${variants[variant]}
+  px-4
+  py-[1px]
+  rounded-full
+  mx-1
+  font-regular
+`;
+---
+
+<small class={completeClass}>{text}</small>
