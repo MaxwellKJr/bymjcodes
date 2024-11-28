@@ -19,10 +19,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="flex w-full dark:bg-background-dark bg-background dark:text-white text-black font-sans"
+    class="flex flex-col lg:flex-row min-w-screen dark:bg-background-dark bg-background dark:text-white text-black font-sans overflow-x-hidden"
   >
     <Navbar />
-    <slot class="flex-1 w-full" />
+    <div class="container m-4 lg:m-10 w-full lg:w-[80vw]">
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>

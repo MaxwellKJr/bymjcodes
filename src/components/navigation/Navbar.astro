@@ -40,15 +40,26 @@ const links: Link[] = [
 ---
 
 <nav
-  class="flex flex-col justify-between items-center gap-4 bg-white text-black dark:bg-background-dark dark:text-white fixed md:relative border-r-[1px] border-primary md:min-h-screen px-2"
+  class="flex flex-col justify-between items-center gap-4 bg-white text-black dark:bg-background-dark dark:text-white fixed bottom-0 left-0 w-full lg:w-[20vw] lg:relative border-t-[1px] lg:border-t-0 lg:border-r-[1px] border-primary lg:min-h-screen z-50 flex-1"
 >
-  <img src="/icon.png" alt="MJ Codes logo" class="w-20 h-20" />
-  <ul class="flex flex-col items-center gap-4 w-full mx-auto">
+  <!-- Logo -->
+  <a
+    href="/"
+    title="Maxwell Kapezi Jr 🚀"
+    class="bg-secondary-dark hidden lg:flex justify-center items-center w-full"
+  >
+    <img src="/icon.png" alt="MJ Codes logo" class="w-10 h-10 animate-pulse" />
+  </a>
+
+  <!-- Page Links -->
+  <ul
+    class="flex lg:flex-col justify-evenly items-center gap-0 lg:gap-4 w-full mx-auto"
+  >
     {
       links.map((link) => (
-        <li>
+        <li class="w-full h-full" title={link.title}>
           <a
-            class="hover:text-primary inline-flex w-full transition-all duration-300"
+            class="hover:text-primary hover:bg-secondary-dark flex justify-center items-center w-full transition-all duration-300 p-4 lg:p-2 text-xs uppercase"
             href={link.route}
           >
             {link.name}
@@ -57,4 +68,6 @@ const links: Link[] = [
       ))
     }
   </ul>
+
+  <!-- Social Links -->
 </nav>
