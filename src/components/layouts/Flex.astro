@@ -1,22 +1,32 @@
 ---
 interface Props {
-  direction: "row" | "column" | "row-reverse" | "column-reverse";
+  direction: "row" | "col" | "row-reverse" | "col-reverse";
   align: "flex-start" | "flex-end" | "center" | "stretch" | "baseline";
   justify:
     | "flex-start"
     | "flex-end"
     | "center"
-    | "space-between"
-    | "space-around";
-  gap: string;
-  wrap: "nowrap" | "wrap" | "wrap-reverse";
+    | "between"
+    | "around"
+    | "evenly";
+  gap?: string;
+  wrap?: "nowrap" | "wrap" | "wrap-reverse";
   className?: string;
 }
 
-const { direction, align, justify, gap, wrap, className, ...props } =
-  Astro.props;
+const {
+  direction,
+  align,
+  justify,
+  gap = 2,
+  wrap,
+  className,
+  ...props
+} = Astro.props;
 ---
 
-<div class="flex">
+<div
+  class={`flex flex-${direction} items-${align} justify-${justify} gap-${gap} ${wrap === "nowrap" ? "flex-nowrap" : `flex-${wrap}`} ${className}`}
+>
   <slot />
 </div>
