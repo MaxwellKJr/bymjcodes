@@ -1,8 +1,12 @@
 ---
+import { Icon } from "astro-icon/components";
+import SocialLinks from "../contacts/SocialLinks.astro";
+import Footer from "./Footer.astro";
 interface Link {
   name: string;
   route: string;
   title: string;
+  icon: string;
 }
 
 const links: Link[] = [
@@ -10,31 +14,31 @@ const links: Link[] = [
     name: "Home",
     route: "/",
     title: "Home",
-    // icon: <RiHome6Fill className="route-icon" />,
+    icon: "ri:home-6-fill",
   },
   {
     name: "About",
     route: "/about",
     title: "Know me",
-    // icon: <RiUser3Fill className="route-icon" />,
+    icon: "ri:user-3-fill",
   },
   {
     name: "Services",
     route: "/services",
     title: "What I offer",
-    // icon: <RiMoneyDollarBoxLine className="route-icon" />,
+    icon: "ri:money-dollar-box-line",
   },
   {
     name: "Blog",
     route: "/blog",
     title: "Read something",
-    // icon: <RiNewspaperLine className="route-icon" />,
+    icon: "ri:newspaper-line",
   },
   {
     name: "Projects",
     route: "/projects",
     title: "See my work",
-    // icon: <RiMacbookLine className="route-icon" />,
+    icon: "ri:macbook-line",
   },
 ];
 ---
@@ -59,9 +63,10 @@ const links: Link[] = [
       links.map((link) => (
         <li class="w-full h-full" title={link.title}>
           <a
-            class="hover:text-primary hover:bg-secondary-dark flex justify-center items-center w-full transition-all duration-300 p-4 lg:p-2 text-xs uppercase"
+            class="hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-2 text-xs uppercase"
             href={link.route}
           >
+            <Icon name={link.icon} size={24} class="lg:hidden" />
             {link.name}
           </a>
         </li>
@@ -70,4 +75,8 @@ const links: Link[] = [
   </ul>
 
   <!-- Social Links -->
+  <div class="w-full mx-auto">
+    <SocialLinks layout="grid" />
+    <Footer />
+  </div>
 </nav>

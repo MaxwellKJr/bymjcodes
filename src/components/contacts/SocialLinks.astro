@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  layout: "flex" | "grid";
+}
+
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: string;
+  title: string;
+  blank?: true;
+}
+
+const Links: SocialLink[] = [
+  {
+    name: "GitHub",
+    url: "https://github.com/MaxwellKJr",
+    icon: "ri:github-fill",
+    title: "GitHub",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/maxwellKJr",
+    icon: "ri:linkedin-box-fill",
+    title: "LinkedIn",
+  },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/maxwellkjnr",
+    icon: "ri:facebook-circle-fill",
+    title: "Facebook",
+  },
+  {
+    name: "Threads",
+    url: "https://threads.net/@maxwellkjnr",
+    icon: "ri:threads-fill",
+    title: "Threads",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/maxwellkjnr",
+    icon: "ri:instagram-line",
+    title: "Instagram",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/maxwellKJr",
+    icon: "ri:twitter-x-fill",
+    title: "Twitter",
+  },
+  {
+    name: "TikTok",
+    url: "https://tiktok.com/@maxwellkjr",
+    icon: "ri:tiktok-fill",
+    title: "TikTok",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/265992800255",
+    icon: "ri:whatsapp-line",
+    title: "WhatsApp",
+  },
+];
+
+const layouts = {
+  flex: "flex justify-center items-center gap-4",
+  grid: "lg:grid-cols-2 lg:gap-2 hidden lg:grid",
+};
+
+const { layout } = Astro.props;
+---
+
+<ul class={layouts[layout]}>
+  {
+    Links.map((link) => (
+      <li class="w-full h-full" title={link.title}>
+        <a
+          class="hover:text-primary hover:bg-secondary-dark flex flex-col justify-start items-center w-full transition-all duration-300 p-4 hover:-translate-y-2 text-xs uppercase"
+          href={link.url}
+          target={link.blank ? "_blank" : "_self"}
+          title={link.title}
+        >
+          <Icon name={link.icon} size={24} />
+        </a>
+      </li>
+    ))
+  }
+</ul>
