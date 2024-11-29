@@ -66,7 +66,7 @@ const Links: SocialLink[] = [
 
 const layouts = {
   flex: "flex justify-center items-center gap-4",
-  grid: "lg:grid-cols-2 lg:gap-2 hidden lg:grid",
+  grid: "lg:grid-cols-2 lg:gap-2 hidden lg:grid mb-4",
 };
 
 const { layout } = Astro.props;
@@ -77,12 +77,12 @@ const { layout } = Astro.props;
     Links.map((link) => (
       <li class="w-full h-full" title={link.title}>
         <a
-          class="hover:text-primary hover:bg-secondary-dark flex flex-col justify-start items-center w-full transition-all duration-300 p-4 hover:-translate-y-2 text-xs uppercase"
+          class="hover:text-primary flex flex-col justify-start items-center w-full transition-all duration-300 p-2 hover:-translate-y-2 text-xs uppercase"
           href={link.url}
-          target={link.blank ? "_blank" : "_self"}
+          target="_blank"
           title={link.title}
         >
-          <Icon name={link.icon} size={24} />
+          <Icon name={link.icon} size={22} />
         </a>
       </li>
     ))

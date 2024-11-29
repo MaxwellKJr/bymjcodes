@@ -23,7 +23,7 @@ const { title } = Astro.props;
     class="flex flex-col lg:flex-row min-w-screen dark:bg-background-dark bg-background dark:text-white text-black font-sans overflow-x-hidden"
   >
     <Navbar />
-    <div class="container m-4 lg:m-10 w-full lg:w-[80vw]">
+    <div class="m-10 lg:px-[15vw] w-full lg:w-[85vw] overflow-y-auto max-w-3xl">
       <slot />
     </div>
     <ViewTransitions />
@@ -33,4 +33,25 @@ const { title } = Astro.props;
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  ::-webkit-scrollbar {
+    background: transparent !important;
+    width: 12px !important;
+    transition: all 300ms ease-in-out;
+  }
+
+  ::-webkit-scrollbar:hover,
+  ::-webkit-scrollbar:focus {
+    width: 13px !important;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff0099b7 !important;
+    transition: all 300ms ease-in-out;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: #ff0098ff !important;
+  }
 </style>
