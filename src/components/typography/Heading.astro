@@ -8,18 +8,16 @@ interface Props {
 const { text, size = "md", color = "text-black dark:text-white" } = Astro.props;
 
 const sizes = {
-  sm: "text-xl",
-  md: "text-2xl",
-  lg: "text-3xl",
+  sm: "text-xl py-1",
+  md: "text-2xl py-1",
+  lg: "text-3xl py-1",
   xl: "text-5xl py-2",
   xxl: "text-6xl py-4",
 };
 
 const completeClass = `
   ${sizes[size]}
-  dark:text-white
-  text-black
-  py-1
+  font-bold
 `;
 ---
 
