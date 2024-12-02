@@ -1,26 +1,53 @@
 ---
 import Button from "../components/buttons/Button.astro";
 import Flex from "../components/layouts/Flex.astro";
-import Pill from "../components/misc/Pill.astro";
 import Heading from "../components/typography/Heading.astro";
-import Text from "../components/typography/Text.astro";
 import Layout from "../layouts/Layout.astro";
+import Text from "../components/typography/Text.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <section class="h-[80vh]">
       <div class="container flex flex-col justify-center h-full">
-        <Heading text="Astro" size="xl" />
+        <Heading text="The Developing Developer" size="xl" />
         <Flex
-          direction="col"
+          direction="row"
           align="flex-start"
           justify="flex-start"
           gap="2"
           wrap="wrap"
         >
-          <Text text="A simple and fast static site generator" />
-          <Pill text="Astro" variant="primary" />
+          <a
+            href="https://linkedin.com/in/maxwellKJr"
+            class="text-secondary-white hover:text-primary transition-all duration-300"
+            target="_blank">Software Developer 👨‍💻</a
+          >
+          <a
+            href="https://instagram.com/maxwellkjnr"
+            class="text-secondary-white hover:text-primary transition-all duration-300"
+            target="_blank">Graphic Designer 🎨</a
+          >
+          <a
+            href="https://malawianwriter.vercel.app"
+            class="text-secondary-white hover:text-primary transition-all duration-300"
+            target="_blank">Writer ✍️</a
+          >
+        </Flex>
+        <Text
+          text="A platform to showcase my software development journey and share the few things I know."
+          size="sm"
+          color="text-secondary-white"
+        />
+        <Flex
+          direction="row"
+          align="flex-start"
+          justify="flex-start"
+          gap="2"
+          wrap="wrap"
+        >
+          <Button text="About" link="/about" variant="primary" />
+          <Button text="Projects" link="/projects" variant="secondary" />
         </Flex>
       </div>
     </section>
