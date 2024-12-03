@@ -4,6 +4,7 @@ import Button from "../components/buttons/Button.astro";
 import Flex from "../components/layouts/Flex.astro";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
+import maxwellImage from "../images/mjk.jpg";
 ---
 
 <Layout
@@ -17,16 +18,19 @@ import Layout from "../layouts/Layout.astro";
         class="container flex flex-col justify-center items-center h-full w-full mx-auto py-24"
       >
         <div
-          class="flex flex-col lg:flex-row items-center gap-4 lg:gap-7 xl:gap-16"
+          class="flex flex-col lg:flex-row items-center gap-4 lg:gap-7 xl:gap-10"
         >
           <!-- Image -->
           <Image
-            src="/src/images/mjk.jpg"
-            class="w-64 h-64 xl:w-80 xl:h-80 rounded-full border-white border-2"
+            src={maxwellImage}
             title="Maxwell Kapezi Jr. 🚀"
+            alt={"Maxwell Kapezi Jr. 🚀"}
             width={208}
             height={208}
-            alt={"Maxwell Kapezi Jr. 🚀"}
+            decoding="async"
+            loading="lazy"
+            quality="high"
+            class="w-40 h-40 sm:w-64 sm:h-64 xl:w-80 xl:h-80 rounded-full border-white border-2"
           />
           <!-- Background -->
           <div>
