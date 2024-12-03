@@ -4,16 +4,41 @@ import Navbar from "../components/navigation/Navbar.astro";
 
 interface Props {
   title: string;
+  description?: string;
+  siteUrl?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows.",
+  siteUrl = "https://bymjcodes.netlify.app",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
+    <meta
+      name="title"
+      content={`${title} | Programming and Tech Related Content 🚀`}
+    />
+    <meta name="description" content={description} />
+    <meta
+      property="og:title"
+      content={`${title} | Programming and Tech Related Content 🚀`}
+    />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png"
+    />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
     <meta name="generator" content={Astro.generator} />
@@ -24,7 +49,7 @@ const { title } = Astro.props;
   >
     <Navbar />
     <div
-      class="m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto max-w-screen-lg"
+      class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto max-w-screen-xl mx-auto"
     >
       <slot />
     </div>
@@ -35,6 +60,10 @@ const { title } = Astro.props;
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  :root {
+    overflow-x: hidden;
+  }
 
   ::-webkit-scrollbar {
     background: transparent !important;

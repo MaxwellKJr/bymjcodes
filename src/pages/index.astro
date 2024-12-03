@@ -4,48 +4,56 @@ import Flex from "../components/layouts/Flex.astro";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import Text from "../components/typography/Text.astro";
+
+const occupations = [
+  {
+    name: "Software Developer 💻",
+    url: "https://linkedin.com/in/maxwellkjr",
+  },
+  {
+    name: "Writer ✍️",
+    url: "https://malawianwriter.vercel.app",
+  },
+  {
+    name: "Graphic Designer 🎨",
+    url: "https://instagram.com/maxwellkjnr",
+  },
+];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="MJ Codes | Programming and Tech Related Content 🚀"
+  description="Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows."
+  ,
+>
   <main>
     <section class="h-[80vh]">
       <div class="container flex flex-col justify-center h-full">
-        <Heading text="The Developing Developer" size="xl" />
-        <Flex
-          direction="row"
-          align="flex-start"
-          justify="flex-start"
-          gap="2"
-          wrap="wrap"
-        >
-          <a
-            href="https://linkedin.com/in/maxwellKJr"
-            class="text-secondary-white hover:text-primary transition-all duration-300"
-            target="_blank">Software Developer 👨‍💻</a
-          >
-          <a
-            href="https://instagram.com/maxwellkjnr"
-            class="text-secondary-white hover:text-primary transition-all duration-300"
-            target="_blank">Graphic Designer 🎨</a
-          >
-          <a
-            href="https://malawianwriter.vercel.app"
-            class="text-secondary-white hover:text-primary transition-all duration-300"
-            target="_blank">Writer ✍️</a
-          >
-        </Flex>
+        <Heading
+          text="The Developing Developer"
+          size="xl"
+          color="text-secondary"
+        />
+        <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
+        <div class="flex flex-wrap mx-auto w-full">
+          {
+            occupations.map((occupation) => (
+              <a
+                href={occupation.url}
+                class="text-secondary-white hover:text-primary transition-all duration-300 mr-4"
+                target="_blank"
+              >
+                {occupation.name}
+              </a>
+            ))
+          }
+        </div>
         <Text
           text="A platform to showcase my software development journey and share the few things I know."
           size="sm"
           color="text-secondary-white"
         />
-        <Flex
-          direction="row"
-          align="flex-start"
-          justify="flex-start"
-          gap="2"
-          wrap="wrap"
-        >
+        <Flex direction="row" align="start" justify="start" gap="2" wrap="wrap">
           <Button text="About" link="/about" variant="primary" />
           <Button text="Projects" link="/projects" variant="secondary" />
         </Flex>
