@@ -1,0 +1,294 @@
+---
+import { Icon } from "astro-icon/components";
+import Heading from "../../components/typography/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+
+interface Skill {
+  name: string;
+  skill: number;
+  icon: string;
+}
+
+const skills: Skill[] = [
+  // Programming Languages
+  {
+    name: "TypeScript",
+    skill: 1,
+    icon: "simple-icons:typescript",
+  },
+  {
+    name: "Swift",
+    skill: 1,
+    icon: "simple-icons:swift",
+  },
+  {
+    name: "Kotlin",
+    skill: 1,
+    icon: "simple-icons:kotlin",
+  },
+  {
+    name: "Dart",
+    skill: 1,
+    icon: "simple-icons:dart",
+  },
+  {
+    name: "PHP",
+    skill: 1,
+    icon: "simple-icons:php",
+  },
+  {
+    name: "HTML",
+    skill: 1,
+    icon: "simple-icons:html5",
+  },
+  {
+    name: "CSS",
+    skill: 1,
+    icon: "simple-icons:css3",
+  },
+
+  // Web Libraries and Frameworks
+  {
+    name: "React",
+    skill: 2,
+    icon: "simple-icons:html5",
+  },
+  {
+    name: "Laravel",
+    skill: 2,
+    icon: "simple-icons:laravel",
+  },
+  {
+    name: "Tailwind CSS",
+    skill: 2,
+    icon: "simple-icons:tailwindcss",
+  },
+  {
+    name: "Bootstrap",
+    skill: 2,
+    icon: "simple-icons:bootstrap",
+  },
+  {
+    name: "Sass",
+    skill: 2,
+    icon: "simple-icons:sass",
+  },
+  // Mobile Development
+  {
+    name: "Android (Kotlin)",
+    skill: 3,
+    icon: "simple-icons:kotlin",
+  },
+  {
+    name: "iOS (Swift)",
+    skill: 3,
+    icon: "simple-icons:swift",
+  },
+  {
+    name: "Flutter",
+    skill: 3,
+    icon: "simple-icons:flutter",
+  },
+  {
+    name: "React Native",
+    skill: 3,
+    icon: "simple-icons:react",
+  },
+  // Querying
+  {
+    name: "SQL",
+    skill: 4,
+    icon: "simple-icons:mysql",
+  },
+  {
+    name: "GraphQL",
+    skill: 4,
+    icon: "simple-icons:graphql",
+  },
+  // Data Management and Storage
+  {
+    name: "Firebase",
+    skill: 5,
+    icon: "simple-icons:firebase",
+  },
+  {
+    name: "Supabase",
+    skill: 5,
+    icon: "simple-icons:supabase",
+  },
+  {
+    name: "Strapi",
+    skill: 5,
+    icon: "simple-icons:strapi",
+  },
+  {
+    name: "Realm",
+    skill: 5,
+    icon: "simple-icons:realm",
+  },
+  // Other Technologies
+  {
+    name: "Git",
+    skill: 6,
+    icon: "simple-icons:git",
+  },
+  {
+    name: "Jira",
+    skill: 6,
+    icon: "simple-icons:jira",
+  },
+  {
+    name: "Notion",
+    skill: 6,
+    icon: "simple-icons:notion",
+  },
+  {
+    name: "WordPress",
+    skill: 6,
+    icon: "simple-icons:wordpress",
+  },
+];
+---
+
+<Layout
+  title="My Skills | MJ Codes"
+  siteUrl="https://bymjcodes.netlify.app/about/my-skills"
+>
+  <main>
+    <Heading text="My Skills" size="lg" />
+    <div class="split">
+      {/*Programming Languages*/}
+      <div class="skills">
+        <Heading text="Programming Languages" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 1)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+      {/*Web Libraries & Frameworks*/}
+      <div class="skills">
+        <Heading text="Web Libraries & Frameworks" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 2)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+      {/*Mobile Development*/}
+      <div class="skills">
+        <Heading text="Mobile Development" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 3)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+      {/*Querying*/}
+      <div class="skills">
+        <Heading text="Querying" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 4)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+      {/*Data Management & Storage*/}
+      <div class="skills">
+        <Heading text="Data Management & Storage" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 5)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+      {/*Other Technologies*/}
+      <div class="skills">
+        <Heading text="Other Technologies" size="sm" />
+        <ul class="skills-grid">
+          {
+            skills.map((skill) => {
+              if (skill.skill === 6)
+                return (
+                  <li class="card-dark">
+                    {skill.name} <Icon name={skill.icon} />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </div>
+
+      {/* Skills */}
+      <!-- <div>
+        <h1>What I Use:</h1>
+        <ul class="uses-grid">
+          {
+            uses.map((use) => (
+              <li key={use.name} class="use-card">
+                <ul class="use-type">
+                  <li>
+                    <h5 class="type">{use.type}: </h5>
+                  </li>
+                  <li>
+                    <a
+                      href={use.link}
+                      target="_blank"
+                      rel="nooponer noreferrer"
+                      class="use-link"
+                    >
+                      <h3>
+                        {use.name} {use.icon}
+                      </h3>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="use-description">
+                  <li>{use.description}</li>
+                  <li>
+                    <h5>Why I Use This:</h5> {use.whyUse}
+                  </li>
+                </ul>
+              </li>
+            ))
+          }
+        </ul>
+      </div> -->
+    </div>
+  </main>
+</Layout>

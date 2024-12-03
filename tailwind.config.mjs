@@ -25,6 +25,9 @@ export default {
       fontFamily: {
         odibee: ["Odibee Sans", "sans-serif"],
       },
+      backgroundImage: {
+        "js-blob": "url('/js.png')",
+      },
     },
   },
   plugins: [],
