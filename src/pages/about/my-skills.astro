@@ -155,107 +155,123 @@ const skills: Skill[] = [
   siteUrl="https://bymjcodes.netlify.app/about/my-skills"
 >
   <main>
-    <Heading text="My Skills" size="lg" />
-    <div class="split">
-      {/*Programming Languages*/}
-      <div class="skills">
-        <Heading text="Programming Languages" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 1)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
-      {/*Web Libraries & Frameworks*/}
-      <div class="skills">
-        <Heading text="Web Libraries & Frameworks" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 2)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
-      {/*Mobile Development*/}
-      <div class="skills">
-        <Heading text="Mobile Development" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 3)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
-      {/*Querying*/}
-      <div class="skills">
-        <Heading text="Querying" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 4)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
-      {/*Data Management & Storage*/}
-      <div class="skills">
-        <Heading text="Data Management & Storage" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 5)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
-      {/*Other Technologies*/}
-      <div class="skills">
-        <Heading text="Other Technologies" size="sm" />
-        <ul class="skills-grid">
-          {
-            skills.map((skill) => {
-              if (skill.skill === 6)
-                return (
-                  <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
-                  </li>
-                );
-            })
-          }
-        </ul>
-      </div>
+    <div class="py-16 relative">
+      <!-- TODO: Make this Sticky or Fixed for Mobile screens -->
+      <a
+        href="/about"
+        class="fixed lg:static top-0 left-0 w-full z-10 py-4 px-4 dark:bg-black bg-white backdrop-blur-md bg-white/30 dark:bg-black/30"
+      >
+        <div
+          class="flex items-center gap-2 hover:text-primary hover:scale-95 transition-all duration-300 hover:opacity-80 active:text-primary active:scale-95 active:opacity-80"
+        >
+          <Icon
+            name={"material-symbols-light:arrow-left-alt-rounded"}
+            size={40}
+            class="text-primary"
+          />
+          <Heading text="My Skills" size="lg" />
+        </div>
+      </a>
+      <div class="split">
+        {/*Programming Languages*/}
+        <div class="skills">
+          <Heading text="Programming Languages" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 1)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
+        {/*Web Libraries & Frameworks*/}
+        <div class="skills">
+          <Heading text="Web Libraries & Frameworks" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 2)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
+        {/*Mobile Development*/}
+        <div class="skills">
+          <Heading text="Mobile Development" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 3)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
+        {/*Querying*/}
+        <div class="skills">
+          <Heading text="Querying" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 4)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
+        {/*Data Management & Storage*/}
+        <div class="skills">
+          <Heading text="Data Management & Storage" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 5)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
+        {/*Other Technologies*/}
+        <div class="skills">
+          <Heading text="Other Technologies" size="sm" />
+          <ul class="skills-grid">
+            {
+              skills.map((skill) => {
+                if (skill.skill === 6)
+                  return (
+                    <li class="card-dark">
+                      {skill.name} <Icon name={skill.icon} />
+                    </li>
+                  );
+              })
+            }
+          </ul>
+        </div>
 
-      {/* Skills */}
-      <!-- <div>
+        {/* Skills */}
+        <!-- <div>
         <h1>What I Use:</h1>
         <ul class="uses-grid">
           {
@@ -289,6 +305,7 @@ const skills: Skill[] = [
           }
         </ul>
       </div> -->
+      </div>
     </div>
   </main>
 </Layout>
