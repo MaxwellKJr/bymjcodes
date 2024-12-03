@@ -17,6 +17,7 @@ export default {
         secondary: "#ff006675",
         "secondary-dark": "#301622",
         "secondary-white": "#8f8f8f",
+        "secondary-white-lighter": "#C8C8C8FF",
         "background-dark": "#111111",
         "card-background": "rgba(0, 0, 0, 0.562)",
         "card-border": "#000000",
