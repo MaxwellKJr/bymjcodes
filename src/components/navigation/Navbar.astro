@@ -41,6 +41,8 @@ const links: Link[] = [
     icon: "ri:macbook-line",
   },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav
@@ -65,21 +67,27 @@ const links: Link[] = [
       class="flex lg:flex-col justify-evenly items-center gap-0 lg:gap-4 w-full mx-auto"
     >
       {
-        links.map((link) => (
-          <li class="w-full h-full" title={link.title}>
-            <a
-              class="hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2 text-secondary-white lg:text-white m-0"
-              href={link.route}
-            >
-              <Icon
-                name={link.icon}
-                size={22}
-                class="lg:hidden mb-1 dark:text-white text-black"
-              />
-              {link.name}
-            </a>
-          </li>
-        ))
+        links.map((link) => {
+          const isActive =
+            (link.route === "/" && currentPath === "/") ||
+            (link.route !== "/" && currentPath.startsWith(link.route));
+
+          return (
+            <li class="w-full h-full" title={link.title}>
+              <a
+                class={`hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2  m-0  ${isActive ? "text-primary" : ""}`}
+                href={link.route}
+              >
+                <Icon
+                  name={link.icon}
+                  size={22}
+                  class={`lg:hidden mb-1 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
+                />
+                {link.name}
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
 
