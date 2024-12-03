@@ -68,10 +68,14 @@ const links: Link[] = [
         links.map((link) => (
           <li class="w-full h-full" title={link.title}>
             <a
-              class="hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 text-xs uppercase text-[10px] px-2 text-secondary-white lg:text-white m-0"
+              class="hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2 text-secondary-white lg:text-white m-0"
               href={link.route}
             >
-              <Icon name={link.icon} size={18} class="lg:hidden" />
+              <Icon
+                name={link.icon}
+                size={22}
+                class="lg:hidden mb-1 dark:text-white text-black"
+              />
               {link.name}
             </a>
           </li>

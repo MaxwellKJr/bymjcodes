@@ -66,7 +66,7 @@ const Links: SocialLink[] = [
 
 const layouts = {
   flex: "flex justify-center items-center gap-4",
-  grid: "lg:grid-cols-2 lg:gap-2 hidden lg:grid mb-4",
+  grid: "lg:grid-cols-2 lg:gap-0 hidden lg:grid mb-4",
 };
 
 const { layout } = Astro.props;
@@ -82,7 +82,7 @@ const { layout } = Astro.props;
           target="_blank"
           title={link.title}
         >
-          <Icon name={link.icon} size={22} />
+          <Icon name={link.icon} size={20} />
         </a>
       </li>
     ))
