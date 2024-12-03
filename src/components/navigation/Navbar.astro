@@ -50,6 +50,7 @@ const currentPath = Astro.url.pathname;
 >
   <div class="flex flex-col justify-between items-center h-full">
     <!-- Logo -->
+    <!-- TODO: Create an interactive area/playground for the logo -->
     <a
       href="/"
       title="Maxwell Kapezi Jr 🚀"
@@ -58,7 +59,7 @@ const currentPath = Astro.url.pathname;
       <img
         src="/icon.png"
         alt="MJ Codes logo"
-        class="w-10 h-10 animate-pulse"
+        class="w-10 h-10 transition-all duration-300 animate-pulse hover:animate-bounce"
       />
     </a>
 
@@ -75,13 +76,13 @@ const currentPath = Astro.url.pathname;
           return (
             <li class="w-full h-full" title={link.title}>
               <a
-                class={`hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2  m-0  ${isActive ? "text-primary" : ""}`}
+                class={`hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2  m-0 group  ${isActive ? "text-primary" : ""}`}
                 href={link.route}
               >
                 <Icon
                   name={link.icon}
                   size={22}
-                  class={`lg:hidden mb-1 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
+                  class={`lg:hidden mb-1 group-hover:text-primary duration-300 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
                 />
                 {link.name}
               </a>
