@@ -29,7 +29,7 @@ const { text, link, variant, blank = false } = Astro.props;
     z-index: 1;
     position: relative;
     transition: all ease-in-out 300ms;
-    border-radius: 9999px;
+    border-radius: 1em;
     margin: 0.5rem;
   }
 
@@ -49,18 +49,18 @@ const { text, link, variant, blank = false } = Astro.props;
     height: 100%;
     z-index: -1;
     transition: all ease-in-out 300ms;
-    border-radius: 9999px;
+    border-radius: 1em;
   }
 
   .btn-primary:hover {
     color: var(--primary-black);
-    border-radius: 9999px;
+    border-radius: 1em;
   }
 
   .btn-primary:hover::after {
     width: 100%;
     text-decoration: none;
-    border-radius: 9999px;
+    border-radius: 1em;
   }
 
   /* SECONDARY BUTTON */
@@ -79,7 +79,7 @@ const { text, link, variant, blank = false } = Astro.props;
     height: 100%;
     z-index: -1;
     transition: all ease-in-out 300ms;
-    border-radius: 9999px 0 0 9999px;
+    border-radius: 1em 0 0 1em;
   }
 
   .btn-secondary:hover {
@@ -89,6 +89,6 @@ const { text, link, variant, blank = false } = Astro.props;
   .btn-secondary:hover::after {
     width: 100%;
     text-decoration: none;
-    border-radius: 9999px;
+    border-radius: 1em;
   }
 </style>
