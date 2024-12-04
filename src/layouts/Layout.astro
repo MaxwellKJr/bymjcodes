@@ -17,7 +17,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -48,7 +48,7 @@ const {
   <body
     class="flex flex-col lg:flex-row min-w-screen dark:bg-background-dark bg-background dark:text-white text-black font-sans overflow-x-hidden relative"
   >
-    <Navbar />
+    <Navbar transition:persist />
     <div
       class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] z-50 lg:z-auto"
     >

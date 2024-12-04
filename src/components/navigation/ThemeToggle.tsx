@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     // Default to light theme if not in browser
-    return 'light';
+    return 'dark';
   });
 
   useEffect(() => {
