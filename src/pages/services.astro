@@ -1,9 +1,70 @@
 ---
+import ServicesCards from "../components/cards/ServicesCards.astro";
+import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
+import type { Service } from "../types/Service";
+
+const WebDevelopmentServicesList: Service[] = [
+  {
+    name: "Static Plan",
+    price: "174,999",
+    isRecommended: false,
+    features: [
+      "Single Landing Page",
+      "with an option of 2 more separate pages",
+      "Suitable for advertising",
+      "Fast delivery of updates post deployment",
+      "No database",
+      "No admin privileges",
+      "No discounts",
+    ],
+  },
+  {
+    name: "Startup Plan",
+    price: "379,999",
+    isRecommended: true,
+    features: [
+      "Unlimited Pages",
+      "Fast delivery of updates post deployment",
+      "Simple database for content management is available",
+      "Some admin privileges",
+      "Recommended for most people such as independent startups, writers, creatives, NGOs",
+      "Discounts are considered",
+    ],
+  },
+  {
+    name: "Media & eCommerce",
+    price: "799,999",
+    isRecommended: false,
+    features: [
+      "Unlimited pages",
+      "Database",
+      "Fast delivery of updates post deployment",
+      "Admin privileges are available",
+      "Discounts are considered",
+    ],
+  },
+  {
+    name: "Corporate Plan",
+    price: "1,499,999",
+    isRecommended: false,
+    features: [
+      "System development and integration",
+      "Fast delivery of updates post deployment",
+      "Consultations post deployment",
+      "Admin privileges are available",
+    ],
+  },
+];
 ---
 
-<Layout title="Services Page">
+<Layout title="Services | MJ Codes">
   <main>
-    <h1>Services Page</h1>
+    <section class="lg:min-h-[89vh] w-full">
+      <div class="container flex flex-col justify-center h-full py-16">
+        <Heading text="Services" size="lg" />
+        <ServicesCards type="web" services={WebDevelopmentServicesList} />
+      </div>
+    </section>
   </main>
 </Layout>

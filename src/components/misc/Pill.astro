@@ -1,6 +1,6 @@
 ---
 interface Props {
-  text: string;
+  text: string | undefined;
   variant: "primary" | "secondary" | "tertiary";
 }
 const { text, variant } = Astro.props;
