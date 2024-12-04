@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Heading from "../typography/Heading.astro";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface Question {
   id: number;
@@ -64,21 +64,21 @@ export const FAQS = () => {
   const [isOpen, setIsOpen] = useState<{ [key: number]: boolean }>({});
 
   return (
-    <div
-      // initial="hidden"
-      // animate="visible"
-      // variants={{
-      //   hidden: {
-      //     scale: 1,
-      //     y: 50,
-      //     opacity: 0,
-      //   },
-      //   visible: {
-      //     scale: 1,
-      //     y: 0,
-      //     opacity: 1,
-      //   },
-      // }}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {
+          scale: 1,
+          y: 50,
+          opacity: 0,
+        },
+        visible: {
+          scale: 1,
+          y: 0,
+          opacity: 1,
+        },
+      }}
     >
       <div className="questions-container">
         {questionsAndAnswers.map((question: Question) => (
@@ -105,6 +105,6 @@ export const FAQS = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };

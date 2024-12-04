@@ -76,6 +76,12 @@ const {
   @tailwind components;
   @tailwind utilities;
 
+  @layer utilities {
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+  }
+
   :root {
     overflow-x: hidden;
   }
@@ -128,31 +134,26 @@ const {
 
   /* FAQS */
   .questions-container {
-    margin: 1rem 0;
+    @apply mb-4 mt-4;
   }
+
   .questions-container .question-card {
-    margin: 1rem 0;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #ebebeb;
+    @apply mb-4 mt-4 border-b py-2;
   }
+
   .questions-container .question-card .question {
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.8;
+    @apply flex justify-between opacity-80;
   }
+
   .questions-container .question-card .question.question-open {
-    color: #ff0077;
+    @apply text-primary;
   }
+
   .questions-container .question-card .answer {
-    font-size: 14px;
-    padding: 0.4rem 0;
-    margin-top: 0.8rem;
-    transition: all 400ms ease-in-out;
-    max-height: 200px;
-    overflow: hidden;
+    @apply mt-2 max-h-48 overflow-hidden py-1 text-sm transition duration-300 ease-in-out;
   }
+
   .questions-container .question-card .hidden {
-    max-height: 0;
-    padding: 0;
+    @apply max-h-0 p-0;
   }
 </style>
