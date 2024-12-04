@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import Navbar from "../components/navigation/Navbar.astro";
 import ThemeToggle from "../components/navigation/ThemeToggle";
@@ -49,6 +50,14 @@ const {
     class="flex flex-col lg:flex-row min-w-screen dark:bg-background-dark bg-background dark:text-white text-black font-sans overflow-x-hidden relative"
   >
     <Navbar transition:persist />
+    <Image
+      src="/icon.png"
+      alt="MJ Codes logo"
+      width={200}
+      height={200}
+      loading={"eager"}
+      class="absolute lg:hidden top-4 left-4 w-10 h-10 transition-all duration-300 animate-pulse"
+    />
     <div
       class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] z-50 lg:z-auto"
     >
