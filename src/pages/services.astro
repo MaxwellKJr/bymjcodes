@@ -1,9 +1,11 @@
 ---
+import { FAQS } from "../components/cards/FAQS";
 import ServicesCards from "../components/cards/ServicesCards.astro";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import type { Service } from "../types/Service";
 
+// Web Development Services List
 const WebDevelopmentServicesList: Service[] = [
   {
     name: "Static Plan",
@@ -56,6 +58,32 @@ const WebDevelopmentServicesList: Service[] = [
     ],
   },
 ];
+
+// Mobile Development Services List
+const MobileDevelopmentServicesList: Service[] = [
+  {
+    name: "Simple Utility App",
+    price: "499,999",
+    isRecommended: false,
+    features: [
+      "Maximum of 15 Screens",
+      "Database is available if needed",
+      "Snappy and responsive",
+    ],
+  },
+  {
+    name: "Brand App",
+    price: "849,999",
+    isRecommended: true,
+    features: [
+      "Unlimited Screens",
+      "Database is available if needed",
+      "Fast delivery of updates post deployment",
+      "Recommended for independent startups, writers, creatives, NGOs",
+      "Cross-platform app that runs on both Android and iOS",
+    ],
+  },
+];
 ---
 
 <Layout title="Services | MJ Codes">
@@ -63,7 +91,12 @@ const WebDevelopmentServicesList: Service[] = [
     <section class="lg:min-h-[89vh] w-full">
       <div class="container flex flex-col justify-center h-full py-16">
         <Heading text="Services" size="lg" />
+        <Heading text="Web Development" size="sm" />
         <ServicesCards type="web" services={WebDevelopmentServicesList} />
+        <Heading text="Mobile Development" size="sm" />
+        <ServicesCards type="mobile" services={MobileDevelopmentServicesList} />
+        <Heading text="Frequently Asked Questions" size="sm" />
+        <FAQS client:load />
       </div>
     </section>
   </main>
