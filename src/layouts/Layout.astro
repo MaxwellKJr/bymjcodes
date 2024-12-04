@@ -55,6 +55,15 @@ const {
     </div>
     <ViewTransitions />
   </body>
+  <!-- <script>
+    // Optional: Initial theme setting in <head> to prevent FOUC
+    const theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  </script> -->
 </html>
 <style is:global>
   @tailwind base;
@@ -106,6 +115,6 @@ const {
   }
 
   .skills-grid .card-dark {
-    @apply bg-js-blob flex items-center justify-between rounded-md border border-secondary-dark bg-cover bg-center bg-no-repeat p-2;
+    @apply flex items-center justify-between rounded-md border border-secondary-dark bg-js-blob bg-cover bg-center bg-no-repeat p-2;
   }
 </style>
