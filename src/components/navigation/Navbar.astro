@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import SocialLinks from "../contacts/SocialLinks.astro";
 import Footer from "./Footer.astro";
-import ThemeToggle from "./ThemeToggle";
 interface Link {
   name: string;
   route: string;
@@ -49,9 +48,6 @@ const currentPath = Astro.url.pathname;
 <nav
   class="text-black dark:text-white backdrop-blur-md bg-white/30 dark:bg-black/30 fixed bottom-0 left-0 w-full lg:h-screen lg:w-[12vw] border-t-[1px] lg:border-t-0 lg:border-r-[1px] border-primary lg:min-h-screen z-50 flex-1 overflow-hidden"
 >
-  <div>
-    <ThemeToggle client:load />
-  </div>
   <div class="flex flex-col justify-between items-center h-full">
     <!-- Logo -->
     <!-- TODO: Create an interactive area/playground for the logo -->

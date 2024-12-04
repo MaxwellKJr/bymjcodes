@@ -34,13 +34,13 @@ const ThemeToggle = () => {
   return (
     <button 
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+      className="p-2 rounded-lg dark:bg-secondary-dark bg-white transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-95 shadow-md dark:shadow-md dark:shadow-primary/30  backdrop-blur-md"
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
       {theme === 'dark' ? (
-        <Sun className="w-6 h-6 text-yellow-500" />
+        <Sun className="w-6 h-6 text-primary" />
       ) : (
-        <Moon className="w-6 h-6 text-indigo-600" />
+        <Moon className="w-6 h-6 text-secondary-white" />
       )}
     </button>
   );
