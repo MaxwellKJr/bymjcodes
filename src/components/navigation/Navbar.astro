@@ -54,7 +54,7 @@ const currentPath = Astro.url.pathname;
     <a
       href="/"
       title="Maxwell Kapezi Jr 🚀"
-      class="bg-secondary-dark hidden lg:flex justify-center items-center w-full py-4"
+      class="dark:bg-secondary-dark bg-secondary-light hidden lg:flex justify-center items-center w-full py-4"
     >
       <img
         src="/icon.png"
@@ -76,7 +76,7 @@ const currentPath = Astro.url.pathname;
           return (
             <li class="w-full h-full" title={link.title}>
               <a
-                class={`hover:text-primary hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2  m-0 group  ${isActive ? "text-primary" : ""}`}
+                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 uppercase text-[9px] lg:text-xs px-2  m-0 group  ${isActive ? "text-primary" : ""}`}
                 href={link.route}
               >
                 <Icon
