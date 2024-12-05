@@ -5,7 +5,7 @@ export default {
   theme: {
     colors: {
       white: "#ebebeb",
-      black: "#111111",
+      black: "#121212",
       h1: "#ff0098",
       h2: "#ff006675",
     },
@@ -17,10 +17,12 @@ export default {
         primary: "#ff0098",
         secondary: "#ff006675",
         "secondary-light": "#ffdaea",
+        "secondary-lighter": "#fff4f8",
         "secondary-dark": "#301622",
         "secondary-white": "#8f8f8f",
         "secondary-white-lighter": "#C8C8C8FF",
-        "background-dark": "#111111",
+        "background-light": "#ebebeb",
+        "background-dark": "#121212",
         "card-background": "rgba(0, 0, 0, 0.562)",
         "card-border": "#000000",
       },
