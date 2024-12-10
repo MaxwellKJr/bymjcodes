@@ -18,3 +18,5 @@ export async function loadQuery<QueryResponse>({
     data: result,
   };
 }
+
+

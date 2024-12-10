@@ -1,9 +1,36 @@
 ---
+import type { SanityDocument } from "@sanity/client";
+import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
+import { loadQuery } from "../sanity/lib/load-query";
+import type Post from "../types/Post";
+import { POSTS_QUERY } from "../sanity/lib/queries";
+import BlogCard from "../components/cards/BlogCard.astro";
+
+const posts = await loadQuery<Post[]>({
+  query: POSTS_QUERY,
+});
 ---
 
 <Layout title="Blog">
   <main>
-    <h1>Blog</h1>
+    <section class="lg:min-h-[89vh] w-full">
+      <div class="container flex flex-col justify-center h-full py-16">
+        <Heading text="Posts" size="lg" />
+        <ul class="grid grid-cols-2">
+          {
+            posts.data.map((post) => (
+              <BlogCard
+                title={post.title}
+                mainImage={post.mainImage}
+                publishedAt={post.publishedAt}
+                body={post.body}
+                href={`/blog/${post.slug.current}`}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </section>
   </main>
 </Layout>

@@ -5,6 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import Heading from "../../components/typography/Heading.astro";
 import type Post from "../../types/Post";
 import PortableText from "../../components/sanity/PortableText.astro";
+import { POST_QUERY } from "../../sanity/lib/queries";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
@@ -23,7 +24,7 @@ export async function getStaticPaths() {
 const { params } = Astro;
 
 const { data: post }: { data: Post } = await loadQuery({
-  query: `*[_type == "post" && slug.current == $slug][0]`,
+  query: POST_QUERY,
   params,
 });
 ---
