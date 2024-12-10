@@ -43,7 +43,9 @@ const { href, title, mainImage, description, publishedAt, categories } =
       <Heading text={title} size="md" color="text-primary" />
       <FormattedDate unformattedDate={publishedAt} />
       <hr class="h-[1px] text-primary my-2 opacity-60" />
-      <Text text={description} size="sm" />
+      <div class="pb-2">
+        <Text text={description} size="sm" />
+      </div>
       <hr class="h-[1px] text-primary my-2 opacity-60" />
       <ul class="pt-2">
         {

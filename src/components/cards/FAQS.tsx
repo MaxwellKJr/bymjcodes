@@ -64,26 +64,11 @@ export const FAQS = () => {
   const [isOpen, setIsOpen] = useState<{ [key: number]: boolean }>({});
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {
-          scale: 1,
-          y: 50,
-          opacity: 0,
-        },
-        visible: {
-          scale: 1,
-          y: 0,
-          opacity: 1,
-        },
-      }}
-    >
+    <div>
       <div className="questions-container">
         {questionsAndAnswers.map((question: Question) => (
           <div className="question-card transition-all duration-300 cursor-pointer" key={question.id}>
-            <h4
+            <h5
               className={
                 isOpen[question.id] ? "question question-open" : "question"
               }
@@ -96,7 +81,7 @@ export const FAQS = () => {
             >
               {question.question}{" "}
               {isOpen[question.id] ? <span>-</span> : <span>+</span>}
-            </h4>
+            </h5>
             {isOpen[question.id] ? (
               <p className="answer transition-all duration-300">{question.answer}</p>
             ) : (
@@ -105,6 +90,6 @@ export const FAQS = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
