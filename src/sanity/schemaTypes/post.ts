@@ -36,6 +36,10 @@ export const postType = defineType({
       ],
     }),
     defineField({
+      name: "description",
+      type: "string",
+    }),
+    defineField({
       name: "categories",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
