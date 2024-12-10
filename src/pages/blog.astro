@@ -17,9 +17,9 @@ console.log(posts.data.map((post) => post.categories));
 <Layout title="Blog">
   <main>
     <section class="lg:min-h-[89vh] w-full">
-      <div class="container flex flex-col justify-center h-full py-16">
+      <div class="container flex flex-col justify-center h-full py-24">
         <Heading text="Read Something" size="lg" />
-        <ul class="grid grid-cols-1 lg:grid-cols-2 py-4">
+        <ul class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-4">
           {
             posts.data.map((post) => (
               <BlogCard

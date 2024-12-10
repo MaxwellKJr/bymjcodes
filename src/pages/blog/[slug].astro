@@ -30,6 +30,10 @@ const { data: post }: { data: Post } = await loadQuery({
 ---
 
 <Layout title={post.title}>
-  <Heading text={post.title} size="lg" color="text-primary" />
-  <PortableText portableText={post.body} />
+  <article>
+    <div class="py-24">
+      <Heading text={post.title} size="lg" color="text-primary" />
+      <PortableText portableText={post.body} />
+    </div>
+  </article>
 </Layout>
