@@ -13,8 +13,10 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.0.0",
     "@astrojs/tailwind": "^5.1.2",
+    "@portabletext/types": "^2.0.13",
     "@sanity/astro": "^3.1.6",
     "@sanity/client": "^6.24.1",
+    "@sanity/image-url": "^1.1.0",
     "@sanity/visual-editing": "^2.10.6",
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.3",
@@ -31,9 +33,9 @@
   },
   "devDependencies": {
     "@iconify-json/material-symbols-light": "^1.2.8",
-    "@iconify-json/simple-icons": "^1.2.14",
     "@iconify-json/mdi": "^1.2.1",
     "@iconify-json/ri": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.14",
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9"
   }
