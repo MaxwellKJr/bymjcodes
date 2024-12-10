@@ -1,34 +1,45 @@
 ---
 import type { ImageAsset, PortableTextBlock } from "sanity";
-import PortableText from "../sanity/PortableText.astro";
 import { Image } from "astro:assets";
 import { urlForImage } from "../../sanity/lib/urlForImage";
 import Heading from "../typography/Heading.astro";
 
-interface BlogCardProps {
+interface Props {
   title: string;
-  mainImage: ImageAsset;
+  mainImage: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
   publishedAt: string;
-  body: PortableTextBlock[];
   href: string;
 }
 
-const { href, title, mainImage, body, publishedAt } = Astro.props;
+const { href, title, mainImage, publishedAt } = Astro.props;
 ---
 
-<li class="dark:bg-[#000000] bg-[#ffffff] z-10 rounded-lg">
+<li
+  class="dark:bg-[#000000] bg-[#ffffff] z-10 rounded-lg hover:scale-95 transition-all duration-300 border-[1px] hover:border-primary dark:border-[#000000]"
+>
   <a href={`${href}`}>
     <Image
       src={urlForImage(mainImage)}
-      alt={title}
+      alt={mainImage.alt}
       width={500}
       height={500}
       loading={"lazy"}
-      class={"rounded-t-lg"}
+      class={"rounded-t-lg w-full"}
+      title={title}
     />
-    <div class="p-2">
+    <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />
       <small class="text-xs text-secondary-white">{publishedAt}</small>
+      <hr class="h-[1px] text-primary my-2 opacity-60" />
+
+      <ul>
+        {}
+      </ul>
     </div>
   </a>
 </li>
