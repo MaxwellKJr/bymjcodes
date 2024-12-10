@@ -6,6 +6,7 @@ import Heading from "../typography/Heading.astro";
 import Text from "../typography/Text.astro";
 import type { Category } from "../../types/Category";
 import Pill from "../misc/Pill.astro";
+import FormattedDate from "../misc/FormattedDate.astro";
 
 interface Props {
   title: string;
@@ -40,7 +41,7 @@ const { href, title, mainImage, description, publishedAt, categories } =
     />
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />
-      <small class="text-xs text-secondary-white">{publishedAt}</small>
+      <FormattedDate unformattedDate={publishedAt} />
       <hr class="h-[1px] text-primary my-2 opacity-60" />
       <Text text={description} size="sm" />
       <hr class="h-[1px] text-primary my-2 opacity-60" />
