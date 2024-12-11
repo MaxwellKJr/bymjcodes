@@ -10,8 +10,6 @@ import BlogCard from "../components/cards/BlogCard.astro";
 const posts = await loadQuery<Post[]>({
   query: POSTS_QUERY,
 });
-
-console.log(posts.data.map((post) => post.categories));
 ---
 
 <Layout title="Blog">

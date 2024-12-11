@@ -27,7 +27,32 @@ export const POSTS_QUERY = groq`*[_type == "post" && defined(slug)]{
   }
 }`;
 
-export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]`;
+export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]{
+  _id,
+  title,
+  description,
+  slug,
+  publishedAt,
+  body,
+  "categories": categories[]->{
+    _id,
+    title,
+    slug
+  },
+  "author": author->{
+    _id,
+    name,
+    bio,
+    "image": image.asset->url
+  },
+  mainImage {
+    asset->{
+      _id,
+      url
+    },
+    alt
+  }
+}`;
 
 export const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)]{
   _id,
