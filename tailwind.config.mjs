@@ -21,9 +21,10 @@ export default {
         "secondary-dark": "#301622",
         "secondary-white": "#8f8f8f",
         "secondary-white-lighter": "#C8C8C8FF",
-        "background-light": "#ebebeb",
+        "background-light": "#FAFAFAFF",
         "background-dark": "#121212",
-        "card-background": "rgba(0, 0, 0, 0.562)",
+        "card-dark": "#000000",
+        "card-light": "#ffffff",
         "card-border": "#000000",
       },
       fontFamily: {

@@ -7,7 +7,6 @@ import Text from "../typography/Text.astro";
 import type { Category } from "../../types/Category";
 import Pill from "../misc/Pill.astro";
 import FormattedDate from "../misc/FormattedDate.astro";
-import type Project from "../../types/Project";
 
 interface Props {
   title: string;
@@ -21,30 +20,50 @@ interface Props {
   publishedAt: string;
   href: string;
   categories: Category[];
+  isProject?: boolean;
+  projectUrl?: string;
+  githubUrl?: string | null | undefined;
 }
 
-const { href, title, mainImage, description, publishedAt, categories } =
-  Astro.props;
-
-console.log("CAtegories", categories);
+const {
+  href,
+  title,
+  mainImage,
+  description,
+  publishedAt,
+  categories,
+  isProject = false,
+  projectUrl,
+  githubUrl,
+} = Astro.props;
 ---
 
 <li
-  class="dark:bg-[#000000] bg-[#ffffff] z-10 rounded-xl hover:scale-95 transition-all duration-300 border-[0.5px] hover:border-primary dark:hover:border-primary dark:border-[#000000] border-[#ffffff]"
+  class="dark:bg-card-dark bg-card-light z-10 rounded-xl hover:scale-95 transition-all duration-300 border-[0.5px] hover:border-primary dark:hover:border-primary dark:border-card-dark border-card-light"
 >
-  <a href={`${href}`}>
+  <a
+    href={isProject ? `${projectUrl}` : `${href}`}
+    target={isProject ? "_blank" : "_self"}
+  >
     <Image
       src={urlForImage(mainImage)}
       alt={mainImage.alt}
       width={500}
       height={500}
       loading={"lazy"}
-      class={"rounded-t-xl w-full"}
+      class={isProject ? "w-full" : "rounded-t-xl w-full shadow-xl"}
       title={title}
     />
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />
-      <FormattedDate unformattedDate={publishedAt} />
+      <div>
+        {
+          isProject && (
+            <span class="text-xs text-secondary-white">🚀 Deployed on:</span>
+          )
+        }
+        <FormattedDate unformattedDate={publishedAt} />
+      </div>
       <hr class="h-[1px] text-primary my-2 opacity-60" />
       <div class="pb-2">
         <Text text={description} size="sm" />

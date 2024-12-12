@@ -1,5 +1,5 @@
 ---
-import BlogCard from "../components/cards/BlogCard.astro";
+import Card from "../components/cards/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import { PROJECTS_QUERY } from "../sanity/lib/queries";
 import { loadQuery } from "../sanity/lib/load-query";
@@ -26,13 +26,16 @@ const projects = await loadQuery<Project[]>({
         <ul class="grid grid-cols-1 lg:grid-cols-2 py-4 gap-4">
           {
             projects.data.map((project: Project) => (
-              <BlogCard
+              <Card
                 title={project.title}
                 mainImage={project.mainImage}
                 description={project.description}
                 publishedAt={project.publishedAt}
                 categories={project.categories}
+                isProject
                 href={`/projects/${project.slug.current}`}
+                projectUrl={project.projectUrl}
+                githubUrl={project.githubUrl}
               />
             ))
           }
