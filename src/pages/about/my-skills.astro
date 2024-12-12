@@ -51,7 +51,7 @@ const skills: Skill[] = [
   {
     name: "React",
     skill: 2,
-    icon: "simple-icons:html5",
+    icon: "simple-icons:react",
   },
   {
     name: "Laravel",
@@ -162,14 +162,14 @@ const skills: Skill[] = [
         class="fixed lg:static top-0 left-0 w-full z-10 py-4 px-4 lg:p-0 dark:bg-background-dark bg-background-white backdrop-blur-md bg-background-white/50 dark:bg-background-dark/50"
       >
         <div
-          class="flex items-center gap-2 hover:text-primary hover:scale-95 transition-all duration-300 hover:opacity-80 active:text-primary active:scale-95 active:opacity-80"
+          class="flex items-center gap-2 group hover:text-primary hover:translate-x-3 transition-all duration-300 hover:opacity-80 active:text-primary active:scale-95 active:opacity-80"
         >
           <Icon
             name={"material-symbols-light:arrow-left-alt-rounded"}
             size={40}
-            class="text-primary"
+            class="text-primary group-hover:dark:text-white transition-all duration-300"
           />
-          <Heading text="My Skills" size="lg" />
+          <Heading text="My Skills" size="md" />
         </div>
       </a>
       <div class="split py-4">
@@ -309,3 +309,17 @@ const skills: Skill[] = [
     </section>
   </main>
 </Layout>
+
+<style>
+  /* Skills */
+  .skills {
+    @apply pb-8 lg:pb-10;
+  }
+  .skills-grid {
+    @apply my-4 grid grid-cols-2 gap-4 md:grid-cols-3;
+  }
+
+  .skills-grid .card-dark {
+    @apply flex items-center justify-between rounded-md border border-secondary-dark bg-js-blob bg-cover bg-center bg-no-repeat p-2;
+  }
+</style>

@@ -5,6 +5,7 @@ import Flex from "../components/layouts/Flex.astro";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import maxwellImage from "../images/mjk.jpg";
+import SocialLinks from "../components/contacts/SocialLinks.astro";
 ---
 
 <Layout
@@ -33,7 +34,7 @@ import maxwellImage from "../images/mjk.jpg";
             class="w-40 h-40 sm:w-48 sm:h-48 2xl:w-62 2xl:h-62 rounded-full border-white border-2"
           />
           <!-- Background -->
-          <div>
+          <div class="text-center lg:text-left">
             <Heading text="About Me" size="lg" />
             <div
               class="flex flex-col text-sm dark:text-secondary-white-lighter text-black"
@@ -106,13 +107,25 @@ import maxwellImage from "../images/mjk.jpg";
                 games. I mean why not?
               </p>
             </div>
-            <Flex direction="row" gap="2" className="my-4">
+            <Flex
+              direction="row"
+              gap="2"
+              className="my-4 justify-center lg:justify-start"
+            >
               <Button
                 text="My Skills"
                 link="/about/my-skills"
                 variant="primary"
               />
             </Flex>
+
+            <!-- Social Links/Contacts -->
+            <div class="block lg:hidden py-10 px-2 text-center">
+              <Heading text="Reach Me" size="lg" />
+              <div class="py-4">
+                <SocialLinks layout="cols-3" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

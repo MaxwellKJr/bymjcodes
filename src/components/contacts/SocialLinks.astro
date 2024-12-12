@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  layout: "flex" | "grid";
+  layout: "flex" | "grid" | "cols-3";
 }
 
 interface SocialLink {
@@ -67,6 +67,7 @@ const Links: SocialLink[] = [
 const layouts = {
   flex: "flex justify-center items-center gap-4",
   grid: "lg:grid-cols-2 lg:gap-0 hidden lg:grid mb-4",
+  "cols-3": "grid grid-cols-3 gap-4",
 };
 
 const { layout } = Astro.props;
