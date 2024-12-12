@@ -8,13 +8,17 @@ interface Props {
   title: string;
   description?: string;
   siteUrl?: string;
+  image?: string;
 }
 
 const {
   title,
   description = "Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows.",
   siteUrl = "https://bymjcodes.netlify.app",
+  image,
 } = Astro.props;
+
+// Old image ("https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png");
 ---
 
 <!doctype html>
@@ -24,17 +28,16 @@ const {
     <meta name="description" content={description} />
     <meta name="title" content={`${title} | MJ Codes 🚀`} />
     <meta name="description" content={description} />
+    <meta name="image" content={image} />
     <meta property="og:title" content={`${title} | MJ Codes 🚀`} />
     <meta property="og:description" content={description} />
-    <meta
-      property="og:image"
-      content="https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png"
-    />
+    <meta property="og:image" content={image} />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:type" content="website" />
     <meta name="twitter:title" content={`${title} | MJ Codes 🚀`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content={image} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
     <meta name="generator" content={Astro.generator} />

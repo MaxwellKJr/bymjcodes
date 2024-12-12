@@ -12,9 +12,14 @@ const posts = await loadQuery<Post[]>({
 });
 ---
 
-<Layout title="Blog">
+<Layout
+  title="Blog"
+  description={`Maxwell Kapezi Jr's "take" on Tech, software and its development, and probably rants about AI.`}
+  siteUrl="https://bymjcodes.netlify.app/blog/"
+>
   <main>
-    <section class="lg:min-h-[89vh] w-full">
+    <section class="lg:min-h-[89vh]
+  w-full">
       <div class="container flex flex-col justify-center h-full py-24">
         <Heading text="Read Something" size="lg" />
         <ul class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-4">
@@ -33,5 +38,5 @@ const posts = await loadQuery<Post[]>({
         </ul>
       </div>
     </section>
-  </main>
-</Layout>
+  </main></Layout
+>
