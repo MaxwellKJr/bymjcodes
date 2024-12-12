@@ -5,5 +5,5 @@ import type { SanityAsset } from '@sanity/image-url/lib/types/types';
 export const imageBuilder = imageUrlBuilder(sanityClient);
 
 export function urlForImage(source: SanityAsset) {
-  return imageBuilder.image(source).auto('format').fit('max').url();
+  return imageBuilder.image(source).auto('format').fit('max').quality(90).url();
 }
