@@ -39,6 +39,19 @@ export const projectType = defineType({
       name: "description",
       type: "string",
     }),
+   defineField({
+      name: "projectUrl",
+      type: "url",
+    }),
+    defineField({
+      name: "githubUrl",
+      type: "url",
+    }),
+    defineField({
+      name: "categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    }),
     defineField({
       name: "tags",
       type: "array",

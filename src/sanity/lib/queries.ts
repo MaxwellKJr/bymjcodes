@@ -54,7 +54,7 @@ export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]{
   }
 }`;
 
-export const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)]{
+export const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)] | order(publishedAt desc){
   _id,
   title,
   description,
@@ -66,6 +66,13 @@ export const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)]{
     name,
     bio,
     "image": image.asset->url
+  },
+  projectUrl,
+  githubUrl,
+  "categories": categories[]->{
+    _id,
+    title,
+    slug
   },
   "tags": tags[],
   mainImage {

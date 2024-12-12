@@ -7,6 +7,7 @@ import Text from "../typography/Text.astro";
 import type { Category } from "../../types/Category";
 import Pill from "../misc/Pill.astro";
 import FormattedDate from "../misc/FormattedDate.astro";
+import type Project from "../../types/Project";
 
 interface Props {
   title: string;
@@ -24,6 +25,8 @@ interface Props {
 
 const { href, title, mainImage, description, publishedAt, categories } =
   Astro.props;
+
+console.log("CAtegories", categories);
 ---
 
 <li
@@ -47,10 +50,10 @@ const { href, title, mainImage, description, publishedAt, categories } =
         <Text text={description} size="sm" />
       </div>
       <hr class="h-[1px] text-primary my-2 opacity-60" />
-      <ul class="pt-2">
+      <ul class="pt-2 flex flex-wrap w-full gap-2">
         {
           categories.map((category: Category) => (
-            <Pill text={category.title} variant="secondary" />
+            <Pill text={category.slug.current} variant="secondary" />
           ))
         }
       </ul>

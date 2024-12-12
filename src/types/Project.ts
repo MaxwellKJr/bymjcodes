@@ -1,7 +1,7 @@
 import type { SanityDocument } from "@sanity/client";
 import type { Category } from "./Category";
 
-export default interface Post extends SanityDocument {
+export default interface Project extends SanityDocument {
   title: string;
   slug: {
     current: string;
@@ -17,7 +17,10 @@ export default interface Post extends SanityDocument {
       _ref: string;
     };
   };
+  projectUrl: string;
+  githubUrl?: string | null;
   categories: Category[];
+  tags?: string[];
   publishedAt: string;
   body: object[];
 }

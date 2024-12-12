@@ -1,5 +1,14 @@
 ---
+import BlogCard from "../components/cards/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
+import { PROJECTS_QUERY } from "../sanity/lib/queries";
+import { loadQuery } from "../sanity/lib/load-query";
+import type Project from "../types/Project";
+import Heading from "../components/typography/Heading.astro";
+
+const projects = await loadQuery<Project[]>({
+  query: PROJECTS_QUERY,
+});
 ---
 
 <Layout
@@ -8,6 +17,27 @@ import Layout from "../layouts/Layout.astro";
   siteUrl="https://bymjcodes.netlify.app/projects/"
 >
   <main>
-    <h1>Projects Page</h1>
+    <section class="lg:min-h-[89vh]
+  w-full">
+      <div class="container flex flex-col justify-center h-full py-24 m-auto">
+        <div class="text-center lg:text-left">
+          <Heading text="My Work" size="lg" />
+        </div>
+        <ul class="grid grid-cols-1 lg:grid-cols-2 py-4 gap-4">
+          {
+            projects.data.map((project: Project) => (
+              <BlogCard
+                title={project.title}
+                mainImage={project.mainImage}
+                description={project.description}
+                publishedAt={project.publishedAt}
+                categories={project.categories}
+                href={`/projects/${project.slug.current}`}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </section>
   </main>
 </Layout>
