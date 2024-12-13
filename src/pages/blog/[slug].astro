@@ -50,7 +50,7 @@ const { data: post }: { data: Post } = await loadQuery({
         height={500}
         quality={100}
         loading="eager"
-        class="my-4 w-full shadow-lg"
+        class="w-full my-4 shadow-lg"
       />
       <div class="flex items-center justify-end gap-2">
         {
@@ -62,7 +62,7 @@ const { data: post }: { data: Post } = await loadQuery({
       </div>
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <div
-        class="fixed top-0 left-0 w-full lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 mx-auto z-10 p-2 dark:bg-background-dark/50 bg-background-white/50 backdrop-blur-lg"
+        class="fixed top-0 left-0 z-10 w-full p-2 mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 dark:bg-background-dark/50 bg-background-white/50 backdrop-blur-lg"
       >
         <div class="flex items-center gap-4">
           <a href="/blog">

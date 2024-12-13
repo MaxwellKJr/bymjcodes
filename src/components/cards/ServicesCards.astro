@@ -16,7 +16,7 @@ const { type, services } = Astro.props;
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {
       services.map((service) => (
-        <div class="p-4 bg-secondary-lighter dark:bg-secondary-dark rounded-lg shadow-lg dark:shadow-primary/30 dark:shadow-md">
+        <div class="p-4 rounded-lg shadow-lg bg-secondary-lighter dark:bg-secondary-dark dark:shadow-primary/30 dark:shadow-md">
           <div class="flex items-center justify-between">
             <Heading text={service.name} size="sm" />
             {service.isRecommended && (

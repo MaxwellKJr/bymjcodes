@@ -44,7 +44,7 @@ const {
     <title>{`${title} | MJ Codes 🚀`}</title>
   </head>
   <body
-    class="flex flex-col lg:flex-row min-w-screen dark:bg-background-dark bg-background-light dark:text-white text-black font-sans overflow-x-hidden relative"
+    class="relative flex flex-col overflow-x-hidden font-sans text-black lg:flex-row min-w-screen dark:bg-background-dark bg-background-light dark:text-white"
   >
     <Navbar transition:persist />
     <Image
@@ -53,7 +53,7 @@ const {
       width={200}
       height={200}
       loading={"eager"}
-      class="absolute lg:hidden top-4 left-4 w-10 h-10 transition-all duration-300 animate-pulse"
+      class="absolute w-10 h-10 lg:hidden top-4 left-4 transition-all duration-300 animate-pulse"
     />
     <div
       class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] z-50 lg:z-auto"

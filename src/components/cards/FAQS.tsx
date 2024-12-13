@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Heading from "../typography/Heading.astro";
-import { motion } from "framer-motion";
 
 interface Question {
   id: number;
@@ -67,7 +65,7 @@ export const FAQS = () => {
     <div>
       <div className="questions-container">
         {questionsAndAnswers.map((question: Question) => (
-          <div className="question-card transition-all duration-300 cursor-pointer" key={question.id}>
+          <div className="transition-all duration-300 cursor-pointer question-card" key={question.id}>
             <h5
               className={
                 isOpen[question.id] ? "question question-open" : "question"
@@ -83,9 +81,9 @@ export const FAQS = () => {
               {isOpen[question.id] ? <span>-</span> : <span>+</span>}
             </h5>
             {isOpen[question.id] ? (
-              <p className="answer transition-all duration-300">{question.answer}</p>
+              <p className="transition-all duration-300 answer">{question.answer}</p>
             ) : (
-              <p className="answer hidden transition-all duration-300">{question.answer}</p>
+              <p className="hidden transition-all duration-300 answer">{question.answer}</p>
             )}
           </div>
         ))}

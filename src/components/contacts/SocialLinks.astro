@@ -78,7 +78,7 @@ const { layout } = Astro.props;
     Links.map((link) => (
       <li class="w-full h-full" title={link.title}>
         <a
-          class="hover:text-primary text-secondary-white flex flex-col justify-start items-center w-full transition-all duration-300 p-2 hover:-translate-y-2 text-xs uppercase"
+          class="flex flex-col items-center justify-start w-full p-2 text-xs uppercase hover:text-primary text-secondary-white transition-all duration-300 hover:-translate-y-2"
           href={link.url}
           target="_blank"
           title={link.title}

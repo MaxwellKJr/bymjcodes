@@ -22,7 +22,7 @@ const occupations = [
 ---
 
 <Layout
-  title="Home | Programming and Tech Related Content | "
+  title="Home | Programming and Tech Related Content"
   description="Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows."
   siteUrl="https://bymjcodes.netlify.app/"
 >
@@ -36,12 +36,12 @@ const occupations = [
           color="text-secondary"
         />
         <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
-        <div class="flex flex-wrap mx-auto w-full">
+        <div class="flex flex-wrap w-full mx-auto">
           {
             occupations.map((occupation) => (
               <a
                 href={occupation.url}
-                class="text-secondary-white hover:text-primary transition-all duration-300 mr-4 z-10"
+                class="z-10 mr-4 transition-all duration-300 text-secondary-white hover:text-primary"
                 target="_blank"
               >
                 {occupation.name}
@@ -67,5 +67,5 @@ const occupations = [
         </Flex>
       </div>
     </section>
-  </main></Layout
->
+  </main>
+</Layout>

@@ -24,7 +24,7 @@ const posts = await loadQuery<Post[]>({
         <div class="text-center lg:text-left">
           <Heading text="Read Something" size="lg" />
         </div>
-        <ul class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-4">
+        <ul class="py-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {
             posts.data.map((post) => (
               <Card
