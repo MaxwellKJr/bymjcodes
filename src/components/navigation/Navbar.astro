@@ -73,7 +73,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Page Links -->
     <ul
-      class="flex items-center w-full mx-auto gap-0 lg:flex-col justify-evenly"
+      class="flex items-center w-full gap-0 mx-auto lg:flex-col justify-evenly"
     >
       {
         links.map((link) => {
@@ -84,7 +84,7 @@ const currentPath = Astro.url.pathname;
           return (
             <li class="w-full h-full" title={link.title}>
               <a
-                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 capitalize lg:uppercase text-[9px] lg:text-xs xl:text-base px-2  m-0 group  ${isActive ? "text-primary font-medium" : ""}`}
+                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-300 p-4 lg:p-4 capitalize lg:uppercase text-[11px] lg:text-xs xl:text-[13px] px-2  m-0 group  ${isActive ? "text-primary font-medium" : ""}`}
                 href={link.route}
               >
                 <Icon

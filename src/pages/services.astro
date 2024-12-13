@@ -1,89 +1,6 @@
 ---
-import { FAQS } from "../components/cards/FAQS";
-import ServicesCards from "../components/cards/ServicesCards.astro";
-import Heading from "../components/typography/Heading.astro";
+import ServicesToggle from "../components/navigation/SectionToggle";
 import Layout from "../layouts/Layout.astro";
-import type { Service } from "../types/Service";
-
-// Web Development Services List
-const WebDevelopmentServicesList: Service[] = [
-  {
-    name: "Static Plan",
-    price: "174,999",
-    isRecommended: false,
-    features: [
-      "Single Landing Page",
-      "with an option of 2 more separate pages",
-      "Suitable for advertising",
-      "Fast delivery of updates post deployment",
-      "No database",
-      "No admin privileges",
-      "No discounts",
-    ],
-  },
-  {
-    name: "Startup Plan",
-    price: "379,999",
-    isRecommended: true,
-    features: [
-      "Unlimited Pages",
-      "Fast delivery of updates post deployment",
-      "Simple database for content management is available",
-      "Some admin privileges",
-      "Recommended for most people such as independent startups, writers, creatives, NGOs",
-      "Discounts are considered",
-    ],
-  },
-  {
-    name: "Media & eCommerce",
-    price: "799,999",
-    isRecommended: false,
-    features: [
-      "Unlimited pages",
-      "Database",
-      "Fast delivery of updates post deployment",
-      "Admin privileges are available",
-      "Discounts are considered",
-    ],
-  },
-  {
-    name: "Corporate Plan",
-    price: "1,499,999",
-    isRecommended: false,
-    features: [
-      "System development and integration",
-      "Fast delivery of updates post deployment",
-      "Consultations post deployment",
-      "Admin privileges are available",
-    ],
-  },
-];
-
-// Mobile Development Services List
-const MobileDevelopmentServicesList: Service[] = [
-  {
-    name: "Simple Utility App",
-    price: "499,999",
-    isRecommended: false,
-    features: [
-      "Maximum of 15 Screens",
-      "Database is available if needed",
-      "Snappy and responsive",
-    ],
-  },
-  {
-    name: "Brand App",
-    price: "849,999",
-    isRecommended: true,
-    features: [
-      "Unlimited Screens",
-      "Database is available if needed",
-      "Fast delivery of updates post deployment",
-      "Recommended for independent startups, writers, creatives, NGOs",
-      "Cross-platform app that runs on both Android and iOS",
-    ],
-  },
-];
 ---
 
 <Layout
@@ -98,13 +15,7 @@ const MobileDevelopmentServicesList: Service[] = [
       <div
         class="container flex flex-col justify-center w-full h-full py-24 mx-auto"
       >
-        <Heading text="Services" size="lg" />
-        <Heading text="Web Development" size="sm" />
-        <ServicesCards type="web" services={WebDevelopmentServicesList} />
-        <Heading text="Mobile Development" size="sm" />
-        <ServicesCards type="mobile" services={MobileDevelopmentServicesList} />
-        <Heading text="Frequently Asked Questions" size="sm" />
-        <FAQS client:load />
+        <ServicesToggle client:load />
       </div>
     </section>
   </main></Layout

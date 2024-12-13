@@ -4,4 +4,5 @@ export interface Service {
   isRecommended?: boolean;
   description?: string;
   features: string[];
+  type: "web" | "mobile";
 }
