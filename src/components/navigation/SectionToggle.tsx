@@ -167,7 +167,7 @@ function ServiceChoice(toggle: number) {
             },
           }}
         >
-          <h2 className="text-2xl font-bold">Web Development</h2>
+          <h2 className="text-xl font-bold opacity-75">Web Development</h2>
           <ServicesCards type="web" services={WebDevelopmentServicesList} />
         </motion.div>
       );
@@ -189,7 +189,7 @@ function ServiceChoice(toggle: number) {
             },
           }}
         >
-          <h2 className="text-2xl font-bold">Mobile App Development</h2>
+          <h2 className="text-xl font-bold opacity-75">Mobile App Development</h2>
           <ServicesCards
             type="mobile"
             services={MobileDevelopmentServicesList}
@@ -214,7 +214,7 @@ function ServiceChoice(toggle: number) {
             },
           }}
         >
-          <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-bold opacity-75">Frequently Asked Questions</h2>
           <FAQS />
         </motion.div>
       );

@@ -1,5 +1,6 @@
 ---
 import ServicesToggle from "../components/navigation/SectionToggle";
+import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -9,14 +10,15 @@ import Layout from "../layouts/Layout.astro";
   siteUrl="https://bymjcodes.netlify.app/services/"
 >
   <main>
-    <section class="lg:min-h-[89vh]
-  w-full
-  mx-auto">
+    <section class="lg:min-h-[89vh] w-full mx-auto">
       <div
         class="container flex flex-col justify-center w-full h-full py-24 mx-auto"
       >
+        <div class="mb-4 text-center lg:text-left">
+          <Heading text="Services" size="lg" />
+        </div>
         <ServicesToggle client:load />
       </div>
     </section>
-  </main></Layout
->
+  </main>
+</Layout>
