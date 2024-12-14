@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { FAQS } from "../../components/cards/FAQS";
+import { FAQS } from "../cards/FAQS";
 import type { Service } from "../../types/Service";
 import ServicesCards from "../cards/ServicesCards";
 import { motion } from "framer-motion";
@@ -16,11 +16,10 @@ const WebDevelopmentServicesList: Service[] = [
       "with an option of 2 more separate pages",
       "Suitable for advertising",
       "Fast delivery of updates post deployment",
-      "No database",
-      "No admin privileges",
-      "No discounts",
     ],
+    featuresNotIncluded: ["No database", "No admin privileges", "No discounts"],
     type: "web",
+    seeExampleLink: "https://flossysclothing.netlify.app/"
   },
   {
     name: "Startup Plan",
@@ -31,10 +30,11 @@ const WebDevelopmentServicesList: Service[] = [
       "Fast delivery of updates post deployment",
       "Simple database for content management is available",
       "Some admin privileges",
-      "Recommended for most people such as independent startups, writers, creatives, NGOs",
+      "Recommended for independent startups, writers, creatives, NGOs",
       "Discounts are considered",
     ],
     type: "web",
+    seeExampleLink: "https://www.sababa-agri-foundation.com/"
   },
   {
     name: "Media & eCommerce",
@@ -95,17 +95,17 @@ export default function ServicesToggle() {
   const [toggle, setToggle] = useState(1);
 
   const activeTab = `
-    rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white
+    rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-300 ease-in-out border-primary border-[1px]
 `;
 
   const outlineTab = `
-    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer
+    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-300 ease-in-out
 `;
 
   const toggleTab = (index: React.SetStateAction<number>) => setToggle(index);
   return (
     <>
-      <ul className="z-10 flex flex-wrap items-center w-full gap-4 mb-10">
+      <ul className="z-10 flex flex-wrap items-center w-full gap-2 lg:gap-4 mb-10">
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}
@@ -166,6 +166,7 @@ function ServiceChoice(toggle: number) {
               opacity: 1,
             },
           }}
+          className="z-10"
         >
           <h2 className="text-xl font-bold opacity-75">Web Development</h2>
           <ServicesCards type="web" services={WebDevelopmentServicesList} />

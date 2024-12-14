@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import Navbar from "../components/navigation/Navbar.astro";
-import ThemeToggle from "../components/navigation/ThemeToggle";
+import ThemeToggler from "../components/navigation/ThemeToggler";
 
 interface Props {
   title: string;
@@ -56,12 +56,12 @@ const {
       class="absolute w-10 h-10 transition-all duration-300 lg:hidden top-4 left-4 animate-pulse"
     />
     <div
-      class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] z-50 lg:z-auto"
+      class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] lg:bottom-auto lg:right-auto z-50 lg:z-auto"
     >
-      <ThemeToggle client:load />
+      <ThemeToggler client:load />
     </div>
     <div
-      class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto"
+      class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto z-auto"
     >
       <slot />
     </div>
@@ -153,10 +153,10 @@ const {
   }
 
   .questions-container .question-card .answer {
-    @apply mt-2 max-h-48 overflow-hidden py-1 text-sm transition duration-300 ease-in-out;
+    @apply mt-2 max-h-48 overflow-hidden py-1 text-base transition-all duration-300 ease-in-out;
   }
 
   .questions-container .question-card .hidden {
-    @apply max-h-0 p-0;
+    @apply max-h-0 p-0 transition-all duration-300 ease-in-out;
   }
 </style>

@@ -4,5 +4,8 @@ export interface Service {
   isRecommended?: boolean;
   description?: string;
   features: string[];
+  featuresNotIncluded?: string[];
   type: "web" | "mobile";
+  // TODO: seeExampleLink should accommodate multiple links
+  seeExampleLink?: string;
 }

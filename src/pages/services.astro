@@ -1,5 +1,5 @@
 ---
-import ServicesToggle from "../components/navigation/SectionToggle";
+import ServicesSectionToggler from "../components/navigation/ServicesSectionToggler";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -14,10 +14,10 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="container flex flex-col justify-center w-full h-full py-24 mx-auto"
       >
-        <div class="mb-4 text-center lg:text-left">
+        <div class="mb-4 lg:text-left">
           <Heading text="Services" size="lg" />
         </div>
-        <ServicesToggle client:load />
+        <ServicesSectionToggler client:load />
       </div>
     </section>
   </main>

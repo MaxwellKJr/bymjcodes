@@ -81,9 +81,9 @@ export const FAQS = () => {
               {isOpen[question.id] ? <span>-</span> : <span>+</span>}
             </h5>
             {isOpen[question.id] ? (
-              <p className="transition-all duration-300 answer">{question.answer}</p>
+              <p className="transition-all ease-in-out duration-300 answer">{question.answer}</p>
             ) : (
-              <p className="hidden transition-all duration-300 answer">{question.answer}</p>
+              <p className="hidden transition-all ease-in-out duration-300 answer">{question.answer}</p>
             )}
           </div>
         ))}
