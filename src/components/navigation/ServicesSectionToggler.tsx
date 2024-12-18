@@ -19,7 +19,7 @@ const WebDevelopmentServicesList: Service[] = [
     ],
     featuresNotIncluded: ["No database", "No admin privileges", "No discounts"],
     type: "web",
-    seeExampleLink: "https://flossysclothing.netlify.app/"
+    seeExampleLink: "https://nyalisclothing.netlify.app/"
   },
   {
     name: "Startup Plan",

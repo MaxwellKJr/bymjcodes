@@ -30,7 +30,7 @@ export default function ServicesCards({ type, services }: Props) {
                 <h1 className='text-3xl font-bold inline-block'>{service.price}</h1>
               </div>
               <p className='text-sm'>{service.description}</p>
-              {/* Features */}
+              {/* Features Included */}
               <ul>
                 {service.features.map((feature) => (
                   <li className="flex items-center gap-4">
@@ -48,7 +48,7 @@ export default function ServicesCards({ type, services }: Props) {
                     <span>
                       <X className='text-[#ff0000]' size={20} strokeWidth={2} />
                     </span>
-                    <p className='text-sm'>{feature}</p>
+                    <p className='text-sm text-secondary-white opacity-100 dark:opacity-50'>{feature}</p>
                   </li>
                 ))}
               </ul>
