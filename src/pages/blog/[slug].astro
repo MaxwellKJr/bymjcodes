@@ -70,8 +70,8 @@ const { data: post }: { data: Post } = await loadQuery({
               name={"material-symbols-light:arrow-left-alt-rounded"}
               size={40}
               class="text-primary dark:hover:text-white hover:text-black transition-all duration-300 hover:translate-x-3"
-            /></a
-          >
+            />
+          </a>
           <div>
             <Heading text={post.title} size="md" color="text-primary" />
             <FormattedDate unformattedDate={post.publishedAt} />
@@ -79,7 +79,9 @@ const { data: post }: { data: Post } = await loadQuery({
         </div>
       </div>
       <br />
-      <PortableText portableText={post.body} />
+      <div class="portable-text-body">
+        <PortableText portableText={post.body} />
+      </div>
     </div>
   </article>
 </Layout>
