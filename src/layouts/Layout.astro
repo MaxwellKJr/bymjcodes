@@ -86,6 +86,7 @@ const {
     --primary-black: #111111;
   }
 
+  /* This only works on Chromium browsers by the way */
   ::-webkit-scrollbar {
     background: transparent !important;
     width: 12px !important;
@@ -105,6 +106,17 @@ const {
   ::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
     background: #ff0098ff !important;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ff0099b7 transparent;
+  }
+
+  /* For Firefox - hover state */
+  *:hover {
+    scrollbar-color: #ff0098ff transparent;
   }
 
   p {
