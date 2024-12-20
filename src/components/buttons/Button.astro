@@ -1,16 +1,26 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
   text: string;
-  link?: string;
+  link?: string | undefined;
   variant: "primary" | "secondary";
   blank?: boolean;
+  icon?: string;
 }
 
-const { text, link, variant, blank = false } = Astro.props;
+const { text, link, variant, blank = false, icon } = Astro.props;
 ---
 
 <a href={link} class={`btn btn-${variant}`} target={blank ? "_blank" : "_self"}>
   {text}
+  {
+    icon && (
+      <span class="ml-2">
+        <Icon name={icon} size={20} />
+      </span>
+    )
+  }
 </a>
 
 <!-- TODO: Refactor this so that it uses Tailwind -->
@@ -26,12 +36,10 @@ const { text, link, variant, blank = false } = Astro.props;
     height: 40px;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
     z-index: 1;
     position: relative;
     transition: all ease-in-out 300ms;
     border-radius: 1em;
-    margin: 0.5rem;
   }
 
   .btn-primary {
