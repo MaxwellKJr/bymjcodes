@@ -13,12 +13,12 @@
 ### Outline
 
 - [Astro](https://astro.build) for static site generation (SSG)
-- [TailwindCSS](https://tailwindcss.com) for styling
+- [Tailwind CSS](https://tailwindcss.com) for styling
 - [Sanity](https://sanity.io) for the content management system (CMS)
 
 This website was built with [Astro](https://astro.build), a static site generator (framework) for content-driven websites.
 
-### Why Astro?
+## Why Astro?
 
 Well, the previous iterations of this website were built using GatsbyJS, which was a SSG first framework and I loved how fast my website was. When I looked at Astro, I saw that it had SSG-first approach as well which is what I wanted.
 
