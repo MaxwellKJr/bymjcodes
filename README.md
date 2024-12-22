@@ -1,16 +1,36 @@
+<p align="center">
+  <a href="https://bymjcodes.netlify.app/">
+    <img alt="MJ Codes logo" src="https://bymjcodes.netlify.app/icon.png" width="32" />
+  </a>
+</p>
+<h2 align="center">MJ Codes Presents:</h2>
+<h1 align="center">
+   <strong>Programmer's Starter Blog</strong>
+</h1>
+
+## Tech Stack 🛠️
+
+### Outline
+
+- [Astro](https://astro.build) for static site generation (SSG)
+- [TailwindCSS](https://tailwindcss.com) for styling
+- [Sanity](https://sanity.io) for the content management system (CMS)
+
+This website was built with [Astro](https://astro.build), a static site generator (framework) for content-driven websites.
+
+### Why Astro?
+
+Well, the previous iterations of this website were built using GatsbyJS, which was a SSG first framework and I loved how fast my website was. When I looked at Astro, I saw that it had SSG-first approach as well which is what I wanted.
+
+Not only was it fast, Gatsby had one of the best plugin ecosystem for a JavaScript I have seen. Even Next.js doesn't come close. Astro has its own "plugin" system, which allows integrations from different frameworks such as React, Vue, Svelte, Solid in my case, I used React components to handle state changes in some parts of this site, such as [Services](https://bymjcodes.netlify.app/services) toggler system.
+
+When I first started off as a programmer, I didn't know that I would one day need to have a portfolio to showcase my work. I have made four iterations of the same website (this being the forth) and last two were built with [GatsbyJS](https://www.gatsbyjs.com), a [React](https://react.dev) based framework.
+
 # Astro Starter Kit: Basics
 
 ```sh
 npm create astro@latest -- --template basics
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
 ## 🚀 Project Structure
 
