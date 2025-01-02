@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/navigation/Navbar.astro";
 import ThemeToggler from "../components/navigation/ThemeToggler";
 
@@ -22,7 +23,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark" transition:name="root" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -60,12 +61,13 @@ const {
     >
       <ThemeToggler client:load />
     </div>
-    <div
+    <main
       class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto z-auto"
+      transition:animate="slide"
     >
       <slot />
-    </div>
-    <ViewTransitions />
+    </main>
+    <ClientRouter />
   </body>
 </html>
 <style is:global>
