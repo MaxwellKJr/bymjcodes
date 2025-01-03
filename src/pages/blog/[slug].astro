@@ -12,6 +12,7 @@ import FormattedDate from "../../components/misc/FormattedDate.astro";
 import Pill from "../../components/misc/Pill.astro";
 import type { Category } from "../../types/Category";
 import { Icon } from "astro-icon/components";
+import { transitionEnabledOnThisPage } from "astro:transitions/client";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
@@ -50,7 +51,6 @@ const { data: post }: { data: Post } = await loadQuery({
         height={500}
         loading={"eager"}
         class="w-full my-4 shadow-lg"
-        server:defer
       />
       <div class="flex items-center justify-end gap-2">
         {

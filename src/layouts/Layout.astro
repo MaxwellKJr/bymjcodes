@@ -52,7 +52,7 @@ const {
       alt="MJ Codes logo"
       width={200}
       height={200}
-      loading={"eager"}
+      loading={"lazy"}
       class="absolute w-10 h-10 transition-all duration-300 lg:hidden top-4 left-4 animate-pulse"
     />
     <div
@@ -62,7 +62,6 @@ const {
     </div>
     <main
       class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto z-auto"
-      transition:animate={fade({ duration: 400 })}
     >
       <slot />
     </main>

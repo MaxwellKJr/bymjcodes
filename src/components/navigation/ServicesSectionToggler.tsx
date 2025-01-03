@@ -1,9 +1,9 @@
+import {AnimatePresence, motion} from "framer-motion";
 import React, { useState } from "react";
 
 import { FAQS } from "../cards/FAQS";
 import type { Service } from "../../types/Service";
 import ServicesCards from "../cards/ServicesCards";
-import { motion } from "framer-motion";
 
 // Web Development Services List
 const WebDevelopmentServicesList: Service[] = [
@@ -125,24 +125,27 @@ export default function ServicesToggle() {
           Frequently Asked Questions
         </li>
       </ul>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            scale: 1,
-            y: 50,
-            opacity: 0,
-          },
-          visible: {
-            scale: 1,
-            y: 0,
-            opacity: 1,
-          },
-        }}
-      >
-        {ServiceChoice(toggle)}
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={toggle}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 1,
+              y: 50,
+              opacity: 0,
+            },
+            visible: {
+              scale: 1,
+              y: 0,
+              opacity: 1,
+            },
+          }}
+        >
+          {ServiceChoice(toggle)}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }
@@ -151,73 +154,27 @@ function ServiceChoice(toggle: number) {
   switch (toggle) {
     case 1:
       return (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 1,
-              y: 50,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              y: 0,
-              opacity: 1,
-            },
-          }}
-          className="z-10"
-        >
+        <div className="z-10">
           <h2 className="text-xl font-bold opacity-75">Web Development</h2>
           <ServicesCards type="web" services={WebDevelopmentServicesList} />
-        </motion.div>
+        </div>
       );
     case 2:
       return (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 1,
-              y: 50,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              y: 0,
-              opacity: 1,
-            },
-          }}
-        >
+        <div>
           <h2 className="text-xl font-bold opacity-75">Mobile App Development</h2>
           <ServicesCards
             type="mobile"
             services={MobileDevelopmentServicesList}
           />
-        </motion.div>
+        </div>
       );
     case 3:
       return (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 1,
-              y: 50,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              y: 0,
-              opacity: 1,
-            },
-          }}
-        >
+        <div>
           <h2 className="text-xl font-bold opacity-75">Frequently Asked Questions</h2>
           <FAQS />
-        </motion.div>
+        </div>
       );
     default:
       return null;

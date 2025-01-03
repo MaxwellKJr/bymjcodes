@@ -6,6 +6,7 @@ import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import maxwellImage from "../images/mjk.jpg";
 import SocialLinks from "../components/contacts/SocialLinks.astro";
+import { fade } from "astro:transitions";
 ---
 
 <Layout
@@ -13,82 +14,84 @@ import SocialLinks from "../components/contacts/SocialLinks.astro";
   description="Maxwell Kapezi Jr. is a Software Developer, Graphic Designer, and Writer from the Warm Heart of Africa, Malawi 🇲🇼"
   siteUrl="https://bymjcodes.netlify.app/about/"
 >
-  <main>
-    <section class="lg:h-[89vh] w-full">
+  <section
+    class="lg:h-[89vh] w-full"
+    transition:animate={fade({ duration: 0.5 })}
+  >
+    <div
+      class="container flex flex-col items-center justify-center w-full h-full py-24 mx-auto"
+    >
       <div
-        class="container flex flex-col items-center justify-center w-full h-full py-24 mx-auto"
+        class="flex flex-col items-center lg:flex-row gap-4 lg:gap-7 xl:gap-10"
       >
-        <div
-          class="flex flex-col items-center lg:flex-row gap-4 lg:gap-7 xl:gap-10"
-        >
-          <!-- Image -->
-          <Image
-            src={maxwellImage}
-            title="Maxwell Kapezi Jr. 🚀"
-            alt={"Maxwell Kapezi Jr. 🚀"}
-            width={500}
-            height={500}
-            decoding="async"
-            loading={"eager"}
-            quality="high"
-            class="w-40 h-40 border-2 border-white rounded-full sm:w-48 sm:h-48 2xl:w-62 2xl:h-62"
-          />
-          <!-- Background -->
-          <div class="text-center lg:text-left">
-            <Heading text="About Me" size="lg" />
-            <div
-              class="flex flex-col text-sm text-black dark:text-secondary-white-lighter"
-            >
-              <p>
-                My name is Maxwell Kapezi Jr, a Software Developer with over 2
-                years of professional experience, I specialize in mobile app
-                development using{" "}
-                <a
-                  href="https://www.swift.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="underlined-link"
-                >
-                  Swift
-                </a>{", "}
-                <a
-                  href="http://kotlinlang.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="underlined-link"
-                >
-                  Kotlin
-                </a>{", "}
-                and
-                <a
-                  href="http://flutter.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="underlined-link"
-                >
-                  Flutter
-                </a>{"."}
-              </p>
-              <p>
-                My journey in software development began in 2017, driven by a
-                passion for creating my own video games—though that dream died
-                quickly lol. If you want to know the whole story, read this
-                post:{" "}
-                <a href="/blog/hello-world" class="underlined-link"
-                  >Hello World</a
-                >.
-              </p>
-              <p>
-                Whether it’s developing robust mobile applications or creating
-                dynamic web experiences, I am motivated by the impact that
-                well-crafted technology can have. My approach is guided by three
-                core principles:
-              </p>
-              <p>
-                Building Things that Work, A Welcoming User Experience, and
-                Appealing/Attractive Design.
-              </p>
-              <!-- <p>
+        <!-- Image -->
+        <Image
+          src={maxwellImage}
+          title="Maxwell Kapezi Jr. 🚀"
+          alt={"Maxwell Kapezi Jr. 🚀"}
+          width={500}
+          height={500}
+          decoding="async"
+          loading={"eager"}
+          quality="high"
+          class="w-40 h-40 border-2 border-white rounded-full sm:w-48 sm:h-48 2xl:w-62 2xl:h-62"
+        />
+        <!-- Background -->
+        <div class="text-center lg:text-left">
+          <Heading text="About Me" size="lg" />
+          <div
+            class="flex flex-col text-sm text-black dark:text-secondary-white-lighter"
+          >
+            <p>
+              My name is Maxwell Kapezi Jr, a Software Developer with over 2
+              years of professional experience, I specialize in mobile app
+              development using{" "}
+              <a
+                href="https://www.swift.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underlined-link"
+              >
+                Swift
+              </a>{", "}
+              <a
+                href="http://kotlinlang.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underlined-link"
+              >
+                Kotlin
+              </a>{", "}
+              and
+              <a
+                href="http://flutter.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underlined-link"
+              >
+                Flutter
+              </a>{"."}
+            </p>
+            <p>
+              My journey in software development began in 2017, driven by a
+              passion for creating my own video games—though that dream died
+              quickly lol. If you want to know the whole story, read this post:{
+                " "
+              }
+              <a href="/blog/hello-world" class="underlined-link">Hello World</a
+              >.
+            </p>
+            <p>
+              Whether it’s developing robust mobile applications or creating
+              dynamic web experiences, I am motivated by the impact that
+              well-crafted technology can have. My approach is guided by three
+              core principles:
+            </p>
+            <p>
+              Building Things that Work, A Welcoming User Experience, and
+              Appealing/Attractive Design.
+            </p>
+            <!-- <p>
                 <a href="/blog/software-that-works" class="underlined-link">
                   Building Things that Work
                 </a>,
@@ -103,34 +106,33 @@ import SocialLinks from "../components/contacts/SocialLinks.astro";
                   Appealing/Attractive Design
                 </span>{". "}
               </p> -->
-              <p>
-                Apart from coding I also enjoy writing fiction, short stories to
-                be specific &amp; playing <em>&ldquo;difficult&rdquo;</em> video
-                games. I mean why not?
-              </p>
-            </div>
-            <Flex
-              direction="row"
-              gap="2"
-              className="justify-center my-4 lg:justify-start"
-            >
-              <Button
-                text="My Skills"
-                link="/about/my-skills"
-                variant="primary"
-              />
-            </Flex>
+            <p>
+              Apart from coding I also enjoy writing fiction, short stories to
+              be specific &amp; playing <em>&ldquo;difficult&rdquo;</em> video games.
+              I mean why not?
+            </p>
+          </div>
+          <Flex
+            direction="row"
+            gap="2"
+            className="justify-center my-4 lg:justify-start"
+          >
+            <Button
+              text="My Skills"
+              link="/about/my-skills"
+              variant="primary"
+            />
+          </Flex>
 
-            <!-- Social Links/Contacts -->
-            <div class="block px-2 py-10 text-center lg:hidden">
-              <Heading text="Reach Me" size="lg" />
-              <div class="py-4">
-                <SocialLinks layout="cols-3" />
-              </div>
+          <!-- Social Links/Contacts -->
+          <div class="block px-2 py-10 text-center lg:hidden">
+            <Heading text="Reach Me" size="lg" />
+            <div class="py-4">
+              <SocialLinks layout="cols-3" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 </Layout>

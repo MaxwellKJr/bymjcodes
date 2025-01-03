@@ -5,6 +5,7 @@ import { PROJECTS_QUERY } from "../sanity/lib/queries";
 import { loadQuery } from "../sanity/lib/load-query";
 import type Project from "../types/Project";
 import Heading from "../components/typography/Heading.astro";
+import { fade } from "astro:transitions";
 
 const projects = await loadQuery<Project[]>({
   query: PROJECTS_QUERY,
@@ -16,32 +17,33 @@ const projects = await loadQuery<Project[]>({
   description="See Maxwell Kapezi Jr's work and works-in-progress he has been working on over the years."
   siteUrl="https://bymjcodes.netlify.app/projects/"
 >
-  <main>
-    <section class="lg:min-h-[89vh]
-  w-full">
-      <div class="container flex flex-col justify-center h-full py-24 m-auto">
-        <div class="text-center lg:text-left">
-          <Heading text="My Work" size="lg" />
-        </div>
-        <ul class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2">
-          {
-            projects.data.map((project: Project) => (
-              <Card
-                title={project.title}
-                mainImage={project.mainImage}
-                description={project.description}
-                publishedAt={project.publishedAt}
-                categories={project.categories}
-                isProject
-                href={`/projects/${project.slug.current}`}
-                projectUrl={project.projectUrl}
-                githubUrl={project.githubUrl}
-                server:defer
-              />
-            ))
-          }
-        </ul>
+  <section
+    class="lg:min-h-[89vh]
+  w-full"
+    transition:animate={fade({ duration: 0.5 })}
+  >
+    <div class="container flex flex-col justify-center h-full py-24 m-auto">
+      <div class="text-center lg:text-left">
+        <Heading text="My Work" size="lg" />
       </div>
-    </section>
-  </main>
+      <ul class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2">
+        {
+          projects.data.map((project: Project) => (
+            <Card
+              title={project.title}
+              mainImage={project.mainImage}
+              description={project.description}
+              publishedAt={project.publishedAt}
+              categories={project.categories}
+              isProject
+              href={`/projects/${project.slug.current}`}
+              projectUrl={project.projectUrl}
+              githubUrl={project.githubUrl}
+              server:defer
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
 </Layout>

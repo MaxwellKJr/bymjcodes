@@ -4,6 +4,7 @@ import Flex from "../components/layouts/Flex.astro";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import Text from "../components/typography/Text.astro";
+import { fade } from "astro:transitions";
 
 const occupations = [
   {
@@ -26,47 +27,48 @@ const occupations = [
   description="Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows."
   siteUrl="https://bymjcodes.netlify.app/"
 >
-  <main>
-    <section class="h-screen
-  lg:h-[80vh]">
-      <div class="container flex flex-col justify-center h-full">
-        <Heading
-          text="The Developing Developer"
-          size="xl"
-          color="text-secondary"
-        />
-        <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
-        <div class="flex flex-wrap w-full mx-auto mt-2">
-          {
-            occupations.map((occupation) => (
-              <a
-                href={occupation.url}
-                class="z-10 mr-4 transition-all duration-300 text-secondary-white hover:text-primary"
-                target="_blank"
-              >
-                {occupation.name}
-              </a>
-            ))
-          }
-        </div>
-        <div class="mt-4">
-          <Text
-            text="A platform to showcase software development journey and share the few things I know."
-            size="md"
-          />
-        </div>
-        <Flex
-          direction="row"
-          align="start"
-          justify="start"
-          gap="2"
-          wrap="wrap"
-          className="mt-4"
-        >
-          <Button text="About" link="/about" variant="primary" />
-          <Button text="Projects" link="/projects" variant="secondary" />
-        </Flex>
+  <section
+    class="h-screen
+  lg:h-[80vh]"
+    transition:animate={fade({ duration: 0.5 })}
+  >
+    <div class="container flex flex-col justify-center h-full">
+      <Heading
+        text="The Developing Developer"
+        size="xl"
+        color="text-secondary"
+      />
+      <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
+      <div class="flex flex-wrap w-full mx-auto mt-2">
+        {
+          occupations.map((occupation) => (
+            <a
+              href={occupation.url}
+              class="z-10 mr-4 transition-all duration-300 text-secondary-white hover:text-primary"
+              target="_blank"
+            >
+              {occupation.name}
+            </a>
+          ))
+        }
       </div>
-    </section>
-  </main>
+      <div class="mt-4">
+        <Text
+          text="A platform to showcase software development journey and share the few things I know."
+          size="md"
+        />
+      </div>
+      <Flex
+        direction="row"
+        align="start"
+        justify="start"
+        gap="2"
+        wrap="wrap"
+        className="mt-4"
+      >
+        <Button text="About" link="/about" variant="primary" />
+        <Button text="Projects" link="/projects" variant="secondary" />
+      </Flex>
+    </div>
+  </section>
 </Layout>

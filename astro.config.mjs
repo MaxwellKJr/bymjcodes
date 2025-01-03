@@ -24,6 +24,10 @@ export default defineConfig({
     domains: ['cdn.sanity.io'],
     remotePatterns: [{ protocol: "https" }],
   },
+  // transition: {
+  //   // Disable transitions for specific routes
+  //   exclude: ['/blog/[slug]']
+  // },
   adapter: netlify({
     imageCDN: false,
   }),
