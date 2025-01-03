@@ -1,11 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import tailwind from '@astrojs/tailwind';
-
-import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,5 +21,7 @@ export default defineConfig({
     icon(),
   ],
 
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: false,
+  }),
 });
