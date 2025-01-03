@@ -36,6 +36,7 @@ const projects = await loadQuery<Project[]>({
                 href={`/projects/${project.slug.current}`}
                 projectUrl={project.projectUrl}
                 githubUrl={project.githubUrl}
+                server:defer
               />
             ))
           }

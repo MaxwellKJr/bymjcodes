@@ -51,6 +51,7 @@ const { data: post }: { data: Post } = await loadQuery({
         quality={100}
         loading="lazy"
         class="w-full my-4 shadow-lg"
+        server:defer
       />
       <div class="flex items-center justify-end gap-2">
         {

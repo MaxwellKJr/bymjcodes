@@ -33,6 +33,7 @@ const posts = await loadQuery<Post[]>({
                 publishedAt={post.publishedAt}
                 categories={post.categories}
                 href={`/blog/${post.slug.current}`}
+                server:defer
               />
             ))
           }

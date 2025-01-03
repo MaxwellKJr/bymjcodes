@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import tailwind from '@astrojs/tailwind';
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -19,4 +21,6 @@ export default defineConfig({
     tailwind(),
     icon(),
   ],
+
+  adapter: netlify(),
 });
