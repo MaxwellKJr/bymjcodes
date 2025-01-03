@@ -2,10 +2,9 @@
 interface Props {
   text: string | undefined;
   size?: "xs" | "sm" | "md" | "lg";
-  color?: string;
 }
 
-const { text, size = "md", color = "text-black dark:text-white" } = Astro.props;
+const { text, size = "md" } = Astro.props;
 
 const sizes = {
   xs: "text-xs",
