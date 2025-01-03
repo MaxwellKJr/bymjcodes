@@ -1,5 +1,5 @@
-import type { SanityDocument } from "@sanity/client";
 import type { Category } from "./Category";
+import type { SanityDocument } from "@sanity/client";
 
 export default interface Post extends SanityDocument {
   title: string;
@@ -14,7 +14,8 @@ export default interface Post extends SanityDocument {
   mainImage: {
     alt: string;
     asset: {
-      _ref: string;
+      _id: string;
+      url: string;
     };
   };
   categories: Category[];

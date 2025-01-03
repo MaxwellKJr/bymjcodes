@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { ClientRouter, slide } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 import Navbar from "../components/navigation/Navbar.astro";
 import ThemeToggler from "../components/navigation/ThemeToggler";
 
@@ -62,7 +62,7 @@ const {
     </div>
     <main
       class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto z-auto"
-      transition:animate={slide({ duration: "1s" })}
+      transition:animate={fade({ duration: "0.4s" })}
     >
       <slot />
     </main>

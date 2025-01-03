@@ -14,7 +14,8 @@ interface Props {
   mainImage: {
     alt: string;
     asset: {
-      _ref: string;
+      _id: string;
+      url: string;
     };
   };
   description: string;
@@ -37,6 +38,8 @@ const {
   projectUrl,
   githubUrl,
 } = Astro.props;
+
+console.log("MAIN IMAGE", mainImage);
 ---
 
 <li
@@ -47,7 +50,7 @@ const {
     target={isProject ? "_blank" : "_self"}
   >
     <Image
-      src={urlForImage(mainImage)}
+      src={urlForImage(mainImage.asset)}
       alt={mainImage.alt}
       width={500}
       height={500}
