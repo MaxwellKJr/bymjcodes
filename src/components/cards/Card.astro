@@ -42,6 +42,7 @@ const {
 
 <li
   class="dark:bg-card-dark bg-card-light z-10 rounded-xl hover:scale-95 transition-all duration-300 border-[0.5px] hover:border-primary dark:hover:border-primary dark:border-card-dark border-card-light inline-block"
+  transition:animate="fade"
 >
   <a
     href={isProject ? `${projectUrl}` : `${href}`}
@@ -74,7 +75,7 @@ const {
         isProject && (
           <Flex direction="row" gap="2" className="mb-6">
             <Button
-              text="Project"
+              text="See Project"
               link={projectUrl}
               variant="primary"
               icon="ri:external-link-line"

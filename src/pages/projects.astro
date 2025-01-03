@@ -6,6 +6,7 @@ import { loadQuery } from "../sanity/lib/load-query";
 import type Project from "../types/Project";
 import Heading from "../components/typography/Heading.astro";
 import { fade } from "astro:transitions";
+import { Suspense } from "react";
 
 const projects = await loadQuery<Project[]>({
   query: PROJECTS_QUERY,
@@ -28,20 +29,23 @@ const projects = await loadQuery<Project[]>({
       </div>
       <ul class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2">
         {
-          projects.data.map((project: Project) => (
-            <Card
-              title={project.title}
-              mainImage={project.mainImage}
-              description={project.description}
-              publishedAt={project.publishedAt}
-              categories={project.categories}
-              isProject
-              href={`/projects/${project.slug.current}`}
-              projectUrl={project.projectUrl}
-              githubUrl={project.githubUrl}
-              server:defer
-            />
-          ))
+          projects.data &&
+            projects.data.map((project: Project) => (
+              <Suspense fallback={"Loading Projects..."}>
+                <Card
+                  title={project.title}
+                  mainImage={project.mainImage}
+                  description={project.description}
+                  publishedAt={project.publishedAt}
+                  categories={project.categories}
+                  isProject
+                  href={`/projects/${project.slug.current}`}
+                  projectUrl={project.projectUrl}
+                  githubUrl={project.githubUrl}
+                  server:defer
+                />
+              </Suspense>
+            ))
         }
       </ul>
     </div>
