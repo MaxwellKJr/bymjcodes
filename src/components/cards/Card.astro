@@ -52,10 +52,9 @@ const {
       alt={mainImage.alt}
       width={500}
       height={500}
-      loading={"lazy"}
+      loading={"eager"}
       class={isProject ? "w-full" : "rounded-t-xl w-full shadow-xl"}
       title={title}
-      server:defer
     />
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />

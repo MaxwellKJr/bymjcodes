@@ -48,8 +48,9 @@ const { data: post }: { data: Post } = await loadQuery({
         alt={post.mainImage.alt}
         width={500}
         height={500}
-        loading="lazy"
+        loading={"eager"}
         class="w-full my-4 shadow-lg"
+        server:defer
       />
       <div class="flex items-center justify-end gap-2">
         {
