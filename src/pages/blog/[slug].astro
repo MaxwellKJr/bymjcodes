@@ -39,19 +39,17 @@ const { data: post }: { data: Post } = await loadQuery({
   title={post.title}
   description={post.description}
   siteUrl={`https://bymjcodes.netlify.app/blog/${post.slug.current}`}
-  image={urlForImage(post.mainImage)}
+  image={urlForImage(post.mainImage.asset)}
 >
   <article class="relative w-full">
     <div class="py-24 lg:w-[85vw] lg:mx-auto max-w-lg m-auto relative">
       <Image
-        src={urlForImage(post.mainImage)}
+        src={urlForImage(post.mainImage.asset)}
         alt={post.mainImage.alt}
         width={500}
         height={500}
-        quality={100}
         loading="lazy"
         class="w-full my-4 shadow-lg"
-        server:defer
       />
       <div class="flex items-center justify-end gap-2">
         {

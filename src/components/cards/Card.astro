@@ -38,8 +38,6 @@ const {
   projectUrl,
   githubUrl,
 } = Astro.props;
-
-console.log("IMAGE", mainImage.asset);
 ---
 
 <li
@@ -57,6 +55,7 @@ console.log("IMAGE", mainImage.asset);
       loading={"lazy"}
       class={isProject ? "w-full" : "rounded-t-xl w-full shadow-xl"}
       title={title}
+      server:defer
     />
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />

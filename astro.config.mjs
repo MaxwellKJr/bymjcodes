@@ -20,7 +20,10 @@ export default defineConfig({
     tailwind(),
     icon(),
   ],
-
+  image: {
+    domains: ['cdn.sanity.io'],
+    remotePatterns: [{ protocol: "https" }],
+  },
   adapter: netlify({
     imageCDN: false,
   }),

@@ -1,1 +1,1 @@
-{"images":{"remote_images":[]},"headers":[{"for":"/_astro/*","values":{"Cache-Control":"public, max-age=31536000, immutable"}}]}
+{"images":{"remote_images":["https?://cdn\\.sanity\\.io/.*","https://[a-z0-9.-]+(:[0-9]+)?(\\/[^?#]*)?([?][^#]*)?"]},"headers":[{"for":"/_astro/*","values":{"Cache-Control":"public, max-age=31536000, immutable"}}]}

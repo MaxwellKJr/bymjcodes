@@ -25,17 +25,18 @@ const posts = await loadQuery<Post[]>({
         </div>
         <ul class="py-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {
-            posts.data.map((post) => (
-              <Card
-                title={post.title}
-                mainImage={post.mainImage}
-                description={post.description}
-                publishedAt={post.publishedAt}
-                categories={post.categories}
-                href={`/blog/${post.slug.current}`}
-                server:defer
-              />
-            ))
+            posts.data &&
+              posts.data.map((post) => (
+                <Card
+                  title={post.title}
+                  mainImage={post.mainImage}
+                  description={post.description}
+                  publishedAt={post.publishedAt}
+                  categories={post.categories}
+                  href={`/blog/${post.slug.current}`}
+                  server:defer
+                />
+              ))
           }
         </ul>
       </div>
