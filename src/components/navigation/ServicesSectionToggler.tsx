@@ -140,7 +140,10 @@ export default function ServicesToggle() {
               scale: 1,
               y: 0,
               opacity: 1,
-            },
+              transition: {
+                duration: 0.3,
+              }
+            }
           }}
         >
           {ServiceChoice(toggle)}
