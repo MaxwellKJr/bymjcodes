@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 interface Question {
@@ -65,27 +66,25 @@ export const FAQS = () => {
     <div>
       <div className="questions-container">
         {questionsAndAnswers.map((question: Question) => (
-          <div className="transition-all duration-300 cursor-pointer question-card" key={question.id}>
+            <div className="transition-all duration-300 cursor-pointer question-card" key={question.id}>
             <h5
               className={
-                isOpen[question.id] ? "question question-open" : "question"
+              isOpen[question.id] ? "question question-open" : "question"
               }
               onClick={() =>
-                setIsOpen((prevOpen) => ({
-                  ...prevOpen,
-                  [question.id]: !prevOpen[question.id],
-                }))
+              setIsOpen((prevOpen) => ({
+                ...prevOpen,
+                [question.id]: !prevOpen[question.id],
+              }))
               }
             >
               {question.question}{" "}
-              {isOpen[question.id] ? <span>-</span> : <span>+</span>}
+              <ChevronDown className={`transition-all duration-300 ease-in-out ${isOpen[question.id] ? `rotate-180` : `rotate-0`}`} />
             </h5>
-            {isOpen[question.id] ? (
-              <p className="transition-all ease-in-out duration-300 answer">{question.answer}</p>
-            ) : (
-              <p className="hidden transition-all ease-in-out duration-300 answer">{question.answer}</p>
-            )}
-          </div>
+            <p className={isOpen[question.id] ? "answer-shown" : "answer-hidden"}>
+              {question.answer}
+            </p>
+            </div>
         ))}
       </div>
     </div>
