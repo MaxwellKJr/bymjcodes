@@ -2,6 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export const authorType = defineType({
   name: "author",
+  title: "Authors",
   type: "document",
   fields: [
     defineField({
