@@ -6,7 +6,6 @@ import type Post from "../types/Post";
 import { POSTS_QUERY } from "../sanity/lib/queries";
 import Card from "../components/cards/Card.astro";
 import { fade } from "astro:transitions";
-import { Suspense } from "react";
 
 const posts = await loadQuery<Post[]>({
   query: POSTS_QUERY,
@@ -27,21 +26,21 @@ const posts = await loadQuery<Post[]>({
       <div class="text-center lg:text-left">
         <Heading text="Read Something" size="lg" />
       </div>
-      <ul class="py-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      <ul
+        class="py-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 transition-all duration-300 ease-in-out"
+      >
         {
           posts.data &&
             posts.data.map((post: Post) => (
-              <Suspense fallback={"Loading..."}>
-                <Card
-                  title={post.title}
-                  mainImage={post.mainImage}
-                  description={post.description}
-                  publishedAt={post.publishedAt}
-                  categories={post.categories}
-                  href={`/blog/${post.slug.current}`}
-                  server:defer
-                />
-              </Suspense>
+              <Card
+                title={post.title}
+                mainImage={post.mainImage}
+                description={post.description}
+                publishedAt={post.publishedAt}
+                categories={post.categories}
+                href={`/blog/${post.slug.current}`}
+                server:defer
+              />
             ))
         }
       </ul>

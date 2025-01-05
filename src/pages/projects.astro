@@ -27,7 +27,9 @@ const projects = await loadQuery<Project[]>({
       <div class="text-center lg:text-left">
         <Heading text="My Work" size="lg" />
       </div>
-      <ul class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2">
+      <ul
+        class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2 transition-all duration-300 ease-in-out"
+      >
         {
           projects.data &&
             projects.data.map((project: Project) => (
