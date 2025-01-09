@@ -10,6 +10,8 @@ interface Skill {
   icon: string;
 }
 
+const iconSize: number = 21;
+
 const skills: Skill[] = [
   // Programming Languages
   {
@@ -40,9 +42,9 @@ const skills: Skill[] = [
 
   // Web Libraries and Frameworks
   {
-    name: "React",
+    name: "Next.js",
     skill: 2,
-    icon: "simple-icons:react",
+    icon: "ri:nextjs-fill",
   },
   { name: "Astro", skill: 2, icon: "simple-icons:astro" },
   {
@@ -93,7 +95,7 @@ const skills: Skill[] = [
   {
     name: "SQL",
     skill: 4,
-    icon: "simple-icons:mysql",
+    icon: "ri:database-line",
   },
   {
     name: "REST APIs",
@@ -118,6 +120,11 @@ const skills: Skill[] = [
     icon: "simple-icons:supabase",
   },
   {
+    name: "Sanity",
+    skill: 5,
+    icon: "simple-icons:sanity",
+  },
+  {
     name: "Strapi",
     skill: 5,
     icon: "simple-icons:strapi",
@@ -135,14 +142,24 @@ const skills: Skill[] = [
     icon: "simple-icons:git",
   },
   {
-    name: "Jira",
+    name: "GitHub",
     skill: 6,
-    icon: "simple-icons:jira",
+    icon: "simple-icons:github",
+  },
+  {
+    name: "Figma",
+    skill: 6,
+    icon: "simple-icons:figma",
   },
   {
     name: "Notion",
     skill: 6,
     icon: "simple-icons:notion",
+  },
+  {
+    name: "Jira",
+    skill: 6,
+    icon: "simple-icons:jira",
   },
   {
     name: "WordPress",
@@ -185,7 +202,7 @@ const skills: Skill[] = [
               if (skill.skill === 1)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
@@ -202,7 +219,7 @@ const skills: Skill[] = [
               if (skill.skill === 2)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
@@ -219,7 +236,7 @@ const skills: Skill[] = [
               if (skill.skill === 3)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
@@ -236,7 +253,7 @@ const skills: Skill[] = [
               if (skill.skill === 4)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
@@ -253,7 +270,7 @@ const skills: Skill[] = [
               if (skill.skill === 5)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
@@ -270,7 +287,7 @@ const skills: Skill[] = [
               if (skill.skill === 6)
                 return (
                   <li class="card-dark">
-                    {skill.name} <Icon name={skill.icon} />
+                    {skill.name} <Icon name={skill.icon} size={iconSize} />
                   </li>
                 );
             })
