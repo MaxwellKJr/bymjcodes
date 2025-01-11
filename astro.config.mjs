@@ -28,6 +28,7 @@ export default defineConfig({
   //   // Disable transitions for specific routes
   //   exclude: ['/blog/[slug]']
   // },
+  output: "server",
   adapter: netlify({
     imageCDN: false,
   }),
