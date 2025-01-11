@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import { urlForImage } from "../../sanity/lib/urlForImage";
+import {
+  urlForPostImage,
+  urlForProjectImage,
+} from "../../sanity/lib/urlForImage";
 import Heading from "../typography/Heading.astro";
 import Text from "../typography/Text.astro";
 import type { Category } from "../../types/Category";
@@ -49,13 +52,16 @@ const {
     target={isProject ? "_blank" : "_self"}
   >
     <Image
-      src={urlForImage(mainImage.asset)}
+      src={isProject
+        ? urlForProjectImage(mainImage.asset)
+        : urlForPostImage(mainImage.asset)}
       alt={mainImage.alt}
       width={500}
-      height={500}
+      height={250}
       loading={"eager"}
       class={isProject ? "w-full" : "rounded-t-xl w-full shadow-xl"}
       title={title}
+      aria-placeholder="blur"
     />
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />

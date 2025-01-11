@@ -1,6 +1,6 @@
 import groq from "groq";
 
-export const POSTS_QUERY = groq`*[_type == "post" && defined(slug)]{
+export const POSTS_QUERY = groq`*[_type == "post" && defined(slug)]  | order(publishedAt desc) {
   _id,
   title,
   description,
