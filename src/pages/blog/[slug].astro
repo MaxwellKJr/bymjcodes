@@ -64,7 +64,7 @@ const { data: post }: { data: Post } = await loadQuery({
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <!--!FIXME: Restore blur effect that was broken after tailwind update when updating Astro to v5 -->
       <div
-        class="fixed top-0 left-0 z-10 w-full p-2 mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 dark:bg-background-dark bg-background-light"
+        class="fixed top-0 left-0 z-10 w-full p-2 mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 dark:bg-background-dark bg-background-light shadow-md lg:shadow-none"
       >
         <div class="flex items-center gap-4">
           <a href="/blog">
