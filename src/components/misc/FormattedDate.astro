@@ -11,4 +11,4 @@ const { unformattedDate, dateFormat = "MMMM dd, yyyy" } = Astro.props;
 const formattedDate = format(new Date(unformattedDate), dateFormat);
 ---
 
-<span class="text-xs text-secondary-white">{formattedDate}</span>
+<span class="text-sm text-secondary-white">{formattedDate}</span>

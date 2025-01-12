@@ -11,9 +11,11 @@ import { POST_QUERY } from "../../sanity/lib/queries";
 import { urlForImage } from "../../sanity/lib/urlForImage";
 import { Image } from "astro:assets";
 import FormattedDate from "../../components/misc/FormattedDate.astro";
+import EstimatedTimeToRead from "../../components/misc/EstimatedTimeToRead.astro";
 import Pill from "../../components/misc/Pill.astro";
 import type { Category } from "../../types/Category";
 import { Icon } from "astro-icon/components";
+import Flex from "../../components/layouts/Flex.astro";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
@@ -35,6 +37,8 @@ const { data: post }: { data: Post } = await loadQuery({
   query: POST_QUERY,
   params,
 });
+
+console.log("BODY", post.body);
 ---
 
 <Layout
@@ -74,9 +78,13 @@ const { data: post }: { data: Post } = await loadQuery({
               class="text-primary dark:hover:text-white hover:text-black transition-all duration-300 hover:translate-x-3"
             />
           </a>
-          <div>
+          <div class="w-full">
             <Heading text={post.title} size="md" color="text-primary" />
-            <FormattedDate unformattedDate={post.publishedAt} />
+            <div class="flex flex-col w-full">
+              <FormattedDate unformattedDate={post.publishedAt} />
+              <EstimatedTimeToRead body={post.body} />
+            </div>
+            <!-- <small class="inline-block">{readingTime}</small> -->
           </div>
         </div>
       </div>

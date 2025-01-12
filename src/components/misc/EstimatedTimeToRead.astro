@@ -1,0 +1,29 @@
+---
+// Function to extract plain text
+const extractPlainText = (body: any): string =>
+  body
+    .map(
+      (block: any) =>
+        block.children
+          .map((child: any) => child.text || "") // Extract text or fallback to an empty string
+          .join(" ") // Combine text within each block
+    )
+    .join(" "); // Combine text across all blocks
+
+// Function to estimate reading time
+const estimateReadingTime = (text: string): string => {
+  const wordsPerMinute = 200; // Average reading speed
+  const words = text.split(/\s+/).filter(Boolean); // Count words
+  const readingTime = Math.ceil(words.length / wordsPerMinute); // Round up to the nearest minute
+  return `🕘 ${readingTime} min read`;
+};
+
+// Props passed to the component
+const { body } = Astro.props;
+
+// Extract plain text and calculate reading time
+const plainText = extractPlainText(body);
+const readingTime = estimateReadingTime(plainText);
+---
+
+<small class="text-sm text-secondary-white my-1">{readingTime}</small>
