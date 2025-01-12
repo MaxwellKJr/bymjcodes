@@ -22,7 +22,7 @@ export default function ServicesCards({ type, services }: Props) {
                 <h2 className="text-secondary-white text-2xl font-semibold">    {service.name}
                 </h2>
                 {service.isRecommended && (
-                  <small className={`bg-secondary text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Recommended</small>
+                  <small className={`bg-secondary text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Popular</small>
                 )}
               </div>
               <div className="flex w-full items-end pt-4  border-b-[1px] border-secondary-white pb-4">

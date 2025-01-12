@@ -29,38 +29,38 @@ const WebDevelopmentServicesList: Service[] = [
       "Unlimited Pages",
       "Fast delivery of updates post deployment",
       "Simple database for content management is available",
-      "Some admin privileges",
+      "Admin privileges",
       "Recommended for independent startups, writers, creatives, NGOs",
       "Discounts are considered",
     ],
     type: "web",
     seeExampleLink: "https://www.sababa-agri-foundation.com/"
   },
-  {
-    name: "Media & eCommerce",
-    price: "799,999",
-    isRecommended: false,
-    features: [
-      "Unlimited pages",
-      "Database",
-      "Fast delivery of updates post deployment",
-      "Admin privileges are available",
-      "Discounts are considered",
-    ],
-    type: "web",
-  },
-  {
-    name: "Corporate Plan",
-    price: "1,499,999",
-    isRecommended: false,
-    features: [
-      "System development and integration",
-      "Fast delivery of updates post deployment",
-      "Consultations post deployment",
-      "Admin privileges are available",
-    ],
-    type: "web",
-  },
+  // {
+  //   name: "Media & eCommerce",
+  //   price: "799,999",
+  //   isRecommended: false,
+  //   features: [
+  //     "Unlimited pages",
+  //     "Database",
+  //     "Fast delivery of updates post deployment",
+  //     "Admin privileges are available",
+  //     "Discounts are considered",
+  //   ],
+  //   type: "web",
+  // },
+  // {
+  //   name: "Corporate Plan",
+  //   price: "1,499,999",
+  //   isRecommended: false,
+  //   features: [
+  //     "System development and integration",
+  //     "Fast delivery of updates post deployment",
+  //     "Consultations post deployment",
+  //     "Admin privileges are available",
+  //   ],
+  //   type: "web",
+  // },
 ];
 
 // Mobile Development Services List
