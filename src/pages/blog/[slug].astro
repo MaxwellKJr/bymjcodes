@@ -57,7 +57,7 @@ console.log("BODY", post.body);
         loading={"eager"}
         class="w-full my-4 shadow-lg"
       />
-      <div class="flex items-center justify-end gap-2">
+      <div class="flex items-center justify-end gap-2 flex-wrap w-full">
         {
           post.categories &&
             post.categories.map((category: Category) => (
@@ -80,10 +80,10 @@ console.log("BODY", post.body);
           </a>
           <div class="w-full">
             <Heading text={post.title} size="md" color="text-primary" />
-            <div class="flex flex-col w-full">
+            <Flex direction="row" justify="between" align="center">
               <FormattedDate unformattedDate={post.publishedAt} />
               <EstimatedTimeToRead body={post.body} />
-            </div>
+            </Flex>
             <!-- <small class="inline-block">{readingTime}</small> -->
           </div>
         </div>
