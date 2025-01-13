@@ -71,13 +71,15 @@ const {
     <div class="p-4">
       <Heading text={title} size="md" color="text-primary" />
       <div>
-        {
-          isProject && (
-            <span class="text-xs text-secondary-white">🚀 Deployed on:</span>
-          )
-        }
         <Flex direction="row" justify="between" align="center">
-          <FormattedDate unformattedDate={publishedAt} />
+          <div>
+            {
+              isProject && (
+                <span class="text-sm text-secondary-white">🚀 Deployed on</span>
+              )
+            } 
+            <FormattedDate unformattedDate={publishedAt} />
+          </div>
           { !isProject ? <EstimatedTimeToRead body={body} /> : <></> }
         </Flex>
       </div>
