@@ -37,8 +37,6 @@ const { data: post }: { data: Post } = await loadQuery({
   query: POST_QUERY,
   params,
 });
-
-console.log("BODY", post.body);
 ---
 
 <Layout
@@ -78,13 +76,13 @@ console.log("BODY", post.body);
               class="text-primary dark:hover:text-white hover:text-black transition-all duration-300 hover:translate-x-3"
             />
           </a>
-          <div class="w-full">
+
+          <div class="w-full pr-2">
             <Heading text={post.title} size="md" color="text-primary" />
             <Flex direction="row" justify="between" align="center">
               <FormattedDate unformattedDate={post.publishedAt} />
               <EstimatedTimeToRead body={post.body} />
             </Flex>
-            <!-- <small class="inline-block">{readingTime}</small> -->
           </div>
         </div>
       </div>
