@@ -3,6 +3,10 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
+  "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features",
+      "multiFormatter.formatterList": ["dbaeumer.vscode-eslint", "vscode.typescript-language-features"]
+  },
   "editor.defaultFormatter": "astro-build.astro-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
