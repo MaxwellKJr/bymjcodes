@@ -19,11 +19,8 @@ const posts = await loadQuery<Post[]>({
   description={`Maxwell Kapezi Jr's "take" on Tech, software and its development, and probably rants about AI.`}
   siteUrl="https://bymjcodes.netlify.app/blog/"
 >
-  <section
-    class="lg:min-h-[89vh]
-  w-full"
-    transition:animate={fade({ duration: 0.5 })}
-  >
+  <section class="lg:min-h-[89vh]
+  w-full" transition:animate="fade">
     <div class="container flex flex-col justify-center h-full py-24 m-auto">
       <div class="text-center lg:text-left">
         <Heading text="Read Something" size="lg" />
