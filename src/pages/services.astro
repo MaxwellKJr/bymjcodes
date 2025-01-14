@@ -17,12 +17,14 @@ import Notice from "../components/misc/Notice.astro";
     <div
       class="container flex flex-col justify-center w-full h-full py-24 mx-auto"
     >
-      <div class="mb-4 lg:text-left">
+      <div class="lg:text-left">
         <Heading text="Services" size="lg" />
       </div>
-      <Notice
-        text="Notice: Payments such as: domain purchases, additional hosting fees are handled by the client. We just help you process everything."
-      />
+      <div class="mb-4">
+        <Notice
+          text="Notice: Payments such as: domain purchases, additional hosting fees are handled by the client. We just help you process everything."
+        />
+      </div>
       <ServicesSectionToggler
         client:load
         transition:animate={fade({ duration: 1000 })}
