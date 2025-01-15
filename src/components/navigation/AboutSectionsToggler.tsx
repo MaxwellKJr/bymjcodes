@@ -1,7 +1,48 @@
 import { AnimatePresence, motion } from 'framer-motion';
 
 import React from 'react'
+import type { WorkExperience } from '../../types/WorkExperince';
 import { useState } from 'react';
+
+const workExperiences: WorkExperience[] = [
+  {
+    title: "Junior Applications Developer",
+    company: "Global Health Informatics Institute",
+    location: "Lilongwe, Malawi",
+    startDate: "Feb 2024",
+    endDate: "Present",
+    responsibilities: [
+      "Developing and testing hybrid mobile applications for Android and iOS devices with the Flutter Framework",
+
+      "Developing and testing native Android apps with Kotlin, and iOS/iPad apps with Swift",
+
+      "Developing and testing web apps with Next.js",
+
+      "Writing clean, efficient, and well-documented code in Dart, Kotlin, Swift, and TypeScript",
+
+      "Refactoring existing codebases to improve specific components or overall app performance",
+
+      "Testing, troubleshooting and debugging issues that may arise (Who am I kidding, that always arise)",
+
+      "Participating in code reviews and contributing to the improvement of the codebase"
+    ]
+  },
+  {
+    title: "Junior Software Developer (Intern)",
+    company: "Inscriptions MW",
+    location: "Zomba, Malawi | Remote",
+    startDate: "Apr 2022",
+    endDate: "Feb 2024",
+    description: "Developed and maintained web apps using Laravel."
+  },
+  {
+    title: "Mathematics and Computer Studies Teacher",
+    company: "Mkwichi Secondary School",
+    location: "Lilongwe, Malawi",
+    startDate: "Sept 2023",
+    endDate: "Dec 2023",
+  }
+];
 
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1)
@@ -25,7 +66,7 @@ export default function AboutSectionsToggler() {
         >
           Bio
         </li>
-        {/* <li
+        <li
           className={toggle === 2 ? activeTab : outlineTab}
           onClick={() => toggleTab(2)}
         >
@@ -36,7 +77,7 @@ export default function AboutSectionsToggler() {
           onClick={() => toggleTab(3)}
         >
           Education Background
-        </li> */}
+        </li>
       </ul>
       <AnimatePresence mode="wait">
         <motion.div
@@ -143,6 +184,32 @@ function AboutChoice(toggle: number) {
             I mean why not?
           </p>
         </div>
-    )
-  }
+      );
+      case 2:
+        return (
+          workExperiences.map((workExperience: WorkExperience) => (
+            WorkExperienceCard(workExperience)
+          ))
+        );
+      }
+}
+
+function WorkExperienceCard(workExperience: WorkExperience) {
+  return (
+    <div className="bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+      <h2  className="border-l-4 p-4 border-primary text-lg font-medium">
+        {workExperience.title}
+      </h2>
+      <div className="px-4 opacity-50">
+        <h2 className='text-md'>@ {workExperience.company}</h2>
+        <small>{`${workExperience.startDate} - ${workExperience.endDate}`}</small> · <small>{workExperience.location}</small>
+        <p>{workExperience.description}</p>
+        {/* <ul className='flex flex-col'>
+          {workExperience.responsibilities?.map((responsibility) => (
+            <small>→ {responsibility}</small>
+          ))}
+        </ul> */}
+      </div>
+    </div>
+  )
 }
