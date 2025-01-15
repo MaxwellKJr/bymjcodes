@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 
 import React from 'react'
+import type { SchoolBackground } from '../../types/SchoolBackground';
 import type { WorkExperience } from '../../types/WorkExperince';
 import { useState } from 'react';
 
@@ -33,7 +34,7 @@ const workExperiences: WorkExperience[] = [
     location: "Zomba, Malawi | Remote",
     startDate: "Apr 2022",
     endDate: "Feb 2024",
-    description: "Developed and maintained web apps using Laravel."
+    // description: "Developed and maintained web apps using Laravel."
   },
   {
     title: "Mathematics and Computer Studies Teacher",
@@ -43,6 +44,16 @@ const workExperiences: WorkExperience[] = [
     endDate: "Dec 2023",
   }
 ];
+
+const schoolBackgrounds: SchoolBackground[] = [
+  {
+    degree: "Bachelor of Education (Computer Science)",
+    schoolName: "University of Malawi",
+    location: "Zomba, Malawi",
+    startDate: "Aug 2018",
+    endDate: "Dec 2024",
+  }
+]
 
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1)
@@ -191,7 +202,13 @@ function AboutChoice(toggle: number) {
             WorkExperienceCard(workExperience)
           ))
         );
-      }
+        case 3:
+          return (
+            schoolBackgrounds.map((schoolBackground: SchoolBackground) => (
+              SchoolBackgroundCard(schoolBackground)
+            ))
+          );
+   }
 }
 
 function WorkExperienceCard(workExperience: WorkExperience) {
@@ -203,7 +220,27 @@ function WorkExperienceCard(workExperience: WorkExperience) {
       <div className="px-4 opacity-50">
         <h2 className='text-md'>@ {workExperience.company}</h2>
         <small>{`${workExperience.startDate} - ${workExperience.endDate}`}</small> · <small>{workExperience.location}</small>
-        <p>{workExperience.description}</p>
+        {workExperience.description ? <p>{workExperience.description}</p> : <></>}
+        {/* <ul className='flex flex-col'>
+          {workExperience.responsibilities?.map((responsibility) => (
+            <small>→ {responsibility}</small>
+          ))}
+        </ul> */}
+      </div>
+    </div>
+  )
+}
+
+function SchoolBackgroundCard(schoolBackground: SchoolBackground) {
+  return (
+    <div className="bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+      <h2  className="border-l-4 p-4 border-primary text-lg font-medium">
+        {schoolBackground.degree}
+      </h2>
+      <div className="px-4 opacity-50">
+        <h2 className='text-md'>@ {schoolBackground.schoolName}</h2>
+        <small>{`${schoolBackground.startDate} - ${schoolBackground.endDate}`}</small> · <small>{schoolBackground.location}</small>
+        {/* <p>{schoolBackground.fieldOfStudy}</p> */}
         {/* <ul className='flex flex-col'>
           {workExperience.responsibilities?.map((responsibility) => (
             <small>→ {responsibility}</small>
