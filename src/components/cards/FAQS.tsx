@@ -13,10 +13,10 @@ const questionsAndAnswers: Question[] = [
     "question": "Do your development plans include UI/UX design?",
     "answer": "Yes, all our development plans include UI/UX design services. Our team ensures that the app is visually appealing, user-friendly, and optimized for different screen sizes and devices."
   },
-    {
+  {
     "id": 21,
     "question": "Do you provide web hosting services?",
-    "answer": "Yes, we offer web hosting services as part of our plans or as an add-on. Hosting options include shared, VPS, or dedicated servers, depending on your website's needs. Our hosting ensures reliable uptime, fast loading speeds, and security."
+    "answer": "Yes, we offer web hosting services as part of our plans or as an add-on. Add-on payments are handled by the client."
   },
   {
     "id": 22,
