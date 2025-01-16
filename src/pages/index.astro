@@ -31,11 +31,13 @@ const occupations = [
   <section class="h-screen
   lg:h-[80vh]" transition:animate="fade">
     <div class="container flex flex-col justify-center h-full">
-      <Heading
-        text="The Developing Developer"
-        size="xl"
-        color="text-secondary"
-      />
+      <div class="animate-pulse">
+        <Heading
+          text="The Developing Developer"
+          size="xl"
+          color="text-secondary"
+        />
+      </div>
       <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
       <div class="flex flex-wrap w-full mx-auto mt-2">
         {

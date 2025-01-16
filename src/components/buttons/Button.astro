@@ -7,12 +7,17 @@ interface Props {
   variant: "primary" | "secondary";
   blank?: boolean;
   icon?: string;
+  className?: string;
 }
 
-const { text, link, variant, blank = false, icon } = Astro.props;
+const { text, link, variant, blank = false, icon, className } = Astro.props;
 ---
 
-<a href={link} class={`btn btn-${variant}`} target={blank ? "_blank" : "_self"}>
+<a
+  href={link}
+  class={`btn btn-${variant} ${className}`}
+  target={blank ? "_blank" : "_self"}
+>
   {text}
   {
     icon && (
