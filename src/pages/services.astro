@@ -1,7 +1,6 @@
 ---
 export const prerender = true;
 
-import { fade } from "astro:transitions";
 import ServicesSectionToggler from "../components/navigation/ServicesSectionToggler";
 import Heading from "../components/typography/Heading.astro";
 import Layout from "../layouts/Layout.astro";
@@ -25,10 +24,7 @@ import Notice from "../components/misc/Notice.astro";
           text="Notice: Payments such as: domain purchases, additional hosting fees are handled by the client. We just help you process everything."
         />
       </div>
-      <ServicesSectionToggler
-        client:load
-        transition:animate={fade({ duration: 1000 })}
-      />
+      <ServicesSectionToggler client:load />
     </div>
   </section>
 </Layout>

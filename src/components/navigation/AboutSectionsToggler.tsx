@@ -76,6 +76,7 @@ export default function AboutSectionsToggler() {
               transition: { duration: 0.3 }
             }
           }}
+          className="py-2"
         >
           {AboutChoice(toggle)}
         </motion.div>
@@ -86,7 +87,7 @@ export default function AboutSectionsToggler() {
 
 // Helper Components
 const BioSection = () => (
-  <div className="flex flex-col text-sm text-black dark:text-secondary-white-lighter">
+  <div className="flex flex-col text-sm text-black dark:text-secondary-white-lighter text-center lg:text-left">
     <p>
       My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of professional experience, 
       I specialize in mobile app development using{" "}
@@ -97,7 +98,7 @@ const BioSection = () => (
     </p>
 
     <p>
-      My journey in software development began in 2017, driven by a passion for creating my own video games—though that dream died quickly lol. If you want to know the whole story, read my post "<a href="/blog/hello-world" className="underlined-link">Hello, World</a>"
+      My journey in software development began in 2017, driven by a passion for creating my own video games—though that dream died quickly lol. If you want to know the whole story, read my post, "<a href="/blog/hello-world" className="underlined-link">Hello, World</a>".
     </p>
 
     <p>
@@ -115,7 +116,7 @@ const BioSection = () => (
 );
 
 const WorkExperienceCard = ({ title, company, location, startDate, endDate, description }: WorkExperience) => (
-  <div className="bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+  <div className="text-left bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
     <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{title}</h2>
     <div className="px-4 opacity-50">
       <h2 className="text-md">@ {company}</h2>
@@ -126,7 +127,7 @@ const WorkExperienceCard = ({ title, company, location, startDate, endDate, desc
 );
 
 const SchoolBackgroundCard = ({ degree, schoolName, location, startDate, endDate }: SchoolBackground) => (
-  <div className="bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+  <div className="text-left bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
     <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{degree}</h2>
     <div className="px-4 opacity-50">
       <h2 className="text-md">@ {schoolName}</h2>

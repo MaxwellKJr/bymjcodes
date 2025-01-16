@@ -4,7 +4,6 @@ export const prerender = true;
 import { Icon } from "astro-icon/components";
 import Heading from "../../components/typography/Heading.astro";
 import Layout from "../../layouts/Layout.astro";
-import { fade } from "astro:transitions";
 
 interface Skill {
   name: string;
@@ -176,7 +175,7 @@ const skills: Skill[] = [
   description="Maxwell Kapezi Jr's skills and preferred tech stacks"
   siteUrl="https://bymjcodes.netlify.app/about/my-skills"
 >
-  <section class="relative py-16" transition:animate={fade({ duration: 0.5 })}>
+  <section class="relative py-16" transition:animate="fade">
     <!-- Back Button -->
     <!--!FIXME: Restore blur effect that was broken after tailwind update when updating Astro to v5 -->
     <a

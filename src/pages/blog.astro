@@ -7,7 +7,6 @@ import { loadQuery } from "../sanity/lib/load-query";
 import type Post from "../types/Post";
 import { POSTS_QUERY } from "../sanity/lib/queries";
 import Card from "../components/cards/Card.astro";
-import { fade } from "astro:transitions";
 
 const posts = await loadQuery<Post[]>({
   query: POSTS_QUERY,
