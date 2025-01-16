@@ -116,7 +116,7 @@ const BioSection = () => (
 );
 
 const WorkExperienceCard = ({ title, company, location, startDate, endDate, description }: WorkExperience) => (
-  <div className="text-left bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+  <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
     <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{title}</h2>
     <div className="px-4 opacity-50">
       <h2 className="text-md">@ {company}</h2>
@@ -127,7 +127,7 @@ const WorkExperienceCard = ({ title, company, location, startDate, endDate, desc
 );
 
 const SchoolBackgroundCard = ({ degree, schoolName, location, startDate, endDate }: SchoolBackground) => (
-  <div className="text-left bg-card-light dark:bg-card-dark mb-4 pb-4 shadow-lg rounded-lg">
+  <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
     <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{degree}</h2>
     <div className="px-4 opacity-50">
       <h2 className="text-md">@ {schoolName}</h2>

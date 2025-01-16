@@ -47,14 +47,18 @@ const {
     class="relative flex flex-col overflow-x-hidden font-sans text-black lg:flex-row min-w-screen dark:bg-background-dark bg-background-light dark:text-white"
   >
     <Navbar />
-    <Image
-      src="/icon.png"
-      alt="MJ Codes logo"
-      width={200}
-      height={200}
-      loading={"lazy"}
-      class="absolute w-10 h-10 transition-all duration-300 lg:hidden top-4 left-4 animate-pulse"
-    />
+    <a
+      href="/"
+      class="absolute w-10 h-10 transition-all duration-300 lg:hidden top-4 left-4 animate-pulse z-20"
+    >
+      <Image
+        src="/icon.png"
+        alt="MJ Codes logo"
+        width={200}
+        height={200}
+        loading={"lazy"}
+      />
+    </a>
     <div
       class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] lg:bottom-auto lg:right-auto z-50"
     >

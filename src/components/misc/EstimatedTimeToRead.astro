@@ -15,7 +15,7 @@ const estimateReadingTime = (text: string): string => {
   const wordsPerMinute = 200; // Average reading speed
   const words = text.split(/\s+/).filter(Boolean); // Count words
   const readingTime = Math.ceil(words.length / wordsPerMinute); // Round up to the nearest minute
-  return `🕘 ${readingTime} min read`;
+  return `⏱️ ${readingTime} min read`;
 };
 
 // Props passed to the component
