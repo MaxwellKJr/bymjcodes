@@ -14,6 +14,7 @@ import FormattedDate from "../misc/FormattedDate.astro";
 import Flex from "../layouts/Flex.astro";
 import Button from "../buttons/Button.astro";
 import EstimatedTimeToRead from "../misc/EstimatedTimeToRead.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   title: string;
@@ -72,13 +73,15 @@ const {
       <Heading text={title} size="md" color="text-primary" />
       <div>
         <Flex direction="row" justify="between" align="center">
-          <div>
+          <div class="flex items-center">
             {
               isProject && (
-                <span class="text-sm text-secondary-white">🚀 Deployed on</span>
+                <span class="text-sm text-secondary-white mr-1">🚀 Deployed on</span>
               )
             } 
-            <FormattedDate unformattedDate={publishedAt} />
+            <div class="flex items-center">
+              {!isProject && <span class="text-secondary-white mr-1"><Icon name="ri:calendar-line" /></span>}<FormattedDate unformattedDate={publishedAt} />
+            </div>
           </div>
           { !isProject ? <EstimatedTimeToRead body={body} /> : <></> }
         </Flex>
