@@ -1,14 +1,25 @@
 ---
+interface TextBlock {
+  children: TextChild[];
+}
+
+interface TextChild {
+  type: string;
+  text?: string;
+}
+
 // Function to extract plain text
-const extractPlainText = (body: any): string =>
-  body
-    .map(
-      (block: any) =>
-        block.children
-          .map((child: any) => child.text || "") // Extract text or fallback to an empty string
-          .join(" ") // Combine text within each block
-    )
-    .join(" "); // Combine text across all blocks
+const extractPlainText = (documentBody: TextBlock[]): string => {
+  if (!documentBody?.length) return "";
+
+  return documentBody
+    .map((block) => {
+      if (!block?.children?.length) return "";
+      return block.children.map((child) => child?.text || "").join(" ");
+    })
+    .filter((text) => text !== "")
+    .join(" ");
+};
 
 // Function to estimate reading time
 const estimateReadingTime = (text: string): string => {
