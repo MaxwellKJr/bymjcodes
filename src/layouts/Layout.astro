@@ -76,6 +76,7 @@ const {
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+  @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
   @layer utilities {
     .duration-300 {
@@ -145,8 +146,20 @@ const {
     @apply my-2 border-l-4 border-primary bg-secondary-light p-4 font-thin dark:bg-secondary-dark;
   }
 
+  .portable-text-body code {
+    @apply my-4 block rounded-lg p-4;
+  }
+
   .portable-text-body img {
     @apply my-4 w-full;
+  }
+
+  .portable-text-body ol {
+    @apply list-decimal pl-8 text-base text-black opacity-80 dark:text-white;
+  }
+
+  .portable-text-body ol > li {
+    @apply my-2 pl-2;
   }
 
   /* .portable-text-body a:hover,

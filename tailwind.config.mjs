@@ -11,6 +11,7 @@ export default {
     },
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
+      mono: ["JetBrains Mono", "menlo"]
     },
     extend: {
       colors: {
@@ -26,9 +27,6 @@ export default {
         "card-dark": "#000000",
         "card-light": "#ffffff",
         "card-border": "#000000",
-      },
-      fontFamily: {
-        odibee: ["Odibee Sans", "sans-serif"],
       },
       backgroundImage: {
         "js-blob": "url('/js.png')",
