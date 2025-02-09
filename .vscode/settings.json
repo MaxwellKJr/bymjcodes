@@ -1,11 +1,20 @@
 {
-  "prettier.documentSelectors": ["**/*.astro"],
+    "prettier.documentSelectors": ["**/*.astro", "**/*.css", "**/*.json", "**/*.tsx", "**/*.js"],
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[javascript]": {
       "editor.defaultFormatter": "vscode.typescript-language-features",
       "multiFormatter.formatterList": ["dbaeumer.vscode-eslint", "vscode.typescript-language-features"]
+  },
+    "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.defaultFormatter": "astro-build.astro-vscode",
   "editor.formatOnSave": true,
