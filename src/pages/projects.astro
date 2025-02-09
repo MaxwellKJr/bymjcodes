@@ -1,12 +1,12 @@
 ---
 export const prerender = false;
 
-import Card from "../components/cards/Card.astro";
-import Layout from "../layouts/Layout.astro";
-import { PROJECTS_QUERY } from "../sanity/lib/queries";
-import { loadQuery } from "../sanity/lib/load-query";
-import type Project from "../types/Project";
-import Heading from "../components/typography/Heading.astro";
+import Card from "@/components/cards/Card.astro";
+import Layout from "@/layouts/Layout.astro";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import { loadQuery } from "@/sanity/lib/load-query";
+import type Project from "@/types/Project";
+import Heading from "@/components/typography/Heading.astro";
 
 import { Suspense } from "react";
 

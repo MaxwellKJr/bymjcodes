@@ -2,21 +2,21 @@
 export const prerender = false;
 
 import type { SanityDocument } from "@sanity/client";
-import { loadQuery } from "../../sanity/lib/load-query";
-import Layout from "../../layouts/Layout.astro";
-import Heading from "../../components/typography/Heading.astro";
-import type Post from "../../types/Post";
-import PortableText from "../../components/sanity/PortableText.astro";
-import { POST_QUERY } from "../../sanity/lib/queries";
-import { urlForImage } from "../../sanity/lib/urlForImage";
+import { loadQuery } from "@/sanity/lib/load-query";
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/typography/Heading.astro";
+import type Post from "@/types/Post";
+import PortableText from "@/components/sanity/PortableText.astro";
+import { POST_QUERY } from "@/sanity/lib/queries";
+import { urlForImage } from "@/sanity/lib/urlForImage";
 import { Image } from "astro:assets";
-import FormattedDate from "../../components/misc/FormattedDate.astro";
-import EstimatedTimeToRead from "../../components/misc/EstimatedTimeToRead.astro";
-import Pill from "../../components/misc/Pill.astro";
-import type { Category } from "../../types/Category";
+import FormattedDate from "@/components/misc/FormattedDate.astro";
+import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
+import Pill from "@/components/misc/Pill.astro";
+import type { Category } from "@/types/Category";
 import { Icon } from "astro-icon/components";
-import Flex from "../../components/layouts/Flex.astro";
-import PortableTextImage from "../../components/sanity/PortableTextImage.astro";
+import Flex from "@/components/layouts/Flex.astro";
+import PortableTextImage from "@/components/sanity/PortableTextImage.astro";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({

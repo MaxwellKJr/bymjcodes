@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 
-import type { SchoolBackground } from '../../types/SchoolBackground';
-import type { WorkExperience } from '../../types/WorkExperince';
+import type { SchoolBackground } from '@/types/SchoolBackground';
+import type { WorkExperience } from '@/types/WorkExperince';
 
 const workExperiences: WorkExperience[] = [
   {
