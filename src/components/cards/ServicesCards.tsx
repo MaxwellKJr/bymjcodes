@@ -1,6 +1,6 @@
 import { CircleCheck, SquareArrowOutUpRight, X } from 'lucide-react';
 
-import type { Service } from '@/types/Service';
+import type { Service } from '../../types/Service';
 
 interface Props {
   type: "web" | "mobile";
