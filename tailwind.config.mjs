@@ -3,16 +3,6 @@ export default {
   darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    colors: {
-      white: "#ebebeb",
-      black: "#121212",
-      h1: "#ff0098",
-      h2: "#ff006675",
-    },
-    fontFamily: {
-      sans: ["Poppins", "sans-serif"],
-      mono: ["JetBrains Mono", "menlo"]
-    },
     extend: {
       colors: {
         primary: "#ff0098",
@@ -27,9 +17,17 @@ export default {
         "card-dark": "#000000",
         "card-light": "#ffffff",
         "card-border": "#000000",
+        white: "#ebebeb",
+        black: "#121212",
+        h1: "#ff0098",
+        h2: "#ff006675",
       },
       backgroundImage: {
         "js-blob": "url('/js.png')",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        mono: ["JetBrains Mono", "menlo"]
       },
     },
   },
