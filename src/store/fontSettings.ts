@@ -7,7 +7,7 @@ export type FontSettings = {
 };
 
 export const fontSettings = map<FontSettings>({
-  fontFamily: 'poppins',
+  fontFamily: 'Fira Code',
   textSize: '16px',
   lineHeight: '1.5rem'
 });

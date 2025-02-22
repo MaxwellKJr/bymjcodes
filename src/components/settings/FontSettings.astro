@@ -1,16 +1,31 @@
 ---
+// export const prerender = true;
+
 import Icon from "node_modules/astro-icon/components/Icon.astro";
+
+// const fontFamily = Astro.cookies.get("font-family")?.value;
+// // const fam = localStorage.getItem("font-family");
+
+// let iconName = fontFamily == "Poppins" ? "ri:font-sans-serif" : "ri:font-mono";
+
+// console.log("FONT FAM:", fontFamily);
+// console.log("ICON NAME:", iconName);
 ---
 
 <div class="font-settings-container">
-  <!-- <span class="text-xl font-semibold text-secondary-white">Font Settings</span> -->
+  <span class="flex items-center text-lg font-light text-secondary-white mb-4"
+    >Reading Preferences</span
+  >
   <div class="font-settings">
     <div class="setting-group">
-      <Icon name="ri:text-snippet" class="text-2xl text-secondary-white" />
+      <Icon
+        name="ri:font-sans"
+        class="text-2xl text-secondary-white font-icon"
+      />
       <select id="font-family" class="font-family-select">
+        <option value="Fira Code" selected>Monospace</option>
+        <option value="Poppins">Sans Serif</option>
         <option value="Libre Baskerville">Serif</option>
-        <option value="Poppins">Sans</option>
-        <option value="Fira Code">Monospace</option>
       </select>
     </div>
 
@@ -30,12 +45,13 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
   :root {
     --font-family: poppins;
   }
+
   .font-settings-container {
-    @apply mt-10 flex flex-col items-end justify-center border-t-[1px] border-solid border-secondary-white pt-4;
+    @apply mt-10 flex w-full flex-col items-end justify-center border-t-[1px] border-solid border-secondary-white pt-4;
   }
 
   .font-settings {
-    @apply flex w-full flex-row flex-wrap justify-end gap-4;
+    @apply flex w-full flex-row flex-wrap items-center justify-end gap-4;
   }
 
   .font-family-select {
@@ -47,7 +63,7 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
   }
 
   select {
-    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-1 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
+    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-2 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
   }
 
   label {
@@ -81,6 +97,14 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
     textSizeSelect.value = textSize;
   });
 
+  const savedFont = localStorage.getItem("userFontFamily");
+
+  if (savedFont === null || savedFont === undefined || savedFont === "") {
+    updateFontFamily("Fira Code");
+  } else {
+    updateFontFamily(savedFont);
+  }
+
   fontFamilySelect.addEventListener("change", (e) => {
     const newFont = (e.target as HTMLSelectElement).value;
     updateFontFamily(newFont);
@@ -89,5 +113,16 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
   textSizeSelect.addEventListener("change", (e) => {
     const newSize = (e.target as HTMLSelectElement).value;
     updateTextSize(newSize);
+  });
+
+  const fontIcon = document.querySelector(".font-icon") as HTMLElement;
+
+  fontSettings.subscribe(({ fontFamily }) => {
+    if (fontIcon) {
+      fontIcon.setAttribute(
+        "name",
+        fontFamily === "Poppins" ? "ri:font-sans-serif" : "ri:font-serif"
+      );
+    }
   });
 </script>
