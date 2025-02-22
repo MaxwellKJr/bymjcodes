@@ -86,11 +86,11 @@ const {
           { !isProject ? <EstimatedTimeToRead body={body} /> : <></> }
         </Flex>
       </div>
-      <hr class="h-[1px] text-primary my-2 opacity-60" />
-      <Text text={description} size="sm" />
+      <div class="border-y-[0.5px] border-secondary-white mt-4 mb-2 py-1">
+        <Text text={description} size="md" />
       {
         isProject && (
-          <Flex direction="row" gap="0" wrap="wrap" className="mt-2 mb-6">
+          <Flex direction="row" gap="0" wrap="wrap" className="my-2">
               <Button
                 text="See Project"
                 link={projectUrl}
@@ -111,7 +111,7 @@ const {
           </Flex>
         )
       }
-      <hr class="h-[1px] text-primary my-2 opacity-60" />
+      </div>
       <ul class="flex flex-wrap w-full pt-2 gap-2">
         {
           categories.map((category: Category) => (

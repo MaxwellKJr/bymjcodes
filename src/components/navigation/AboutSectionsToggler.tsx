@@ -54,7 +54,7 @@ const outlineTab = `rounded-full px-3 py-1 border-[1px] dark:border-white border
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1);
   const toggleTab = (index: React.SetStateAction<number>) => setToggle(index);
-  
+
   return (
     <>
       <ul className="z-10 flex flex-wrap items-center justify-center lg:justify-normal w-full gap-2 lg:gap-4 my-4">
@@ -89,7 +89,7 @@ export default function AboutSectionsToggler() {
 const BioSection = () => (
   <div className="flex flex-col text-sm text-black dark:text-secondary-white-lighter text-center lg:text-left">
     <p>
-      My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of professional experience, 
+      My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of professional experience,
       I specialize in mobile app development using{" "}
       <a href="https://www.swift.org/" target="_blank" rel="noopener noreferrer" className="underlined-link">Swift</a>{", "}
       <a href="http://kotlinlang.org" target="_blank" rel="noopener noreferrer" className="underlined-link">Kotlin</a>{", "}
@@ -117,21 +117,25 @@ const BioSection = () => (
 
 const WorkExperienceCard = ({ title, company, location, startDate, endDate, description }: WorkExperience) => (
   <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{title}</h2>
+    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">{title}</h2>
     <div className="px-4 opacity-50">
-      <h2 className="text-md">@ {company}</h2>
-      <small>{startDate} - {endDate}</small> · <small>{location}</small>
-      {description && <p>{description}</p>}
+      <div className="border-t-[0.5px] border-secondary-white pt-2">
+        <h2 className="text-md">@ {company}</h2>
+        <small>{startDate} - {endDate}</small> · <small>{location}</small>
+        {description && <p>{description}</p>}
+      </div>
     </div>
   </div>
 );
 
 const SchoolBackgroundCard = ({ degree, schoolName, location, startDate, endDate }: SchoolBackground) => (
   <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 p-4 border-primary text-lg font-medium">{degree}</h2>
+    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">{degree}</h2>
     <div className="px-4 opacity-50">
-      <h2 className="text-md">@ {schoolName}</h2>
-      <small>{startDate} - {endDate}</small> · <small>{location}</small>
+      <div className="border-t-[0.5px] border-secondary-white pt-2">
+        <h2 className="text-md">@ {schoolName}</h2>
+        <small>{startDate} - {endDate}</small> · <small>{location}</small>
+      </div>
     </div>
   </div>
 );

@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function ServicesCards({ type, services }: Props) {
-   const activeTab = `
+  const activeTab = `
     rounded-full bg-primary text-white px-3 py-2 text-sm cursor-pointer transition-all duration-300 ease-in-out border-primary border-[1px] mt-6 inline-block flex items-center justify-center gap-2 w-full hover:text-primary hover:bg-secondary-lighter dark:hover:bg-secondary-dark
 `;
 
@@ -22,7 +22,7 @@ export default function ServicesCards({ type, services }: Props) {
                 <h2 className="text-secondary-white text-2xl font-semibold">    {service.name}
                 </h2>
                 {service.isRecommended && (
-                  <small className={`bg-secondary text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Popular</small>
+                  <small className={`bg-secondary text-black dark:text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Popular</small>
                 )}
               </div>
               <div className="flex w-full items-end pt-4  border-b-[1px] border-secondary-white pb-4">
@@ -53,12 +53,12 @@ export default function ServicesCards({ type, services }: Props) {
                 ))}
               </ul>
               {service.seeExampleLink && (
-                <a href={service.seeExampleLink} target='_blank' className={activeTab}>See Example<SquareArrowOutUpRight size={16}/></a>
+                <a href={service.seeExampleLink} target='_blank' className={activeTab}>See Example<SquareArrowOutUpRight size={16} /></a>
               )}
             </div>
           ))
         }
+      </div>
     </div>
-</div>
   )
 }
