@@ -1,42 +1,42 @@
 ---
-
+import Icon from "node_modules/astro-icon/components/Icon.astro";
 ---
 
 <div class="font-settings">
   <div class="setting-group">
-    <label for="font-family">Font Family:</label>
+    <Icon name="ri:text-snippet" class="text-2xl text-black dark:text-white" />
     <select
       id="font-family"
       class="bg-background-light dark:bg-background-dark"
     >
       <option value="serif">Serif</option>
-      <option value="poppins">Normal</option>
+      <option value="poppins">Sans</option>
       <option value="monospace">Monospace</option>
     </select>
   </div>
 
   <div class="setting-group">
-    <label for="text-size">Text Size:</label>
+    <Icon name="ri:font-size-2" class="text-2xl text-black dark:text-white" />
     <select id="text-size" class="bg-background-light dark:bg-background-dark">
-      <option value="14px">Small</option>
-      <option value="16px">Medium</option>
-      <option value="18px">Large</option>
-      <option value="20px">Extra Large</option>
+      <option value="14px">0.5pt</option>
+      <option value="16px">1pt</option>
+      <option value="18px">1.5pt</option>
+      <option value="20px">2pt</option>
     </select>
   </div>
 </div>
 
 <style>
   .font-settings {
-    @apply flex w-full flex-row flex-wrap justify-end gap-4 p-4;
+    @apply flex w-full flex-row flex-wrap justify-end gap-4 pt-4;
   }
 
   .setting-group {
-    @apply flex items-center gap-0;
+    @apply flex items-center justify-end gap-2;
   }
 
   select {
-    @apply rounded-md border-[1px] border-solid border-primary px-1 py-2;
+    @apply rounded-full border-[1px] border-solid border-primary px-1 py-1 hover:cursor-pointer;
   }
 
   label {
