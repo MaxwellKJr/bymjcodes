@@ -26,7 +26,9 @@ export default {
         "js-blob": "url('/js.png')"
       },
       fontFamily: {
+        "libre-baskerville": ["Libre Baskerville", "serif"],
         poppins: ["Poppins", "sans-serif"],
+        "fira-code": ["Fira Code", "monospace"],
       },
     },
   },

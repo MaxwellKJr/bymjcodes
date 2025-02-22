@@ -2,33 +2,37 @@
 import Icon from "node_modules/astro-icon/components/Icon.astro";
 ---
 
-<div class="font-settings">
-  <div class="setting-group">
-    <Icon name="ri:text-snippet" class="text-2xl text-black dark:text-white" />
-    <select
-      id="font-family"
-      class="bg-background-light dark:bg-background-dark"
-    >
-      <option value="serif">Serif</option>
-      <option value="poppins">Sans</option>
-      <option value="monospace">Monospace</option>
-    </select>
-  </div>
+<div class="font-settings-container">
+  <!-- <span class="text-xl font-semibold text-secondary-white">Font Settings</span> -->
+  <div class="font-settings">
+    <div class="setting-group">
+      <Icon name="ri:text-snippet" class="text-2xl text-secondary-white" />
+      <select id="font-family">
+        <option value="Libre Baskerville">Serif</option>
+        <option value="Poppins">Sans</option>
+        <option value="Fira Code">Monospace</option>
+      </select>
+    </div>
 
-  <div class="setting-group">
-    <Icon name="ri:font-size-2" class="text-2xl text-black dark:text-white" />
-    <select id="text-size" class="bg-background-light dark:bg-background-dark">
-      <option value="14px">0.5pt</option>
-      <option value="16px">1pt</option>
-      <option value="18px">1.5pt</option>
-      <option value="20px">2pt</option>
-    </select>
+    <div class="setting-group">
+      <Icon name="ri:font-size-2" class="text-2xl text-secondary-white" />
+      <select id="text-size">
+        <option value="14px">0.5pt</option>
+        <option value="16px">1pt</option>
+        <option value="18px">1.5pt</option>
+        <option value="20px">2pt</option>
+      </select>
+    </div>
   </div>
 </div>
 
 <style>
+  .font-settings-container {
+    @apply mt-4 flex flex-col items-end justify-center border-t-[1px] border-solid border-secondary-white pt-4;
+  }
+
   .font-settings {
-    @apply flex w-full flex-row flex-wrap justify-end gap-4 pt-4;
+    @apply flex w-full flex-row flex-wrap justify-end gap-4;
   }
 
   .setting-group {
@@ -36,7 +40,7 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
   }
 
   select {
-    @apply rounded-full border-[1px] border-solid border-primary px-1 py-1 hover:cursor-pointer;
+    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-1 py-1 text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
   }
 
   label {
