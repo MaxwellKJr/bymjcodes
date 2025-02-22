@@ -47,7 +47,9 @@ const { data: post }: { data: Post } = await loadQuery({
   image={urlForImage(post.mainImage.asset)}
 >
   <article class="relative w-full">
-    <div class="py-24 lg:w-[85vw] lg:mx-auto max-w-lg m-auto relative">
+    <div
+      class="pt-36 pb-64 lg:pt-28 lg:pb-28 lg:w-[85vw] lg:mx-auto max-w-lg m-auto relative"
+    >
       <Image
         src={urlForImage(post.mainImage.asset)}
         alt={post.mainImage.alt}
