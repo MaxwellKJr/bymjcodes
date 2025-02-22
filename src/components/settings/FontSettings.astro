@@ -42,7 +42,8 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
       </div>
     </div>
 
-    <div class="flex flex-col lg:hidden gap-4">
+    <!-- FONT TOGGLERS FOR MOBILE -->
+    <div class="flex flex-col lg:hidden gap-5">
       <button
         id="font-toggle"
         class="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
@@ -151,7 +152,7 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
       }
     });
 
-    // Font Toggler For Mobile
+    // Font Togglers For Mobile
     let fontFamilyIndex = 0;
     const fonts = ["Fira Code", "Poppins", "Libre Baskerville"];
     let textSizeIndex = 0;
