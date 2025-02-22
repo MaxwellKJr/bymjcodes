@@ -25,7 +25,7 @@ export default function ServicesCards({ type, services }: Props) {
                   <small className={`bg-secondary text-black dark:text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Popular</small>
                 )}
               </div>
-              <div className="flex w-full items-end pt-4  border-b-[1px] border-secondary-white pb-4">
+              <div className="flex w-full items-end pt-4  border-b-[0.5px] border-secondary-white pb-4">
                 <span className="text-primary p-0 m-0 opacity-70 inline-block">MWK</span>
                 <h1 className='text-3xl font-bold inline-block'>{service.price}</h1>
               </div>

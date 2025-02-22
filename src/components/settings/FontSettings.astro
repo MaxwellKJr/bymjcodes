@@ -65,9 +65,10 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
     "text-size"
   ) as HTMLSelectElement;
 
-  fontSettings.subscribe(({ fontFamily, textSize }) => {
+  fontSettings.subscribe(({ fontFamily, textSize, lineHeight }) => {
     document.documentElement.style.setProperty("--font-family", fontFamily);
     document.documentElement.style.setProperty("--text-size", textSize);
+    document.documentElement.style.setProperty("--line-height", lineHeight);
 
     fontFamilySelect.value = fontFamily;
     textSizeSelect.value = textSize;
