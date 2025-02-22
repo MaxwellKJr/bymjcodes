@@ -13,116 +13,162 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
 ---
 
 <div class="font-settings-container">
-  <span class="flex items-center text-lg font-light text-secondary-white mb-4"
+  <span
+    class="hidden lg:flex items-center text-lg font-light text-secondary-white mb-4"
     >Reading Preferences</span
   >
   <div class="font-settings">
-    <div class="setting-group">
-      <Icon
-        name="ri:font-sans"
-        class="text-2xl text-secondary-white font-icon"
-      />
-      <select id="font-family" class="font-family-select">
-        <option value="Fira Code" selected>Monospace</option>
-        <option value="Poppins">Sans Serif</option>
-        <option value="Libre Baskerville">Serif</option>
-      </select>
+    <div class="hidden lg:flex gap-4">
+      <div class="setting-group">
+        <Icon
+          name="ri:font-sans"
+          class="text-2xl text-secondary-white font-icon"
+        />
+        <select id="font-family" class="font-family-select">
+          <option value="Fira Code">Monospace</option>
+          <option value="Poppins">Sans Serif</option>
+          <option value="Libre Baskerville">Serif</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <Icon name="ri:font-size-2" class="text-2xl text-secondary-white" />
+        <select id="text-size">
+          <option value="14px">0.5pt</option>
+          <option value="16px">1pt</option>
+          <option value="18px">1.5pt</option>
+          <option value="20px">2pt</option>
+        </select>
+      </div>
     </div>
 
-    <div class="setting-group">
-      <Icon name="ri:font-size-2" class="text-2xl text-secondary-white" />
-      <select id="text-size">
-        <option value="14px">0.5pt</option>
-        <option value="16px">1pt</option>
-        <option value="18px">1.5pt</option>
-        <option value="20px">2pt</option>
-      </select>
+    <div class="flex flex-col lg:hidden gap-4">
+      <button
+        id="font-toggle"
+        class="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+        title="Toggle font"
+      >
+        F
+      </button>
+
+      <button
+        id="font-size-toggle"
+        class="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+        title="Toggle font"
+      >
+        <Icon name="ri:font-size-2" class="text-xl text-secondary-white" />
+      </button>
     </div>
   </div>
-</div>
 
-<style>
-  :root {
-    --font-family: poppins;
-  }
-
-  .font-settings-container {
-    @apply mt-10 flex w-full flex-col items-end justify-center border-t-[1px] border-solid border-secondary-white pt-4;
-  }
-
-  .font-settings {
-    @apply flex w-full flex-row flex-wrap items-center justify-end gap-4;
-  }
-
-  .font-family-select {
-    font-family: var(--font-family);
-  }
-
-  .setting-group {
-    @apply flex items-center justify-end gap-2;
-  }
-
-  select {
-    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-2 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
-  }
-
-  label {
-    @apply min-w-24;
-  }
-</style>
-
-<script>
-  import {
-    fontSettings,
-    updateFontFamily,
-    updateTextSize,
-    initializeFontSettings,
-  } from "@/store/fontSettings";
-
-  initializeFontSettings();
-
-  const fontFamilySelect = document.getElementById(
-    "font-family"
-  ) as HTMLSelectElement;
-  const textSizeSelect = document.getElementById(
-    "text-size"
-  ) as HTMLSelectElement;
-
-  fontSettings.subscribe(({ fontFamily, textSize, lineHeight }) => {
-    document.documentElement.style.setProperty("--font-family", fontFamily);
-    document.documentElement.style.setProperty("--text-size", textSize);
-    document.documentElement.style.setProperty("--line-height", lineHeight);
-
-    fontFamilySelect.value = fontFamily;
-    textSizeSelect.value = textSize;
-  });
-
-  const savedFont = localStorage.getItem("userFontFamily");
-
-  if (savedFont === null || savedFont === undefined || savedFont === "") {
-    updateFontFamily("Fira Code");
-  } else {
-    updateFontFamily(savedFont);
-  }
-
-  fontFamilySelect.addEventListener("change", (e) => {
-    const newFont = (e.target as HTMLSelectElement).value;
-    updateFontFamily(newFont);
-  });
-
-  textSizeSelect.addEventListener("change", (e) => {
-    const newSize = (e.target as HTMLSelectElement).value;
-    updateTextSize(newSize);
-  });
-
-  const fontIcon = document.querySelector(".font-icon") as HTMLElement;
-
-  fontSettings.subscribe(({ fontFamily }) => {
-    if (fontIcon) {
-      fontIcon.setAttribute(
-        "name",
-        fontFamily === "Poppins" ? "ri:font-sans-serif" : "ri:font-serif"
-      );
+  <style>
+    :root {
+      --font-family: poppins;
     }
-  });
-</script>
+
+    .font-settings-container {
+      @apply flex-col items-end justify-center border-solid lg:mt-10 lg:flex lg:w-full lg:border-t-[1px] lg:border-secondary-white lg:pt-4;
+    }
+
+    .font-settings {
+      @apply flex w-full flex-row flex-wrap items-center justify-end gap-4;
+    }
+
+    .font-family-select {
+      font-family: var(--font-family);
+    }
+
+    .setting-group {
+      @apply flex items-center justify-end gap-2;
+    }
+
+    select {
+      @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-2 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
+    }
+
+    label {
+      @apply min-w-24;
+    }
+  </style>
+
+  <script>
+    import {
+      fontSettings,
+      updateFontFamily,
+      updateTextSize,
+      initializeFontSettings,
+    } from "@/store/fontSettings";
+
+    initializeFontSettings();
+
+    const fontFamilySelect = document.getElementById(
+      "font-family"
+    ) as HTMLSelectElement;
+    const textSizeSelect = document.getElementById(
+      "text-size"
+    ) as HTMLSelectElement;
+
+    // Mobile Button
+    const fontToggleButton = document.getElementById(
+      "font-toggle"
+    ) as HTMLButtonElement;
+    const fontSizeToggleButton = document.getElementById(
+      "font-size-toggle"
+    ) as HTMLButtonElement;
+
+    fontSettings.subscribe(({ fontFamily, textSize, lineHeight }) => {
+      document.documentElement.style.setProperty("--font-family", fontFamily);
+      document.documentElement.style.setProperty("--text-size", textSize);
+      document.documentElement.style.setProperty("--line-height", lineHeight);
+
+      fontFamilySelect.value = fontFamily;
+      textSizeSelect.value = textSize;
+    });
+
+    const savedFont = localStorage.getItem("userFontFamily");
+
+    if (savedFont === null || savedFont === undefined || savedFont === "")
+      updateFontFamily("Fira Code");
+
+    fontFamilySelect.addEventListener("change", (e) => {
+      const newFont = (e.target as HTMLSelectElement).value;
+      updateFontFamily(newFont);
+    });
+
+    textSizeSelect.addEventListener("change", (e) => {
+      const newSize = (e.target as HTMLSelectElement).value;
+      updateTextSize(newSize);
+    });
+
+    const fontIcon = document.querySelector(".font-icon") as HTMLElement;
+
+    fontSettings.subscribe(({ fontFamily }) => {
+      if (fontIcon) {
+        fontIcon.setAttribute(
+          "name",
+          fontFamily === "Poppins" ? "ri:font-sans-serif" : "ri:font-serif"
+        );
+      }
+    });
+
+    // Font Toggler For Mobile
+    let fontFamilyIndex = 0;
+    const fonts = ["Fira Code", "Poppins", "Libre Baskerville"];
+    let textSizeIndex = 0;
+    const textSizes = ["14px", "16px", "18px", "20px"];
+
+    fontToggleButton.addEventListener("click", () => {
+      fontFamilyIndex = (fontFamilyIndex + 1) % fonts.length;
+      const newFont = fonts[fontFamilyIndex];
+      updateFontFamily(newFont);
+      console.log("Toggled to:", newFont);
+    });
+
+    fontSizeToggleButton.addEventListener("click", () => {
+      textSizeIndex = (textSizeIndex + 1) % textSizes.length;
+      const newSize = textSizes[textSizeIndex];
+      updateTextSize(newSize);
+      console.log("Toggled to:", newSize);
+    });
+  </script>
+</div>
