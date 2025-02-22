@@ -7,7 +7,7 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
   <div class="font-settings">
     <div class="setting-group">
       <Icon name="ri:text-snippet" class="text-2xl text-secondary-white" />
-      <select id="font-family">
+      <select id="font-family" class="font-family-select">
         <option value="Libre Baskerville">Serif</option>
         <option value="Poppins">Sans</option>
         <option value="Fira Code">Monospace</option>
@@ -27,6 +27,9 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
 </div>
 
 <style>
+  :root {
+    --font-family: poppins;
+  }
   .font-settings-container {
     @apply mt-10 flex flex-col items-end justify-center border-t-[1px] border-solid border-secondary-white pt-4;
   }
@@ -35,12 +38,16 @@ import Icon from "node_modules/astro-icon/components/Icon.astro";
     @apply flex w-full flex-row flex-wrap justify-end gap-4;
   }
 
+  .font-family-select {
+    font-family: var(--font-family);
+  }
+
   .setting-group {
     @apply flex items-center justify-end gap-2;
   }
 
   select {
-    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-1 py-1 text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
+    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-1 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
   }
 
   label {
