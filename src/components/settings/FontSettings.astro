@@ -1,0 +1,81 @@
+---
+
+---
+
+<div class="font-settings">
+  <div class="setting-group">
+    <label for="font-family">Font Family:</label>
+    <select
+      id="font-family"
+      class="bg-background-light dark:bg-background-dark"
+    >
+      <option value="serif">Serif</option>
+      <option value="poppins">Normal</option>
+      <option value="monospace">Monospace</option>
+    </select>
+  </div>
+
+  <div class="setting-group">
+    <label for="text-size">Text Size:</label>
+    <select id="text-size" class="bg-background-light dark:bg-background-dark">
+      <option value="14px">Small</option>
+      <option value="16px">Medium</option>
+      <option value="18px">Large</option>
+      <option value="20px">Extra Large</option>
+    </select>
+  </div>
+</div>
+
+<style>
+  .font-settings {
+    @apply flex w-full flex-row flex-wrap justify-end gap-4 p-4;
+  }
+
+  .setting-group {
+    @apply flex items-center gap-0;
+  }
+
+  select {
+    @apply rounded-md border-[1px] border-solid border-primary px-1 py-2;
+  }
+
+  label {
+    @apply min-w-24;
+  }
+</style>
+
+<script>
+  import {
+    fontSettings,
+    updateFontFamily,
+    updateTextSize,
+    initializeFontSettings,
+  } from "@/store/fontSettings";
+
+  initializeFontSettings();
+
+  const fontFamilySelect = document.getElementById(
+    "font-family"
+  ) as HTMLSelectElement;
+  const textSizeSelect = document.getElementById(
+    "text-size"
+  ) as HTMLSelectElement;
+
+  fontSettings.subscribe(({ fontFamily, textSize }) => {
+    document.documentElement.style.setProperty("--font-family", fontFamily);
+    document.documentElement.style.setProperty("--text-size", textSize);
+
+    fontFamilySelect.value = fontFamily;
+    textSizeSelect.value = textSize;
+  });
+
+  fontFamilySelect.addEventListener("change", (e) => {
+    const newFont = (e.target as HTMLSelectElement).value;
+    updateFontFamily(newFont);
+  });
+
+  textSizeSelect.addEventListener("change", (e) => {
+    const newSize = (e.target as HTMLSelectElement).value;
+    updateTextSize(newSize);
+  });
+</script>

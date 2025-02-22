@@ -16,7 +16,7 @@ import Pill from "@/components/misc/Pill.astro";
 import type { Category } from "@/types/Category";
 import { Icon } from "astro-icon/components";
 import Flex from "@/components/layouts/Flex.astro";
-import PortableTextImage from "@/components/sanity/PortableTextImage.astro";
+import FontSettings from "@/components/settings/FontSettings.astro";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
@@ -64,6 +64,7 @@ const { data: post }: { data: Post } = await loadQuery({
             ))
         }
       </div>
+      <FontSettings />
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <div
         class="fixed top-0 left-0 z-10 w-full p-2 mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 dark:bg-background-dark/50 bg-background-light/50 backdrop-blur-xl shadow-md lg:shadow-none"

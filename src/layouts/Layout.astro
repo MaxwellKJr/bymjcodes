@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
 import ThemeToggler from "@/components/navigation/ThemeToggler";
+import FontSettings from "@/components/settings/FontSettings.astro";
 
 interface Props {
   title: string;
@@ -88,6 +89,8 @@ const {
     --primary-color: #ff0098;
     --primary-white: #ebebeb;
     --primary-black: #111111;
+    --font-family: poppins;
+    --text-size: 14px;
   }
 
   /* This only works on Chromium browsers by the way */
@@ -123,8 +126,13 @@ const {
     scrollbar-color: #ff0098ff transparent;
   }
 
+  html,
+  body {
+    @apply font-poppins;
+  }
+
   p {
-    @apply py-2 text-sm text-black opacity-80 dark:text-white lg:text-base;
+    @apply py-2 text-sm text-black antialiased opacity-80 dark:text-white lg:text-base;
   }
 
   h3 {
@@ -136,6 +144,13 @@ const {
   }
 
   /* Utilities */
+  .portable-text-body {
+    font-family: var(--font-family);
+  }
+
+  .portable-text-body p {
+    font-size: var(--text-size);
+  }
   /* This is for Links/href's that need to styled differently from the rest */
   .portable-text-body a {
     @apply italic text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-80;
@@ -154,7 +169,13 @@ const {
   }
 
   .portable-text-body ol {
-    @apply list-decimal pl-8 text-base text-black opacity-80 dark:text-white;
+    @apply list-decimal pl-8 text-black opacity-70 dark:text-white;
+    font-size: var(--text-size);
+  }
+
+  .portable-text-body ul {
+    @apply list-disc pl-8 text-black opacity-70 dark:text-white;
+    font-size: var(--text-size);
   }
 
   .portable-text-body ol > li {

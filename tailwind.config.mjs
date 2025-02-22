@@ -23,11 +23,10 @@ export default {
         h2: "#ff006675",
       },
       backgroundImage: {
-        "js-blob": "url('/js.png')",
+        "js-blob": "url('/js.png')"
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        mono: ["JetBrains Mono", "menlo"]
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

@@ -27,6 +27,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^11.13.1",
     "lucide-react": "^0.464.0",
+    "nanostores": "^0.11.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sanity": "^3.68.3",
