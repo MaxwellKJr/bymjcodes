@@ -48,8 +48,9 @@ const currentPath: string = Astro.url.pathname;
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH0X4TRRT"
     ></script></head
   >
+  <!-- FIXME: Google Analytics tag not being recognized -->
   <!-- Google tag (gtag.js) -->
-  <script>
+  <!-- <script>
     declare global {
       interface Window {
         dataLayer: any[];
@@ -64,7 +65,7 @@ const currentPath: string = Astro.url.pathname;
     gtag("js", new Date());
 
     gtag("config", "G-9QH0X4TRRT");
-  </script>
+  </script> -->
 
   <body
     class="relative flex flex-col overflow-x-hidden font-poppins lg:flex-row min-w-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark min-h-screen"
