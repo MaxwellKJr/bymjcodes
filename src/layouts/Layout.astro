@@ -261,3 +261,22 @@ const currentPath: string = Astro.url.pathname;
     @apply min-w-24;
   }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH0X4TRRT"></script>
+<script>
+  declare global {
+    interface Window {
+      dataLayer: any[];
+      gtag: (...args: any[]) => void;
+    }
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: any[]) {
+    window.dataLayer.push(args);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9QH0X4TRRT");
+</script>
