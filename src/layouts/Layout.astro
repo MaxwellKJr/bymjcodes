@@ -49,7 +49,7 @@ const currentPath: string = Astro.url.pathname;
     <title>{`${title} | MJ Codes 🚀`}</title>
   </head>
   <body
-    class="relative flex flex-col overflow-x-hidden font-sans lg:flex-row min-w-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark min-h-screen"
+    class="relative flex flex-col overflow-x-hidden font-poppins lg:flex-row min-w-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark min-h-screen"
   >
     <Navbar />
     <a
@@ -190,12 +190,12 @@ const currentPath: string = Astro.url.pathname;
   }
 
   .portable-text-body ol {
-    @apply list-decimal pl-8 text-black antialiased opacity-70 dark:text-white;
+    @apply list-decimal pl-8 text-black antialiased opacity-80 dark:text-white;
     font-size: var(--text-size);
   }
 
   .portable-text-body ul {
-    @apply list-disc pl-8 text-black antialiased opacity-70 dark:text-white;
+    @apply list-disc pl-8 text-black antialiased opacity-80 dark:text-white;
     font-size: var(--text-size);
   }
 

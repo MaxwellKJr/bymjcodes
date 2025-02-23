@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useEffect, useState, useCallback } from 'react'
-import { Settings2, Text, Type } from 'lucide-react'
+import { ALargeSmall, Settings2, Text, Type } from 'lucide-react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { fontSettings, initializeFontSettings, updateFontFamily, updateLineHeight, updateTextSize } from '@/store/fontSettings'
 
 type FontFamily = 'Fira Code' | 'Poppins' | 'Libre Baskerville'
@@ -29,7 +29,7 @@ export default function FontSettingsButtons() {
 
   const updateStyles = useCallback((font: string, size: string, height: string) => {
     if (typeof window === 'undefined') return
-    
+
     requestAnimationFrame(() => {
       document.documentElement.style.setProperty("--font-family", font)
       document.documentElement.style.setProperty("--text-size", size)
@@ -108,7 +108,7 @@ export default function FontSettingsButtons() {
       <div className="font-settings">
         <div className="hidden lg:flex gap-4">
           <div className="setting-group">
-            <Type className="text-2xl text-secondary-white" />
+            <Type className="text-secondary-white" />
             <select
               id="font-family"
               className="font-family-select"
@@ -122,7 +122,7 @@ export default function FontSettingsButtons() {
           </div>
 
           <div className="setting-group">
-            <Text className="text-2xl text-secondary-white" />
+            <ALargeSmall className=" text-secondary-white" />
             <select
               id="text-size"
               value={textSize}
@@ -153,7 +153,7 @@ export default function FontSettingsButtons() {
             title="Toggle font size"
             onClick={fontSizeToggle}
           >
-            <Text className="text-xl text-secondary-white" />
+            <ALargeSmall className="text-xl text-secondary-white" />
           </button>
         </div>
       </div>
