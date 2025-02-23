@@ -16,7 +16,7 @@ import Pill from "@/components/misc/Pill.astro";
 import type { Category } from "@/types/Category";
 import { Icon } from "astro-icon/components";
 import Flex from "@/components/layouts/Flex.astro";
-import FontSettings from "@/components/settings/FontSettings.astro";
+import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
@@ -67,7 +67,7 @@ const { data: post }: { data: Post } = await loadQuery({
         }
       </div>
       <div class="hidden lg:block">
-        <FontSettings />
+        <FontSettingsButtons client:load />
       </div>
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <div
@@ -98,3 +98,5 @@ const { data: post }: { data: Post } = await loadQuery({
     </div>
   </article>
 </Layout>
+
+<style></style>

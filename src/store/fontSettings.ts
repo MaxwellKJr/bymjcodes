@@ -18,20 +18,13 @@ export const updateFontFamily = (newFont: string) => {
 };
 
 export const updateTextSize = (newSize: string) => {
-  // Update line height based on text size
-  const lineHeights = {
-    '14px': '1.25rem',
-    '16px': '1.5rem',
-    '18px': '1.75rem',
-    '20px': '2rem'
-  };
-  
-  const lineHeight = lineHeights[newSize as keyof typeof lineHeights] || '1.5rem';
-  
   fontSettings.setKey('textSize', newSize);
-  fontSettings.setKey('lineHeight', lineHeight);
   localStorage.setItem('userTextSize', newSize);
-  localStorage.setItem('userLineHeight', lineHeight);
+};
+
+export const updateLineHeight = (newHeight: string) => {
+  fontSettings.setKey('lineHeight', newHeight);
+  localStorage.setItem('userLineHeight', newHeight);
 };
 
 export const initializeFontSettings = () => {

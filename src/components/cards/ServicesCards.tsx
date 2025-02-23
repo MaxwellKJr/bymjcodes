@@ -17,7 +17,7 @@ export default function ServicesCards({ type, services }: Props) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {
           services.map((service) => (
-            <div className="p-4 rounded-xl shadow-lg bg-secondary-lighter dark:bg-secondary-dark dark:shadow-primary/30 dark:shadow-md">
+            <div key={service.name} className="p-4 rounded-xl shadow-lg bg-secondary-lighter dark:bg-secondary-dark dark:shadow-primary/30 dark:shadow-md">
               <div className="flex items-center justify-between">
                 <h2 className="text-secondary-white text-2xl font-semibold">    {service.name}
                 </h2>
@@ -32,8 +32,8 @@ export default function ServicesCards({ type, services }: Props) {
               <p className='text-sm'>{service.description}</p>
               {/* Features Included */}
               <ul>
-                {service.features.map((feature) => (
-                  <li className="flex items-center gap-4">
+                {service.features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-4">
                     <span>
                       <CircleCheck className='text-primary' size={20} strokeWidth={2} />
                     </span>
@@ -43,8 +43,8 @@ export default function ServicesCards({ type, services }: Props) {
               </ul>
               {/* Features Not Included */}
               <ul>
-                {service.featuresNotIncluded && service.featuresNotIncluded.map((feature) => (
-                  <li className="flex items-center gap-4">
+                {service.featuresNotIncluded && service.featuresNotIncluded.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-4">
                     <span>
                       <X className='text-[#ff0000]' size={20} strokeWidth={2} />
                     </span>

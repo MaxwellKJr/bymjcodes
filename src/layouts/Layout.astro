@@ -1,9 +1,11 @@
 ---
+export const prerender = true;
+
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
 import ThemeToggler from "@/components/navigation/ThemeToggler";
-import FontSettings from "@/components/settings/FontSettings.astro";
+import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
 
 interface Props {
   title: string;
@@ -20,6 +22,8 @@ const {
 } = Astro.props;
 
 // Old image ("https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png");
+
+const currentPath: string = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -64,8 +68,10 @@ const {
       class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] lg:bottom-auto lg:right-auto z-50"
     >
       <div class="flex flex-col items-center justify-center gap-5">
-        <div class="block lg:hidden z-50">
-          <FontSettings />
+        <div
+          class={`lg:hidden ${currentPath.startsWith("/blog/") ? "block" : "hidden"}`}
+        >
+          <FontSettingsButtons client:load />
         </div>
         <ThemeToggler client:load />
       </div>
@@ -97,8 +103,8 @@ const {
     --primary-white: #ebebeb;
     --primary-black: #111111;
     --font-family: "Fira Code";
-    --text-size: 14px;
-    --line-height: 1.25rem;
+    --text-size: 16px;
+    --line-height: 1.5rem;
   }
 
   /* This only works on Chromium browsers by the way */
@@ -229,5 +235,30 @@ const {
 
   .questions-container .question-card .answer-hidden {
     @apply max-h-0 overflow-hidden p-0 transition-all duration-150 ease-in-out;
+  }
+
+  /* FONT SETTINGS STYLING */
+  .font-settings-container {
+    @apply flex-col items-end justify-center border-solid lg:mt-10 lg:flex lg:w-full lg:border-t-[1px] lg:border-secondary-white lg:pt-4;
+  }
+
+  .font-settings {
+    @apply flex w-full flex-row flex-wrap items-center justify-end gap-4;
+  }
+
+  .font-family-select {
+    font-family: var(--font-family);
+  }
+
+  .setting-group {
+    @apply flex items-center justify-end gap-2;
+  }
+
+  select {
+    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-2 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
+  }
+
+  label {
+    @apply min-w-24;
   }
 </style>
