@@ -82,12 +82,19 @@ const { data: post }: { data: Post } = await loadQuery({
             />
           </a>
 
-          <div class="w-full pr-2">
-            <Heading text={post.title} size="md" color="text-primary" />
-            <Flex direction="row" justify="between" align="center">
-              <FormattedDate unformattedDate={post.publishedAt} />
-              <EstimatedTimeToRead body={post.body} />
-            </Flex>
+          <div class="w-full">
+            <Heading
+              text={post.title}
+              size="md"
+              color="text-primary"
+              className="text-ellipsis text-nowrap w-[85%] lg:w-full overflow-hidden whitespace-nowrap block"
+            />
+            <div class="pr-14 lg:pr-0">
+              <Flex direction="row" justify="between" align="center">
+                <FormattedDate unformattedDate={post.publishedAt} />
+                <EstimatedTimeToRead body={post.body} />
+              </Flex>
+            </div>
           </div>
         </div>
       </div>

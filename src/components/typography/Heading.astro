@@ -3,9 +3,15 @@ interface Props {
   text: string;
   size: "sm" | "md" | "lg" | "xl" | "xxl";
   color?: string;
+  className?: string;
 }
 
-const { text, size = "md", color = "text-black dark:text-white" } = Astro.props;
+const {
+  text,
+  size = "md",
+  color = "text-black dark:text-white",
+  className,
+} = Astro.props;
 
 const sizes = {
   sm: "text-xl py-1 opacity-70",
@@ -21,4 +27,4 @@ const completeClass = `
 `;
 ---
 
-<h1 class={`${completeClass} ${color}`}>{text}</h1>
+<h1 class={`${completeClass} ${color} ${className}`}>{text}</h1>

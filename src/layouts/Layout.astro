@@ -1,6 +1,4 @@
 ---
-export const prerender = true;
-
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
@@ -199,7 +197,8 @@ const currentPath: string = Astro.url.pathname;
     font-size: var(--text-size);
   }
 
-  .portable-text-body ol > li {
+  .portable-text-body ol > li,
+  .portable-text-body ul > li {
     @apply my-2 pl-2;
   }
 

@@ -31,12 +31,21 @@ const occupations = [
   <section class="h-screen
   lg:h-[80vh]" transition:animate="fade">
     <div class="container flex flex-col justify-center h-full">
-      <div class="animate-pulse">
+      <!-- TODO: Fix the half-baked glitch effect -->
+      <div
+        class="hover:animate-glitch hover:cursor-default before:hover:animate-glitch-delayed-1 after:hover:animate-glitch-delayed-2 relative group hover:text-primary"
+        data-text={`The Developing Developer`}
+      >
         <Heading
           text="The Developing Developer"
           size="xl"
           color="text-secondary"
+          className="group-hover:animate-glitch-delayed-2 group-hover:after:animate-glitch-delayed-1 group-hover:text-primary transition-all duration-300"
         />
+      </div>
+
+      <div class="w-1/2 overflow-hidden pb-2">
+        <hr class="border-t-[1px] border-secondary w-full mt-4 animate-line" />
       </div>
       <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
       <div class="flex flex-wrap w-full mx-auto mt-2">
