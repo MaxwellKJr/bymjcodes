@@ -28,6 +28,7 @@ const currentPath: string = Astro.url.pathname;
 <html lang="en" class="dark" transition:name="root" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
+    <title>{`${title} | MJ Codes 🚀`}</title>
     <meta name="description" content={description} />
     <meta name="title" content={`${title} | MJ Codes 🚀`} />
     <meta name="description" content={description} />
@@ -44,10 +45,11 @@ const currentPath: string = Astro.url.pathname;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{`${title} | MJ Codes 🚀`}</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH0X4TRRT"
-    ></script></head
-  >
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9QH0X4TRRT"
+      is:inline></script>
+  </head>
   <!-- FIXME: Google Analytics tag not being recognized -->
   <!-- Google tag (gtag.js) -->
   <!-- <script>
