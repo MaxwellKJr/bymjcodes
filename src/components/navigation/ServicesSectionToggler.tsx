@@ -99,7 +99,7 @@ export default function ServicesToggle() {
 `;
 
   const outlineTab = `
-    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out
+    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-95
 `;
 
   const toggleTab = (index: React.SetStateAction<number>) => setToggle(index);

@@ -337,6 +337,14 @@ const skills: Skill[] = [
 </Layout>
 
 <style>
+  @import "tailwindcss";
+
+  @theme {
+    --color-secondary-dark: #301622;
+  }
+
+  @custom-variant dark (&:where(.dark, .dark *));
+
   /* Skills */
   .skills {
     @apply pb-8 lg:pb-10;
@@ -346,6 +354,6 @@ const skills: Skill[] = [
   }
 
   .skills-grid .card-dark {
-    @apply border-secondary-dark bg-js-blob flex items-center justify-between rounded-md border bg-cover bg-center bg-no-repeat p-2;
+    @apply border-secondary-dark flex items-center justify-between rounded-md border bg-[url('/js.png')] bg-cover bg-center bg-no-repeat p-2;
   }
 </style>
