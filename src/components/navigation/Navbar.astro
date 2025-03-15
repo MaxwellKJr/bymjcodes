@@ -84,13 +84,13 @@ const currentPath = Astro.url.pathname;
           return (
             <li class="w-full h-full" title={link.title}>
               <a
-                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-400 p-4 lg:p-4 capitalize text-[11px] lg:text-xs xl:text-[13px] px-2  m-0 group  ${isActive ? "text-primary font-medium" : ""}`}
+                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark focus:text-primary focus:bg-secondary-light dark:focus:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-400 p-4 lg:p-4 capitalize text-[11px] lg:text-xs xl:text-[13px] px-2  m-0 group  ${isActive ? "text-primary font-medium" : ""}`}
                 href={link.route}
               >
                 <Icon
                   name={link.icon}
                   size={20}
-                  class={`lg:hidden mb-1 group-hover:text-primary duration-400 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
+                  class={`lg:hidden mb-1 group-hover:text-primary group-focus:text-primary duration-400 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
                 />
                 {link.name}
               </a>
