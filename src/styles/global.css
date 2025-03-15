@@ -1,8 +1,8 @@
 /* Import the reusable base styles */
-@import "base.css";
+@import "./base.css";
 
 /* Import typography styles */
-@import "typography.css";
+@import "./typography.css";
 
 /* Import component-specific styles */
-@import "components.css";
+@import "./components.css";

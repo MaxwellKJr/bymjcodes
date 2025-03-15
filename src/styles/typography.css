@@ -23,7 +23,7 @@ h4 {
 }
 
 .portable-text-body p {
-    font-size: var(--font-size-base);
+    font-size: var(--text-size);
     line-height: var(--line-height-base);
 }
 
@@ -45,12 +45,12 @@ h4 {
 
 .portable-text-body ol {
     @apply list-decimal pl-8 text-black antialiased opacity-80 dark:text-white;
-    font-size: var(--font-size-base);
+    font-size: var(--text-size);
 }
 
 .portable-text-body ul {
     @apply list-disc pl-8 text-black antialiased opacity-80 dark:text-white;
-    font-size: var(--font-size-base);
+    font-size: var(--text-size);
 }
 
 .portable-text-body ol>li,
