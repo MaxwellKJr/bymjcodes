@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://bymjcodes.netlify.app/">
-    <img alt="MJ Codes logo" src="https://bymjcodes.netlify.app/icon.png" width="32" />
+  <a href="https://bymjcodes.com/">
+    <img alt="MJ Codes logo" src="https://bymjcodes.com/icon.png" width="32" />
   </a>
 </p>
 <h2 align="center">MJ Codes Presents:</h2>
@@ -22,7 +22,7 @@ This website was built with [Astro](https://astro.build), a static site generato
 
 Well, the previous iterations of this website were built using GatsbyJS, which was a SSG first framework and I loved how fast my website was. When I looked at Astro, I saw that it had SSG-first approach as well which is what I wanted.
 
-Not only was it fast, Gatsby had one of the best plugin ecosystem for a JavaScript I have seen. Even Next.js doesn't come close. Astro has its own "plugin" system, which allows integrations from different frameworks such as React, Vue, Svelte, Solid in my case, I used React components to handle state changes in some parts of this site, such as [Services](https://bymjcodes.netlify.app/services) toggler system.
+Not only was it fast, Gatsby had one of the best plugin ecosystem for a JavaScript I have seen. Even Next.js doesn't come close. Astro has its own "plugin" system, which allows integrations from different frameworks such as React, Vue, Svelte, Solid in my case, I used React components to handle state changes in some parts of this site, such as [Services](https://bymjcodes.com/services) toggler system.
 
 When I first started off as a programmer, I didn't know that I would one day need to have a portfolio to showcase my work. I have made four iterations of the same website (this being the forth) and last two were built with [GatsbyJS](https://www.gatsbyjs.com), a [React](https://react.dev) based framework.
 
