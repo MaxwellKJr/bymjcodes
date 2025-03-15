@@ -19,16 +19,20 @@ export default function ServicesCards({ type, services }: Props) {
           services.map((service) => (
             <div key={service.name} className="p-4 rounded-xl shadow-lg bg-secondary-lighter dark:bg-secondary-dark dark:shadow-primary/30 dark:shadow-md">
               <div className="flex items-center justify-between">
-                <h2 className="text-secondary-white text-2xl font-semibold">    {service.name}
+                <h2 className="text-secondary-white text-2xl font-semibold">
+                  {service.name}
                 </h2>
+
                 {service.isRecommended && (
                   <small className={`bg-secondary text-black dark:text-white px-4 py-[1px] rounded-full mx-1 font-regular text-center`}>Popular</small>
                 )}
               </div>
+
               <div className="flex w-full items-end pt-4  border-b-[0.5px] border-secondary-white pb-4">
                 <span className="text-primary p-0 m-0 opacity-70 inline-block">MWK</span>
                 <h1 className='text-3xl font-bold inline-block'>{service.price}</h1>
               </div>
+
               <p className='text-sm'>{service.description}</p>
               {/* Features Included */}
               <ul>
@@ -41,6 +45,7 @@ export default function ServicesCards({ type, services }: Props) {
                   </li>
                 ))}
               </ul>
+
               {/* Features Not Included */}
               <ul>
                 {service.featuresNotIncluded && service.featuresNotIncluded.map((feature, index) => (
@@ -52,6 +57,7 @@ export default function ServicesCards({ type, services }: Props) {
                   </li>
                 ))}
               </ul>
+
               {service.seeExampleLink && (
                 <a href={service.seeExampleLink} target='_blank' className={activeTab}><span>See Example</span><SquareArrowOutUpRight size={16} /></a>
               )}
