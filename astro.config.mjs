@@ -4,14 +4,13 @@ import icon from 'astro-icon';
 import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import sanity from '@sanity/astro';
-import tailwind from '@astrojs/tailwind';
 
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-   sanity({
+    sanity({
       projectId: 'c526691m',
       dataset: 'production',
       useCdn: false,
@@ -19,7 +18,6 @@ export default defineConfig({
       studioBasePath: "/studio"
     }),
     react(),
-    tailwind(),
     icon(),
   ],
 
