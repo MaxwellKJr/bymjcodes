@@ -19,6 +19,9 @@
   "editor.defaultFormatter": "astro-build.astro-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "sort-imports.on-save": true,
   "headwind.defaultSortOrder": [
     "container",

@@ -1,0 +1,63 @@
+/* typography.css */
+
+/* Base typography styles */
+p {
+    @apply py-2 text-sm text-black opacity-80 lg:text-base dark:text-white;
+}
+
+h3 {
+    @apply mt-6 text-2xl font-bold text-black dark:text-white;
+}
+
+h4 {
+    @apply border-primary mt-4 border-l-4 pl-2 text-xl font-semibold text-black opacity-80 dark:text-white;
+}
+
+/* Utilities */
+#font-toggle {
+    font-family: var(--font-family);
+}
+
+.portable-text-body {
+    font-family: var(--font-family);
+}
+
+.portable-text-body p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+.portable-text-body a {
+    @apply text-primary italic transition-all duration-400 ease-in-out hover:underline hover:opacity-80;
+}
+
+.portable-text-body blockquote {
+    @apply border-primary bg-secondary-light dark:bg-secondary-dark my-2 border-l-4 p-4 font-thin;
+}
+
+.portable-text-body code {
+    @apply my-4 block rounded-lg p-4;
+}
+
+.portable-text-body img {
+    @apply my-4 w-full;
+}
+
+.portable-text-body ol {
+    @apply list-decimal pl-8 text-black antialiased opacity-80 dark:text-white;
+    font-size: var(--font-size-base);
+}
+
+.portable-text-body ul {
+    @apply list-disc pl-8 text-black antialiased opacity-80 dark:text-white;
+    font-size: var(--font-size-base);
+}
+
+.portable-text-body ol>li,
+.portable-text-body ul>li {
+    @apply my-2 pl-2;
+}
+
+.underlined-link {
+    @apply text-primary inline-block transition-all duration-400 ease-in-out hover:underline hover:opacity-80;
+}

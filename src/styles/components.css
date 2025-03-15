@@ -1,0 +1,62 @@
+/* Skills */
+.skills {
+    @apply pb-8 lg:pb-10;
+}
+
+.skills-grid {
+    @apply my-4 grid grid-cols-2 gap-4 md:grid-cols-3;
+}
+
+.skills-grid .card-dark {
+    @apply border-secondary-dark flex items-center justify-between rounded-md border bg-[url('/js.png')] bg-cover bg-center bg-no-repeat p-2;
+}
+
+/* FAQS */
+.questions-container {
+    @apply mt-4 mb-4;
+}
+
+.questions-container .question-card {
+    @apply mt-4 mb-4 border-b py-2;
+}
+
+.questions-container .question-card .question {
+    @apply flex justify-between opacity-80;
+}
+
+.questions-container .question-card .question.question-open {
+    @apply text-primary font-medium;
+}
+
+.questions-container .question-card .answer-shown {
+    @apply mt-2 max-h-48 overflow-hidden py-1 text-base transition-all duration-150 ease-in-out;
+}
+
+.questions-container .question-card .answer-hidden {
+    @apply max-h-0 overflow-hidden p-0 transition-all duration-150 ease-in-out;
+}
+
+/* FONT SETTINGS STYLING */
+.font-settings-container {
+    @apply lg:border-secondary-white flex flex-col items-end justify-center lg:mt-10 lg:w-full lg:border-t lg:pt-4;
+}
+
+.font-settings {
+    @apply flex w-full flex-row flex-wrap items-center justify-end gap-4;
+}
+
+.font-family-select {
+    font-family: var(--font-family);
+}
+
+.setting-group {
+    @apply flex items-center justify-end gap-2;
+}
+
+select {
+    @apply border-secondary-white bg-background-light text-secondary-white dark:bg-background-dark rounded-full border px-2 py-1 text-sm transition-all duration-400 ease-in-out hover:scale-95 hover:cursor-pointer;
+}
+
+label {
+    @apply min-w-24;
+}
