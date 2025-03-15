@@ -63,6 +63,8 @@
       transition-duration: 300ms;
   }
 
+  @custom-variant dark (&:where(.dark, .dark *));
+
   /* Scrollbar styling */
   ::-webkit-scrollbar {
       background: transparent !important;
