@@ -1,4 +1,6 @@
 ---
+import "@/styles/global.css";
+
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
@@ -11,6 +13,7 @@ interface Props {
   description?: string;
   siteUrl?: string;
   image: string;
+  type?: string;
 }
 
 const {
@@ -18,6 +21,7 @@ const {
   description = "Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows.",
   siteUrl = "https://bymjcodes.com",
   image,
+  type = "website",
 } = Astro.props;
 
 console.log(title);
@@ -31,13 +35,13 @@ const currentPath: string = Astro.url.pathname;
 <html lang="en" class="dark" transition:name="root" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
-    <!-- <SEO
+    <SEO
       title={`${title} | MJ Codes 🚀`}
       description={description}
       openGraph={{
         basic: {
           title: `${title} | MJ Codes 🚀`,
-          type: "A type",
+          type: type,
           image: image,
           url: siteUrl,
         },
@@ -62,29 +66,10 @@ const currentPath: string = Astro.url.pathname;
           { name: "twitter:description", content: description },
         ],
       }}
-    /> -->
+    />
   </head>
-  <!-- FIXME: Google Analytics tag not being recognized -->
-  <!-- Google tag (gtag.js) -->
-  <!-- <script>
-    declare global {
-      interface Window {
-        dataLayer: any[];
-        gtag: (...args: any[]) => void;
-      }
-    }
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-9QH0X4TRRT");
-  </script> -->
-
   <body
-    class="relative flex flex-col overflow-x-hidden font-poppins antialiased lg:flex-row min-w-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark min-h-screen"
+    class="relative flex flex-col overflow-x-hidden font-poppins antialiased lg:flex-row min-w-screen min-h-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark"
   >
     <Navbar />
     <a
@@ -183,7 +168,7 @@ const currentPath: string = Astro.url.pathname;
   }
 
   p {
-    @apply py-2 text-sm text-black opacity-80 dark:text-white lg:text-base;
+    @apply py-2 text-sm text-black opacity-80 lg:text-base dark:text-white;
   }
 
   h3 {
@@ -191,7 +176,7 @@ const currentPath: string = Astro.url.pathname;
   }
 
   h4 {
-    @apply mt-4 border-l-4 border-primary pl-2 text-xl font-semibold text-black opacity-80 dark:text-white;
+    @apply border-primary mt-4 border-l-4 pl-2 text-xl font-semibold text-black opacity-80 dark:text-white;
   }
 
   /* Utilities */
@@ -209,11 +194,11 @@ const currentPath: string = Astro.url.pathname;
   }
   /* This is for Links/href's that need to styled differently from the rest */
   .portable-text-body a {
-    @apply italic text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-80;
+    @apply text-primary italic transition-all duration-300 ease-in-out hover:underline hover:opacity-80;
   }
 
   .portable-text-body blockquote {
-    @apply my-2 border-l-4 border-primary bg-secondary-light p-4 font-thin dark:bg-secondary-dark;
+    @apply border-primary bg-secondary-light dark:bg-secondary-dark my-2 border-l-4 p-4 font-thin;
   }
 
   .portable-text-body code {
@@ -245,16 +230,16 @@ const currentPath: string = Astro.url.pathname;
   } */
 
   .underlined-link {
-    @apply inline-block text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-80;
+    @apply text-primary inline-block transition-all duration-300 ease-in-out hover:underline hover:opacity-80;
   }
 
   /* FAQS */
   .questions-container {
-    @apply mb-4 mt-4;
+    @apply mt-4 mb-4;
   }
 
   .questions-container .question-card {
-    @apply mb-4 mt-4 border-b py-2;
+    @apply mt-4 mb-4 border-b py-2;
   }
 
   .questions-container .question-card .question {
@@ -262,7 +247,7 @@ const currentPath: string = Astro.url.pathname;
   }
 
   .questions-container .question-card .question.question-open {
-    @apply font-medium text-primary;
+    @apply text-primary font-medium;
   }
 
   .questions-container .question-card .answer-shown {
@@ -275,7 +260,7 @@ const currentPath: string = Astro.url.pathname;
 
   /* FONT SETTINGS STYLING */
   .font-settings-container {
-    @apply flex-col items-end justify-center border-solid lg:mt-10 lg:flex lg:w-full lg:border-t-[1px] lg:border-secondary-white lg:pt-4;
+    @apply lg:border-secondary-white flex-col items-end justify-center border-solid lg:mt-10 lg:flex lg:w-full lg:border-t-[1px] lg:pt-4;
   }
 
   .font-settings {
@@ -291,7 +276,7 @@ const currentPath: string = Astro.url.pathname;
   }
 
   select {
-    @apply rounded-full border-[1px] border-solid border-secondary-white bg-background-light px-2 py-1 text-sm text-secondary-white transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer dark:bg-background-dark;
+    @apply border-secondary-white bg-background-light text-secondary-white dark:bg-background-dark rounded-full border-[1px] border-solid px-2 py-1 text-sm transition-all duration-300 ease-in-out hover:scale-95 hover:cursor-pointer;
   }
 
   label {

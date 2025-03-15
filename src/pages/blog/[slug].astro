@@ -45,6 +45,7 @@ const { data: post }: { data: Post } = await loadQuery({
   description={post.description}
   siteUrl={`https://bymjcodes.com/blog/${post.slug.current}`}
   image={urlForImage(post.mainImage.asset)}
+  type="article"
 >
   <article class="relative w-full">
     <div
