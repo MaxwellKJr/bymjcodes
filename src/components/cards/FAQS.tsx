@@ -157,25 +157,25 @@ export const FAQS = () => {
     <div>
       <div className="questions-container">
         {questionsAndAnswers.map((question: Question) => (
-            <div className="transition-all duration-300 cursor-pointer question-card" key={question.id}>
+          <div className="transition-all duration-400 cursor-pointer question-card" key={question.id}>
             <h5
               className={
-              isOpen[question.id] ? "question question-open" : "question"
+                isOpen[question.id] ? "question question-open" : "question"
               }
               onClick={() =>
-              setIsOpen((prevOpen) => ({
-                ...prevOpen,
-                [question.id]: !prevOpen[question.id],
-              }))
+                setIsOpen((prevOpen) => ({
+                  ...prevOpen,
+                  [question.id]: !prevOpen[question.id],
+                }))
               }
             >
               {question.question}{" "}
-              <ChevronDown className={`transition-all duration-300 ease-in-out ${isOpen[question.id] ? `rotate-180` : `rotate-0`}`} />
+              <ChevronDown className={`transition-all duration-400 ease-in-out ${isOpen[question.id] ? `rotate-180` : `rotate-0`}`} />
             </h5>
             <p className={isOpen[question.id] ? "answer-shown" : "answer-hidden"}>
               {question.answer}
             </p>
-            </div>
+          </div>
         ))}
       </div>
     </div>

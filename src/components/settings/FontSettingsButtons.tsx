@@ -140,7 +140,7 @@ export default function FontSettingsButtons() {
         <div className="flex flex-col lg:hidden gap-5">
           <button
             id="font-toggle"
-            className="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+            className="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
             title="Toggle font"
             onClick={fontToggle}
           >
@@ -149,7 +149,7 @@ export default function FontSettingsButtons() {
 
           <button
             id="font-size-toggle"
-            className="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-300 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+            className="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
             title="Toggle font size"
             onClick={fontSizeToggle}
           >

@@ -47,9 +47,9 @@ const schoolBackgrounds: SchoolBackground[] = [
   }
 ];
 
-const activeTab = `rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-300 ease-in-out border-primary border-[1px]`;
+const activeTab = `rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-400 ease-in-out border-primary border-[1px]`;
 
-const outlineTab = `rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-300 ease-in-out`;
+const outlineTab = `rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out`;
 
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1);

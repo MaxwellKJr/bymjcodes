@@ -1,4 +1,4 @@
-import {AnimatePresence, motion} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
 import { FAQS } from "@/components/cards/FAQS";
@@ -95,11 +95,11 @@ export default function ServicesToggle() {
   const [toggle, setToggle] = useState(1);
 
   const activeTab = `
-    rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-300 ease-in-out border-primary border-[1px]
+    rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-400 ease-in-out border-primary border-[1px]
 `;
 
   const outlineTab = `
-    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-300 ease-in-out
+    rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out
 `;
 
   const toggleTab = (index: React.SetStateAction<number>) => setToggle(index);
