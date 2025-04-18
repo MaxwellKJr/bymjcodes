@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
-import type { SchoolBackground } from '@/types/SchoolBackground';
-import type { WorkExperience } from '@/types/WorkExperince';
+import type { SchoolBackground } from "@/types/SchoolBackground";
+import type { WorkExperience } from "@/types/WorkExperince";
 
 const workExperiences: WorkExperience[] = [
   {
@@ -26,14 +26,14 @@ const workExperiences: WorkExperience[] = [
     company: "Inscriptions MW",
     location: "Zomba, Malawi | Remote",
     startDate: "Apr 2022",
-    endDate: "Feb 2024",
+    endDate: "Feb 2024"
   },
   {
     title: "Mathematics and Computer Studies Teacher",
     company: "Mkwichi Secondary School",
     location: "Lilongwe, Malawi",
     startDate: "Sept 2023",
-    endDate: "Dec 2023",
+    endDate: "Dec 2023"
   }
 ];
 
@@ -43,13 +43,15 @@ const schoolBackgrounds: SchoolBackground[] = [
     schoolName: "University of Malawi",
     location: "Zomba, Malawi",
     startDate: "Aug 2018",
-    endDate: "Dec 2024",
+    endDate: "Dec 2024"
   }
 ];
 
-const activeTab = `rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-400 ease-in-out border-primary border-[1px]`;
+const activeTab =
+  "rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-400 ease-in-out border-primary border-[1px]";
 
-const outlineTab = `rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-95`;
+const outlineTab =
+  "rounded-full px-3 py-1 border-[1px] dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-95";
 
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1);
@@ -58,9 +60,27 @@ export default function AboutSectionsToggler() {
   return (
     <>
       <ul className="z-10 flex flex-wrap items-center justify-center lg:justify-normal w-full gap-2 lg:gap-4 my-4">
-        <li className={toggle === 1 ? activeTab : outlineTab} onClick={() => toggleTab(1)}>Bio</li>
-        <li className={toggle === 2 ? activeTab : outlineTab} onClick={() => toggleTab(2)}>Work Experience</li>
-        <li className={toggle === 3 ? activeTab : outlineTab} onClick={() => toggleTab(3)}>Education Background</li>
+        <li
+          className={toggle === 1 ? activeTab : outlineTab}
+          onClick={() => toggleTab(1)}
+          onKeyDown={() => toggleTab(1)}
+        >
+          Bio
+        </li>
+        <li
+          className={toggle === 2 ? activeTab : outlineTab}
+          onClick={() => toggleTab(2)}
+          onKeyDown={() => toggleTab(2)}
+        >
+          Work Experience
+        </li>
+        <li
+          className={toggle === 3 ? activeTab : outlineTab}
+          onClick={() => toggleTab(3)}
+          onKeyDown={() => toggleTab(3)}
+        >
+          Education Background
+        </li>
       </ul>
       <AnimatePresence mode="wait">
         <motion.div
@@ -89,52 +109,109 @@ export default function AboutSectionsToggler() {
 const BioSection = () => (
   <div className="flex flex-col text-sm text-black dark:text-secondary-white-lighter text-center lg:text-left">
     <p>
-      My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of professional experience,
-      I specialize in mobile app development using{" "}
-      <a href="https://www.swift.org/" target="_blank" rel="noopener noreferrer" className="underlined-link">Swift</a>{", "}
-      <a href="http://kotlinlang.org" target="_blank" rel="noopener noreferrer" className="underlined-link">Kotlin</a>{", "}
-      and {" "}
-      <a href="http://flutter.dev" target="_blank" rel="noopener noreferrer" className="underlined-link">Flutter</a>.
+      My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of
+      professional experience, I specialize in mobile app development using{" "}
+      <a
+        href="https://www.swift.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underlined-link"
+      >
+        Swift
+      </a>
+      {", "}
+      <a
+        href="http://kotlinlang.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underlined-link"
+      >
+        Kotlin
+      </a>
+      {", "}
+      and{" "}
+      <a
+        href="http://flutter.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underlined-link"
+      >
+        Flutter
+      </a>
+      .
     </p>
 
     <p>
-      My journey in software development began in 2017, driven by a passion for creating my own video games—though that dream died quickly lol. If you want to know the whole story, read my post, "<a href="/blog/hello-world" className="underlined-link">Hello, World</a>".
+      My journey in software development began in 2017, driven by a passion for
+      creating my own video games—though that dream died quickly lol. If you
+      want to know the whole story, read my post, "
+      <a href="/blog/hello-world" className="underlined-link">
+        Hello, World
+      </a>
+      ".
     </p>
 
     <p>
-      Whether it’s developing robust mobile applications or creating dynamic web experiences, I am motivated by the impact that well-crafted technology can have. My approach is guided by three core principles:
+      Whether it’s developing robust mobile applications or creating dynamic web
+      experiences, I am motivated by the impact that well-crafted technology can
+      have. My approach is guided by three core principles:
     </p>
 
     <p>
-      Building Things that Work, A Welcoming User Experience, and Appealing/Attractive Design.
+      Building Things that Work, A Welcoming User Experience, and
+      Appealing/Attractive Design.
     </p>
 
     <p>
-      Apart from coding I also enjoy writing fiction, short stories to be specific & playing “difficult” video games. I mean why not?
+      Apart from coding I also enjoy writing fiction, short stories to be
+      specific & playing “difficult” video games. I mean why not?
     </p>
   </div>
 );
 
-const WorkExperienceCard = ({ title, company, location, startDate, endDate, description }: WorkExperience) => (
+const WorkExperienceCard = ({
+  title,
+  company,
+  location,
+  startDate,
+  endDate,
+  description
+}: WorkExperience) => (
   <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">{title}</h2>
+    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">
+      {title}
+    </h2>
     <div className="px-4 opacity-50">
       <div className="border-t-[0.5px] border-secondary-white pt-2">
         <h2 className="text-md">@ {company}</h2>
-        <small>{startDate} - {endDate}</small> · <small>{location}</small>
+        <small>
+          {startDate} - {endDate}
+        </small>{" "}
+        · <small>{location}</small>
         {description && <p>{description}</p>}
       </div>
     </div>
   </div>
 );
 
-const SchoolBackgroundCard = ({ degree, schoolName, location, startDate, endDate }: SchoolBackground) => (
+const SchoolBackgroundCard = ({
+  degree,
+  schoolName,
+  location,
+  startDate,
+  endDate
+}: SchoolBackground) => (
   <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">{degree}</h2>
+    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">
+      {degree}
+    </h2>
     <div className="px-4 opacity-50">
       <div className="border-t-[0.5px] border-secondary-white pt-2">
         <h2 className="text-md">@ {schoolName}</h2>
-        <small>{startDate} - {endDate}</small> · <small>{location}</small>
+        <small>
+          {startDate} - {endDate}
+        </small>{" "}
+        · <small>{location}</small>
       </div>
     </div>
   </div>
@@ -145,9 +222,13 @@ function AboutChoice(toggle: number) {
     case 1:
       return <BioSection />;
     case 2:
-      return workExperiences.map((exp) => <WorkExperienceCard key={exp.title} {...exp} />);
+      return workExperiences.map((exp) => (
+        <WorkExperienceCard key={exp.title} {...exp} />
+      ));
     case 3:
-      return schoolBackgrounds.map((bg) => <SchoolBackgroundCard key={bg.degree} {...bg} />);
+      return schoolBackgrounds.map((bg) => (
+        <SchoolBackgroundCard key={bg.degree} {...bg} />
+      ));
     default:
       return null;
   }

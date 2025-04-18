@@ -29,11 +29,11 @@ export const blockContentType = defineType({
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
-        { title: "Code Block", value: "code" },
+        { title: "Code Block", value: "code" }
       ],
       lists: [
         { title: "Bullet", value: "bullet" },
-        {title: 'Numbered', value: 'number'},
+        { title: "Numbered", value: "number" }
       ],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
@@ -42,7 +42,7 @@ export const blockContentType = defineType({
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
-          { title: "Code Block", value: "code" },
+          { title: "Code Block", value: "code" }
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -54,12 +54,12 @@ export const blockContentType = defineType({
               {
                 title: "URL",
                 name: "href",
-                type: "url",
-              },
-            ],
-          },
-        ],
-      },
+                type: "url"
+              }
+            ]
+          }
+        ]
+      }
     }),
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
@@ -71,9 +71,9 @@ export const blockContentType = defineType({
         {
           name: "alt",
           type: "string",
-          title: "Alternative Text",
-        },
-      ],
-    }),
-  ],
+          title: "Alternative Text"
+        }
+      ]
+    })
+  ]
 });

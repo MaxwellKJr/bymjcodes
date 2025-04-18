@@ -1,15 +1,15 @@
 ---
 export const prerender = false;
 
+import Card from "@/components/cards/Card.astro";
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
-import type Post from "@/types/Post";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
-import Card from "@/components/cards/Card.astro";
+import type Post from "@/types/Post";
 
 const posts = await loadQuery<Post[]>({
-  query: POSTS_QUERY,
+  query: POSTS_QUERY
 });
 ---
 
@@ -19,14 +19,13 @@ const posts = await loadQuery<Post[]>({
   siteUrl="https://bymjcodes.com/blog"
   image="/mjk.jpg"
 >
-  <section class="lg:min-h-[89vh]
-  w-full" transition:animate="fade">
-    <div class="container flex flex-col justify-center h-full py-24 m-auto">
+  <section class="w-full lg:min-h-[89vh]" transition:animate="fade">
+    <div class="container m-auto flex h-full flex-col justify-center py-24">
       <div class="text-center lg:text-left">
         <Heading text="Read Something" size="lg" />
       </div>
       <ul
-        class="py-4 grid grid-cols-1 gap-10 sm:grid-cols-2 transition-all duration-400 ease-in-out"
+        class="grid grid-cols-1 gap-10 py-4 transition-all duration-400 ease-in-out sm:grid-cols-2"
       >
         {
           posts.data &&

@@ -1,5 +1,5 @@
-import type { Category } from "./Category";
 import type { SanityDocument } from "@sanity/client";
+import type { Category } from "./Category";
 
 export default interface Post extends SanityDocument {
   title: string;

@@ -32,15 +32,17 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sanity": "^3.68.3",
-    "tailwindcss": "^4.1.4",
-    "typescript": "^5.8.3"
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@iconify-json/material-symbols-light": "^1.2.20",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ri": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.32",
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "typescript": "^5.8.3"
   }
 }

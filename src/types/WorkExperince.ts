@@ -3,7 +3,7 @@ export interface WorkExperience {
   company: string;
   location: string;
   startDate: string;
-  endDate: string | 'Present';
+  endDate: string | "Present";
   description?: string;
   responsibilities?: string[];
   technologies?: string[];

@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { FAQS } from "@/components/cards/FAQS";
-import type { Service } from "@/types/Service";
 import ServicesCards from "@/components/cards/ServicesCards";
+import type { Service } from "@/types/Service";
 
 // Web Development Services List
 const WebDevelopmentServicesList: Service[] = [
@@ -15,7 +15,7 @@ const WebDevelopmentServicesList: Service[] = [
       "Single Landing Page",
       "with an option of 2 more separate pages",
       "Suitable for advertising",
-      "Fast delivery of updates post deployment",
+      "Fast delivery of updates post deployment"
     ],
     featuresNotIncluded: ["No database", "No admin privileges", "No discounts"],
     type: "web",
@@ -31,11 +31,11 @@ const WebDevelopmentServicesList: Service[] = [
       "Simple database for content management is available",
       "Admin privileges",
       "Recommended for independent startups, writers, creatives, NGOs",
-      "Discounts are considered",
+      "Discounts are considered"
     ],
     type: "web",
     seeExampleLink: "https://www.sababa-agri-foundation.com/"
-  },
+  }
   // {
   //   name: "Media & eCommerce",
   //   price: "799,999",
@@ -72,9 +72,9 @@ const MobileDevelopmentServicesList: Service[] = [
     features: [
       "Maximum of 15 Screens",
       "Database is available if needed",
-      "Snappy and responsive",
+      "Snappy and responsive"
     ],
-    type: "mobile",
+    type: "mobile"
   },
   {
     name: "Brand App",
@@ -85,10 +85,10 @@ const MobileDevelopmentServicesList: Service[] = [
       "Database is available if needed",
       "Fast delivery of updates post deployment",
       "Recommended for independent startups, writers, creatives, NGOs",
-      "Cross-platform app that runs on both Android and iOS",
+      "Cross-platform app that runs on both Android and iOS"
     ],
-    type: "mobile",
-  },
+    type: "mobile"
+  }
 ];
 
 export default function ServicesToggle() {
@@ -109,18 +109,21 @@ export default function ServicesToggle() {
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}
+          onKeyDown={() => toggleTab(1)}
         >
           Web Development
         </li>
         <li
           className={toggle === 2 ? activeTab : outlineTab}
           onClick={() => toggleTab(2)}
+          onKeyDown={() => toggleTab(2)}
         >
           Mobile App Development
         </li>
         <li
           className={toggle === 3 ? activeTab : outlineTab}
           onClick={() => toggleTab(3)}
+          onKeyDown={() => toggleTab(3)}
         >
           Frequently Asked Questions
         </li>
@@ -134,14 +137,14 @@ export default function ServicesToggle() {
             hidden: {
               scale: 1,
               y: 50,
-              opacity: 0,
+              opacity: 0
             },
             visible: {
               scale: 1,
               y: 0,
               opacity: 1,
               transition: {
-                duration: 0.3,
+                duration: 0.3
               }
             }
           }}
@@ -165,7 +168,9 @@ function ServiceChoice(toggle: number) {
     case 2:
       return (
         <div>
-          <h2 className="text-xl font-bold opacity-75">Mobile App Development</h2>
+          <h2 className="text-xl font-bold opacity-75">
+            Mobile App Development
+          </h2>
           <ServicesCards
             type="mobile"
             services={MobileDevelopmentServicesList}
@@ -175,7 +180,9 @@ function ServiceChoice(toggle: number) {
     case 3:
       return (
         <div>
-          <h2 className="text-xl font-bold opacity-75">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-bold opacity-75">
+            Frequently Asked Questions
+          </h2>
           <FAQS />
         </div>
       );

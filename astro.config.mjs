@@ -1,29 +1,29 @@
+import netlify from "@astrojs/netlify";
+import react from "@astrojs/react";
+import sanity from "@sanity/astro";
+import icon from "astro-icon";
 // @ts-check
-import { defineConfig } from 'astro/config';
-import icon from 'astro-icon';
-import netlify from '@astrojs/netlify';
-import react from '@astrojs/react';
-import sanity from '@sanity/astro';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     sanity({
-      projectId: 'c526691m',
-      dataset: 'production',
+      projectId: "c526691m",
+      dataset: "production",
       useCdn: false,
       apiVersion: "2024-12-10",
       studioBasePath: "/studio"
     }),
     react(),
-    icon(),
+    icon() // https://astro-icon.vercel.app/
   ],
 
   image: {
-    domains: ['cdn.sanity.io'],
-    remotePatterns: [{ protocol: "https" }],
+    domains: ["cdn.sanity.io"],
+    remotePatterns: [{ protocol: "https" }]
   },
 
   // transition: {
@@ -33,10 +33,10 @@ export default defineConfig({
   output: "server",
 
   adapter: netlify({
-    imageCDN: false,
+    imageCDN: false
   }),
 
   vite: {
-    plugins: [tailwindcss()],
-  },
+    plugins: [tailwindcss()]
+  }
 });

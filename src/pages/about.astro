@@ -3,11 +3,11 @@ export const prerender = true;
 
 import { Image } from "astro:assets";
 import Button from "@/components/buttons/Button.astro";
+import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import Flex from "@/components/layouts/Flex.astro";
 import Heading from "@/components/typography/Heading.astro";
-import Layout from "@/layouts/Layout.astro";
 import maxwellImage from "@/images/mjk.jpg";
-import SocialLinks from "@/components/contacts/SocialLinks.astro";
+import Layout from "@/layouts/Layout.astro";
 
 import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
 ---
@@ -19,12 +19,12 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
   image="/mjk.jpg"
   type="profile"
 >
-  <section class="lg:h-[89vh] w-full" transition:animate="fade">
+  <section class="w-full lg:h-[89vh]" transition:animate="fade">
     <div
-      class="container flex flex-col items-center justify-center h-full py-24 mx-auto"
+      class="container mx-auto flex h-full flex-col items-center justify-center py-24"
     >
       <div
-        class="flex flex-col items-center lg:flex-row gap-4 lg:gap-7 xl:gap-10 transition-all ease-in-out duration-400"
+        class="flex flex-col items-center gap-4 transition-all duration-400 ease-in-out lg:flex-row lg:gap-7 xl:gap-10"
       >
         <!-- Image -->
         <Image
@@ -36,7 +36,7 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
           decoding="async"
           loading={"eager"}
           quality="high"
-          class="w-40 h-40 border-2 border-white rounded-full sm:w-48 sm:h-48 2xl:w-62 2xl:h-62 transition-all ease-in-out duration-400"
+          class="h-40 w-40 rounded-full border-2 border-white transition-all duration-400 ease-in-out sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
         />
         <!-- Background -->
         <div class="text-center lg:text-left">
@@ -45,7 +45,7 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
           <Flex
             direction="row"
             gap="2"
-            className="justify-center my-4 lg:justify-start"
+            className="my-4 justify-center lg:justify-start"
           >
             <Button
               text="My Skills"

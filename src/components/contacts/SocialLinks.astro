@@ -18,43 +18,43 @@ const Links: SocialLink[] = [
     name: "GitHub",
     url: "https://github.com/MaxwellKJr",
     icon: "ri:github-fill",
-    title: "GitHub",
+    title: "GitHub"
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/maxwellKJr",
     icon: "ri:linkedin-box-fill",
-    title: "LinkedIn",
+    title: "LinkedIn"
   },
   {
     name: "Gmail",
     url: "mailto:maxwellkjr@gmail.com",
     icon: "ri:mail-line",
-    title: "Gmail",
+    title: "Gmail"
   },
   {
     name: "Facebook",
     url: "https://facebook.com/maxwellkjnr",
     icon: "ri:facebook-circle-fill",
-    title: "Facebook",
+    title: "Facebook"
   },
   {
     name: "Threads",
     url: "https://threads.net/@maxwellkjnr",
     icon: "ri:threads-line",
-    title: "Threads",
+    title: "Threads"
   },
   {
     name: "Instagram",
     url: "https://instagram.com/maxwellkjnr",
     icon: "ri:instagram-line",
-    title: "Instagram",
+    title: "Instagram"
   },
   {
     name: "Twitter",
     url: "https://twitter.com/maxwellKJr",
     icon: "ri:twitter-x-fill",
-    title: "Twitter",
+    title: "Twitter"
   },
   // {
   //   name: "TikTok",
@@ -66,14 +66,14 @@ const Links: SocialLink[] = [
     name: "WhatsApp",
     url: "https://wa.me/265992800255",
     icon: "ri:whatsapp-line",
-    title: "WhatsApp",
-  },
+    title: "WhatsApp"
+  }
 ];
 
 const layouts = {
   flex: "flex justify-center items-center gap-4",
   grid: "lg:grid-cols-2 lg:gap-0 hidden lg:grid mb-4",
-  "cols-3": "grid grid-cols-3 gap-4",
+  "cols-3": "grid grid-cols-3 gap-4"
 };
 
 const { layout } = Astro.props;
@@ -82,9 +82,9 @@ const { layout } = Astro.props;
 <ul class={layouts[layout]}>
   {
     Links.map((link) => (
-      <li class="w-full h-full" title={link.title}>
+      <li class="h-full w-full" title={link.title}>
         <a
-          class="flex flex-col items-center justify-start w-full p-2 text-xs uppercase hover:text-primary text-secondary-white transition-all duration-400 hover:-translate-y-2"
+          class="hover:text-primary text-secondary-white flex w-full flex-col items-center justify-start p-2 text-xs uppercase transition-all duration-400 hover:-translate-y-2"
           href={link.url}
           target="_blank"
           title={link.title}

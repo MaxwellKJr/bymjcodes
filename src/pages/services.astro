@@ -1,10 +1,10 @@
 ---
 export const prerender = true;
 
+import Notice from "@/components/misc/Notice.astro";
 import ServicesSectionToggler from "@/components/navigation/ServicesSectionToggler";
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
-import Notice from "@/components/misc/Notice.astro";
 ---
 
 <Layout
@@ -13,10 +13,8 @@ import Notice from "@/components/misc/Notice.astro";
   siteUrl="https://bymjcodes.com/services"
   image="/mjk.jpg"
 >
-  <section class="lg:min-h-[89vh] w-full mx-auto" transition:animate="fade">
-    <div
-      class="container flex flex-col justify-center w-full h-full py-24 mx-auto"
-    >
+  <section class="mx-auto w-full lg:min-h-[89vh]" transition:animate="fade">
+    <div class="mx-auto flex h-full w-full flex-col justify-center py-24">
       <div class="lg:text-left">
         <Heading text="Services" size="lg" />
       </div>

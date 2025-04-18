@@ -3,7 +3,7 @@ export interface SchoolBackground {
   degree: string;
   location: string;
   startDate: string;
-  endDate: string | 'Present';
+  endDate: string | "Present";
   fieldOfStudy?: string;
   gpa?: number;
   achievements?: string[];

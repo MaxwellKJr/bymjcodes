@@ -7,29 +7,29 @@ export const authorType = defineType({
   fields: [
     defineField({
       name: "name",
-      type: "string",
+      type: "string"
     }),
     defineField({
       name: "slug",
       type: "slug",
       options: {
         source: "name",
-        maxLength: 96,
-      },
+        maxLength: 96
+      }
     }),
     defineField({
       name: "image",
       type: "image",
       options: {
-        hotspot: true,
+        hotspot: true
       },
       fields: [
         {
           name: "alt",
           type: "string",
-          title: "Alternative Text",
-        },
-      ],
+          title: "Alternative Text"
+        }
+      ]
     }),
     defineField({
       name: "bio",
@@ -38,15 +38,15 @@ export const authorType = defineType({
         {
           type: "block",
           styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-        },
-      ],
-    }),
+          lists: []
+        }
+      ]
+    })
   ],
   preview: {
     select: {
       title: "name",
-      media: "image",
-    },
-  },
+      media: "image"
+    }
+  }
 });

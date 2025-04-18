@@ -1,33 +1,33 @@
 ---
 export const prerender = false;
 
-import type { SanityDocument } from "@sanity/client";
-import { loadQuery } from "@/sanity/lib/load-query";
-import Layout from "@/layouts/Layout.astro";
-import Heading from "@/components/typography/Heading.astro";
-import type Post from "@/types/Post";
+import { Image } from "astro:assets";
+import Flex from "@/components/layouts/Flex.astro";
+import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
+import FormattedDate from "@/components/misc/FormattedDate.astro";
+import Pill from "@/components/misc/Pill.astro";
 import PortableText from "@/components/sanity/PortableText.astro";
+import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
+import Heading from "@/components/typography/Heading.astro";
+import Layout from "@/layouts/Layout.astro";
+import { loadQuery } from "@/sanity/lib/load-query";
 import { POST_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/urlForImage";
-import { Image } from "astro:assets";
-import FormattedDate from "@/components/misc/FormattedDate.astro";
-import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
-import Pill from "@/components/misc/Pill.astro";
 import type { Category } from "@/types/Category";
+import type Post from "@/types/Post";
+import type { SanityDocument } from "@sanity/client";
 import { Icon } from "astro-icon/components";
-import Flex from "@/components/layouts/Flex.astro";
-import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
 
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
-    query: `*[_type == "post"]`,
+    query: `*[_type == "post"]`
   });
 
   return posts.map(({ slug }) => {
     return {
       params: {
-        slug: slug.current,
-      },
+        slug: slug.current
+      }
     };
   });
 }
@@ -36,7 +36,7 @@ const { params } = Astro;
 
 const { data: post }: { data: Post } = await loadQuery({
   query: POST_QUERY,
-  params,
+  params
 });
 ---
 
@@ -49,7 +49,7 @@ const { data: post }: { data: Post } = await loadQuery({
 >
   <article class="relative w-full">
     <div
-      class="pt-36 pb-64 lg:pt-28 lg:pb-28 lg:w-[85vw] lg:mx-auto max-w-lg m-auto relative"
+      class="relative m-auto max-w-lg pt-36 pb-64 lg:mx-auto lg:w-[85vw] lg:pt-28 lg:pb-28"
     >
       <Image
         src={urlForImage(post.mainImage.asset)}
@@ -57,9 +57,9 @@ const { data: post }: { data: Post } = await loadQuery({
         width={500}
         height={500}
         loading={"lazy"}
-        class="w-full my-4 shadow-lg"
+        class="my-4 w-full shadow-lg"
       />
-      <div class="flex items-center justify-end gap-2 flex-wrap w-full">
+      <div class="flex w-full flex-wrap items-center justify-end gap-2">
         {
           post.categories &&
             post.categories.map((category: Category) => (
@@ -72,14 +72,14 @@ const { data: post }: { data: Post } = await loadQuery({
       </div>
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <div
-        class="fixed top-0 left-0 z-10 w-full p-2 mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 dark:bg-background-dark/50 bg-background-light/50 backdrop-blur-xl shadow-md lg:shadow-none"
+        class="dark:bg-background-dark/50 bg-background-light/50 fixed top-0 left-0 z-10 mx-auto w-full p-2 shadow-md backdrop-blur-xl lg:left-1/2 lg:w-1/2 lg:-translate-x-1/2 lg:shadow-none"
       >
         <div class="flex items-center gap-4">
           <a href="/blog">
             <Icon
               name={"material-symbols-light:arrow-left-alt-rounded"}
               size={40}
-              class="text-primary dark:hover:text-white hover:text-black transition-all duration-400 hover:translate-x-3"
+              class="text-primary transition-all duration-400 hover:translate-x-3 hover:text-black dark:hover:text-white"
             />
           </a>
 
@@ -88,7 +88,7 @@ const { data: post }: { data: Post } = await loadQuery({
               text={post.title}
               size="md"
               color="text-primary"
-              className="text-ellipsis text-nowrap w-[85%] lg:w-full overflow-hidden whitespace-nowrap block"
+              className="block w-[85%] overflow-hidden text-nowrap text-ellipsis whitespace-nowrap lg:w-full"
             />
             <div class="pr-14 lg:pr-0">
               <Flex direction="row" justify="between" align="center">

@@ -1,26 +1,26 @@
 ---
-export const prerender = true;
+export const prerender = true
 
-import Button from "@/components/buttons/Button.astro";
-import Flex from "@/components/layouts/Flex.astro";
-import Heading from "@/components/typography/Heading.astro";
-import Layout from "@/layouts/Layout.astro";
-import Text from "@/components/typography/Text.astro";
+import Button from '@/components/buttons/Button.astro'
+import Flex from '@/components/layouts/Flex.astro'
+import Heading from '@/components/typography/Heading.astro'
+import Layout from '@/layouts/Layout.astro'
+import Text from '@/components/typography/Text.astro'
 
 const occupations = [
   {
-    name: "Software Developer 💻",
-    url: "https://linkedin.com/in/maxwellkjr",
+    name: 'Software Developer 💻',
+    url: 'https://linkedin.com/in/maxwellkjr',
   },
   {
-    name: "Writer ✍️",
-    url: "https://malawianwriter.vercel.app",
+    name: 'Writer ✍️',
+    url: 'https://malawianwriter.vercel.app',
   },
   {
-    name: "Graphic Designer 🎨",
-    url: "https://instagram.com/maxwellkjnr",
+    name: 'Graphic Designer 🎨',
+    url: 'https://instagram.com/maxwellkjnr',
   },
-];
+]
 ---
 
 <Layout
@@ -29,12 +29,11 @@ const occupations = [
   siteUrl="https://bymjcodes.com"
   image="/mjk.jpg"
 >
-  <section class="h-screen
-  lg:h-[80vh]" transition:animate="fade">
-    <div class="container flex flex-col justify-center h-full">
+  <section class="h-screen lg:h-[80vh]" transition:animate="fade">
+    <div class="container flex h-full flex-col justify-center">
       <!-- TODO: Fix the half-baked glitch effect -->
       <div
-        class="hover:animate-glitch hover:cursor-default before:hover:animate-glitch-delayed-1 after:hover:animate-glitch-delayed-2 relative group hover:text-primary"
+        class="hover:animate-glitch before:hover:animate-glitch-delayed-1 after:hover:animate-glitch-delayed-2 group hover:text-primary relative hover:cursor-default"
         data-text={`The Developing Developer`}
       >
         <Heading
@@ -46,15 +45,15 @@ const occupations = [
       </div>
 
       <div class="w-1/2 overflow-hidden pb-2">
-        <hr class="border-t-[1px] border-secondary w-full mt-4 animate-line" />
+        <hr class="border-secondary animate-line mt-4 w-full border-t-[1px]" />
       </div>
       <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
-      <div class="flex flex-wrap w-full mx-auto mt-2">
+      <div class="mx-auto mt-2 flex w-full flex-wrap">
         {
           occupations.map((occupation) => (
             <a
               href={occupation.url}
-              class="z-10 mr-4 transition-all duration-500 ease-in-out text-secondary-white hover:text-primary"
+              class="text-secondary-white hover:text-primary z-10 mr-4 transition-all duration-500 ease-in-out"
               target="_blank"
             >
               {occupation.name}

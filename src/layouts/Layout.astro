@@ -21,7 +21,7 @@ const {
   description = "Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows.",
   siteUrl = "https://bymjcodes.com",
   image,
-  type = "website",
+  type = "website"
 } = Astro.props;
 
 console.log(title);
@@ -29,6 +29,7 @@ console.log(title);
 // Old image ("https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png");
 
 const currentPath: string = Astro.url.pathname;
+const currentPathArray: string[] = currentPath.split("/");
 ---
 
 <!doctype html>
@@ -44,19 +45,19 @@ const currentPath: string = Astro.url.pathname;
           title: `${title} | MJ Codes 🚀`,
           type: type,
           image: image,
-          url: siteUrl,
+          url: siteUrl
         },
         optional: {
           description: description,
-          siteName: "MJ Codes",
-        },
+          siteName: "MJ Codes"
+        }
       }}
       twitter={{
         creator: "@maxwellkjr",
         title: title,
         description: description,
         image: image,
-        site: siteUrl,
+        site: siteUrl
       }}
       extend={{
         // extending the default link tags
@@ -65,22 +66,22 @@ const currentPath: string = Astro.url.pathname;
         meta: [
           {
             name: "twitter:image",
-            content: image,
+            content: image
           },
           { name: "twitter:title", content: `${title} | MJ Codes 🚀` },
-          { name: "twitter:description", content: description },
-        ],
+          { name: "twitter:description", content: description }
+        ]
       }}
     />
   </head>
 
   <body
-    class="relative flex flex-col overflow-x-hidden antialiased lg:flex-row min-w-screen min-h-screen text-black bg-gradient-to-br from-background-light via-background-light to-secondary-light dark:text-white dark:from-background-dark dark:via-background-dark dark:to-secondary-dark"
+    class="from-background-light via-background-light to-secondary-light dark:from-background-dark dark:via-background-dark dark:to-secondary-dark relative flex min-h-screen min-w-screen flex-col overflow-x-hidden bg-gradient-to-br text-black antialiased lg:flex-row dark:text-white"
   >
     <Navbar />
     <a
       href="/"
-      class="absolute w-10 h-10 transition-all duration-400 lg:hidden top-4 left-4 animate-pulse"
+      class="absolute top-4 left-4 h-10 w-10 animate-pulse transition-all duration-400 lg:hidden"
     >
       <Image
         src="/icon.png"
@@ -91,7 +92,7 @@ const currentPath: string = Astro.url.pathname;
       />
     </a>
     <div
-      class="fixed bottom-[15vh] right-[5%] lg:top-4 lg:left-[12vw] lg:bottom-auto lg:right-auto z-50"
+      class="fixed right-[5%] bottom-[15vh] z-50 lg:top-4 lg:right-auto lg:bottom-auto lg:left-[12vw]"
     >
       <div class="flex flex-col items-center justify-center gap-5">
         <div
@@ -103,7 +104,7 @@ const currentPath: string = Astro.url.pathname;
       </div>
     </div>
     <main
-      class="px-4 lg:m-10 lg:px-[15vw] w-full lg:w-[85vw] lg:mx-auto xl:w-[95vw] max-w-screen-xl mx-auto z-auto"
+      class="z-auto mx-auto w-full max-w-screen-xl px-4 lg:m-10 lg:mx-auto lg:w-[85vw] lg:px-[15vw] xl:w-[95vw]"
     >
       <slot />
     </main>

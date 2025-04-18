@@ -1,9 +1,9 @@
 ---
 export const prerender = true;
 
-import { Icon } from "astro-icon/components";
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 
 interface Skill {
   name: string;
@@ -18,155 +18,155 @@ const skills: Skill[] = [
   {
     name: "TypeScript",
     skill: 1,
-    icon: "simple-icons:typescript",
+    icon: "simple-icons:typescript"
   },
   {
     name: "Swift",
     skill: 1,
-    icon: "simple-icons:swift",
+    icon: "simple-icons:swift"
   },
   {
     name: "Kotlin",
     skill: 1,
-    icon: "simple-icons:kotlin",
+    icon: "simple-icons:kotlin"
   },
   {
     name: "Dart",
     skill: 1,
-    icon: "simple-icons:dart",
+    icon: "simple-icons:dart"
   },
   {
     name: "PHP",
     skill: 1,
-    icon: "simple-icons:php",
+    icon: "simple-icons:php"
   },
 
   // Web Libraries and Frameworks
   {
     name: "Next.js",
     skill: 2,
-    icon: "ri:nextjs-fill",
+    icon: "ri:nextjs-fill"
   },
   { name: "Astro", skill: 2, icon: "simple-icons:astro" },
   {
     name: "Laravel",
     skill: 2,
-    icon: "simple-icons:laravel",
+    icon: "simple-icons:laravel"
   },
 
   {
     name: "Tailwind CSS",
     skill: 2,
-    icon: "simple-icons:tailwindcss",
+    icon: "simple-icons:tailwindcss"
   },
   {
     name: "Bootstrap",
     skill: 2,
-    icon: "simple-icons:bootstrap",
+    icon: "simple-icons:bootstrap"
   },
   {
     name: "Sass",
     skill: 2,
-    icon: "simple-icons:sass",
+    icon: "simple-icons:sass"
   },
 
   // Mobile Development
   {
     name: "Android (Kotlin)",
     skill: 3,
-    icon: "simple-icons:kotlin",
+    icon: "simple-icons:kotlin"
   },
   {
     name: "iOS (Swift)",
     skill: 3,
-    icon: "simple-icons:swift",
+    icon: "simple-icons:swift"
   },
   {
     name: "Flutter",
     skill: 3,
-    icon: "simple-icons:flutter",
+    icon: "simple-icons:flutter"
   },
   {
     name: "React Native",
     skill: 3,
-    icon: "simple-icons:react",
+    icon: "simple-icons:react"
   },
 
   // Querying
   {
     name: "SQL",
     skill: 4,
-    icon: "ri:database-line",
+    icon: "ri:database-line"
   },
   {
     name: "REST APIs",
     skill: 4,
-    icon: "ri:line-chart-line",
+    icon: "ri:line-chart-line"
   },
   {
     name: "GraphQL",
     skill: 4,
-    icon: "simple-icons:graphql",
+    icon: "simple-icons:graphql"
   },
 
   // Data Management and Storage
   {
     name: "Firebase",
     skill: 5,
-    icon: "simple-icons:firebase",
+    icon: "simple-icons:firebase"
   },
   {
     name: "Supabase",
     skill: 5,
-    icon: "simple-icons:supabase",
+    icon: "simple-icons:supabase"
   },
   {
     name: "Sanity",
     skill: 5,
-    icon: "simple-icons:sanity",
+    icon: "simple-icons:sanity"
   },
   {
     name: "Strapi",
     skill: 5,
-    icon: "simple-icons:strapi",
+    icon: "simple-icons:strapi"
   },
   {
     name: "Realm",
     skill: 5,
-    icon: "simple-icons:realm",
+    icon: "simple-icons:realm"
   },
 
   // Other Technologies
   {
     name: "Git",
     skill: 6,
-    icon: "simple-icons:git",
+    icon: "simple-icons:git"
   },
   {
     name: "GitHub",
     skill: 6,
-    icon: "simple-icons:github",
+    icon: "simple-icons:github"
   },
   {
     name: "Figma",
     skill: 6,
-    icon: "simple-icons:figma",
+    icon: "simple-icons:figma"
   },
   {
     name: "Notion",
     skill: 6,
-    icon: "simple-icons:notion",
+    icon: "simple-icons:notion"
   },
   {
     name: "Jira",
     skill: 6,
-    icon: "simple-icons:jira",
+    icon: "simple-icons:jira"
   },
   {
     name: "WordPress",
     skill: 6,
-    icon: "simple-icons:wordpress",
-  },
+    icon: "simple-icons:wordpress"
+  }
 ];
 ---
 
@@ -181,20 +181,20 @@ const skills: Skill[] = [
     <!--!FIXME: Restore blur effect that was broken after tailwind update when updating Astro to v5 -->
     <a
       href="/about"
-      class="fixed top-0 left-0 z-40 w-full px-4 py-4 lg:static lg:p-0 bg-background-light dark:bg-background-dark shadow-md lg:shadow-none"
+      class="bg-background-light dark:bg-background-dark fixed top-0 left-0 z-40 w-full px-4 py-4 shadow-md lg:static lg:p-0 lg:shadow-none"
     >
       <div
-        class="flex items-center gap-2 group hover:text-primary hover:translate-x-3 transition-all duration-400 hover:opacity-80 active:text-primary active:scale-95 active:opacity-80"
+        class="group hover:text-primary active:text-primary flex items-center gap-2 transition-all duration-400 hover:translate-x-3 hover:opacity-80 active:scale-95 active:opacity-80"
       >
         <Icon
           name={"material-symbols-light:arrow-left-alt-rounded"}
           size={40}
-          class="text-primary group-hover:dark:text-white transition-all duration-400"
+          class="text-primary transition-all duration-400 group-hover:dark:text-white"
         />
         <Heading text="My Skills" size="md" />
       </div>
     </a>
-    <div class="py-4 split">
+    <div class="split py-4">
       {/*Programming Languages*/}
       <div class="skills">
         <Heading text="Programming Languages" size="sm" />

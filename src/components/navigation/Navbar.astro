@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
+import { Icon } from "astro-icon/components";
 import Footer from "./Footer.astro";
 interface Link {
   name: string;
@@ -15,47 +15,47 @@ const links: Link[] = [
     name: "Home",
     route: "/",
     title: "Home",
-    icon: "ri:home-6-fill",
+    icon: "ri:home-6-fill"
   },
   {
     name: "About",
     route: "/about",
     title: "Know me",
-    icon: "ri:user-3-fill",
+    icon: "ri:user-3-fill"
   },
   {
     name: "Services",
     route: "/services",
     title: "What I offer",
-    icon: "ri:money-dollar-box-line",
+    icon: "ri:money-dollar-box-line"
   },
   {
     name: "Blog",
     route: "/blog",
     title: "Read something",
-    icon: "ri:newspaper-line",
+    icon: "ri:newspaper-line"
   },
   {
     name: "Projects",
     route: "/projects",
     title: "See my work",
-    icon: "ri:macbook-line",
-  },
+    icon: "ri:macbook-line"
+  }
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
 <nav
-  class="text-black dark:text-white backdrop-blur-xl bg-background-light/50 dark:bg-background-dark/50 lg:bg-background-white dark:lg:bg-background-dark lg:backdrop-blur-none fixed bottom-0 left-0 w-full lg:h-screen lg:w-[12vw] border-t-[1px] lg:border-t-0 lg:border-r-[1px] border-primary lg:min-h-screen z-[1000] flex-1 overflow-hidden"
+  class="bg-background-light/50 dark:bg-background-dark/50 lg:bg-background-white dark:lg:bg-background-dark border-primary fixed bottom-0 left-0 z-[1000] w-full flex-1 overflow-hidden border-t-[1px] text-black backdrop-blur-xl lg:h-screen lg:min-h-screen lg:w-[12vw] lg:border-t-0 lg:border-r-[1px] lg:backdrop-blur-none dark:text-white"
 >
-  <div class="flex flex-col items-center justify-between h-full">
+  <div class="flex h-full flex-col items-center justify-between">
     <!-- Logo -->
     <!-- TODO: Create an interactive area/playground for the logo -->
     <a
       href="/"
       title="Maxwell Kapezi Jr 🚀"
-      class="flex-col items-center justify-center hidden w-full py-4 lg:flex group"
+      class="group hidden w-full flex-col items-center justify-center py-4 lg:flex"
     >
       <Image
         src="/icon.png"
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname;
         width={200}
         height={200}
         loading={"eager"}
-        class="w-10 h-10 transition-all duration-400 animate-pulse hover:animate-bounce group-hover-translate-x-4 group-hover:-translate-y-2"
+        class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />
       <!-- <small
         class="transition-all duration-400 font-odibee text-primary group-hover:opacity-20 group-hover:translate-y-2 group-hover:animate-pulse"
@@ -73,7 +73,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Page Links -->
     <ul
-      class="flex items-center w-full gap-0 mx-auto lg:flex-col justify-evenly"
+      class="mx-auto flex w-full items-center justify-evenly gap-0 lg:flex-col"
     >
       {
         links.map((link) => {
@@ -82,15 +82,15 @@ const currentPath = Astro.url.pathname;
             (link.route !== "/" && currentPath.startsWith(link.route));
 
           return (
-            <li class="w-full h-full" title={link.title}>
+            <li class="h-full w-full" title={link.title}>
               <a
-                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark focus:text-primary focus:bg-secondary-light dark:focus:bg-secondary-dark flex flex-col lg:flex-row justify-center items-center w-full transition-all duration-400 p-4 lg:p-4 capitalize text-[11px] lg:text-xs xl:text-[13px] px-2  m-0 group  ${isActive ? "text-primary font-medium" : ""}`}
+                class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark focus:text-primary focus:bg-secondary-light dark:focus:bg-secondary-dark group m-0 flex w-full flex-col items-center justify-center p-4 px-2 text-[11px] capitalize transition-all duration-400 lg:flex-row lg:p-4 lg:text-xs xl:text-[13px] ${isActive ? "text-primary font-medium" : ""}`}
                 href={link.route}
               >
                 <Icon
                   name={link.icon}
                   size={20}
-                  class={`lg:hidden mb-1 group-hover:text-primary group-focus:text-primary duration-400 ${isActive ? "text-primary" : "dark:text-white text-black"}`}
+                  class={`group-hover:text-primary group-focus:text-primary mb-1 duration-400 lg:hidden ${isActive ? "text-primary" : "text-black dark:text-white"}`}
                 />
                 {link.name}
               </a>
@@ -101,7 +101,7 @@ const currentPath = Astro.url.pathname;
     </ul>
 
     <!-- Social Links -->
-    <div class="w-full mx-auto">
+    <div class="mx-auto w-full">
       <SocialLinks layout="grid" />
       <Footer />
     </div>
