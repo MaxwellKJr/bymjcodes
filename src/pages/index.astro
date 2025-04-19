@@ -1,12 +1,12 @@
 ---
 export const prerender = true;
 
+import { websiteDescription } from "@/exports/strings";
 import Button from "@/components/buttons/Button.astro";
 import Flex from "@/components/layouts/Flex.astro";
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
 import Text from "@/components/typography/Text.astro";
-import { websiteDescription } from "@/exports/strings";
 
 interface Occupation {
   name?: string;
@@ -16,16 +16,16 @@ interface Occupation {
 const occupations: Occupation[] = [
   {
     name: "Software Developer 💻",
-    url: "https://linkedin.com/in/maxwellkjr"
+    url: "https://linkedin.com/in/maxwellkjr",
   },
   {
     name: "Writer ✍️",
-    url: "https://malawianwriter.vercel.app"
+    url: "https://malawianwriter.vercel.app",
   },
   {
     name: "Graphic Designer 🎨",
-    url: "https://instagram.com/maxwellkjnr"
-  }
+    url: "https://instagram.com/maxwellkjnr",
+  },
 ];
 ---
 
