@@ -9,6 +9,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://bymjcodes.com",
+  prefetch: {
+    prefetchAll: true
+  },
   integrations: [
     sanity({
       projectId: "c526691m",
