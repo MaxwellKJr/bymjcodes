@@ -3,106 +3,107 @@
 @import "tailwindcss";
 
 @theme {
-    /* Colors */
-    --color-primary: #ff0098;
-    --color-secondary: #ff006675;
-    --color-secondary-light: #ffdaea;
-    --color-secondary-lighter: #fff4f8;
-    --color-secondary-dark: #301622;
-    --color-secondary-white: #8f8f8f;
-    --color-secondary-white-lighter: #c8c8c8ff;
-    --color-background-light: #fafafaff;
-    --color-background-dark: #121212;
-    --color-card-dark: #000000;
-    --color-card-light: #ffffff;
-    --color-card-border: #000000;
-    --color-white: #ebebeb;
-    --color-black: #121212;
-    --color-h1: #ff0098;
-    --color-h2: #ff006675;
+  /* Colors */
+  --color-primary: #ff0098;
+  --color-secondary: #ff006675;
+  --color-secondary-light: #ffdaea;
+  --color-secondary-lighter: #fff4f8;
+  --color-secondary-dark: #301622;
+  --color-secondary-white: #8f8f8f;
+  --color-secondary-white-lighter: #c8c8c8ff;
+  --color-background-light: #fafafaff;
+  --color-background-dark: #121212;
+  --color-card-dark: #000000;
+  --color-card-light: #ffffff;
+  --color-card-border: #000000;
+  --color-white: #ebebeb;
+  --color-black: #121212;
+  --color-h1: #ff0098;
+  --color-h2: #ff006675;
 
-    /* Fonts */
-    --font-poppins: "Poppins", "sans-serif";
+  /* Fonts */
+  --font-poppins: "Poppins", "sans-serif";
 
-    /* Animations */
-    --animate-line: line 1s ease-in-out forwards;
+  /* Animations */
+  --animate-line: line 1s ease-in-out forwards;
 
-    @keyframes line {
-        0% {
-            transform: translateX(-100%);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+  @keyframes line {
+    0% {
+      transform: translateX(-100%);
     }
 
-    --animate-glitch: glitch 240ms infinite;
+    100% {
+      transform: translateX(0);
+    }
+  }
 
-    @keyframes glitch {
+  --animate-glitch: glitch 240ms infinite;
 
-        0%,
-        100% {
-            transform: translate(0);
-        }
-
-        33% {
-            transform: translateX(-2px);
-        }
-
-        66% {
-            transform: translateY(4px);
-        }
+  @keyframes glitch {
+    0%,
+    100% {
+      transform: translate(0);
     }
 
-    --animate-glitch-delayed-1: glitch 300ms infinite 100ms;
-    --animate-glitch-delayed-2: glitch 300ms infinite 150ms;
+    33% {
+      transform: translateX(-2px);
+    }
+
+    66% {
+      transform: translateY(4px);
+    }
+  }
+
+  --animate-glitch-delayed-1: glitch 300ms infinite 100ms;
+  --animate-glitch-delayed-2: glitch 300ms infinite 150ms;
 }
 
 /* Custom utility using Tailwind v4 syntax */
 @utility transition-duration {
-    transition-duration: 300ms;
+  transition-duration: 300ms;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@custom-variant hover (&:hover);
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-    background: transparent !important;
-    width: 12px !important;
-    transition: all 300ms ease-in-out;
+  background: transparent !important;
+  width: 12px !important;
+  transition: all 300ms ease-in-out;
 }
 
 ::-webkit-scrollbar:hover,
 ::-webkit-scrollbar:focus {
-    width: 13px !important;
-    cursor: pointer;
+  width: 13px !important;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(var(--color-primary) / 0.72) !important;
-    transition: all 300ms ease-in-out;
+  background: hsl(var(--color-primary) / 0.72) !important;
+  transition: all 300ms ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    cursor: pointer;
-    background: hsl(var(--color-primary) / 1) !important;
+  cursor: pointer;
+  background: hsl(var(--color-primary) / 1) !important;
 }
 
 /* Firefox scrollbar */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--color-primary) / 0.72) transparent;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--color-primary) / 0.72) transparent;
 }
 
 *:hover {
-    scrollbar-color: hsl(var(--color-primary) / 1) transparent;
+  scrollbar-color: hsl(var(--color-primary) / 1) transparent;
 }
 
 /* Base styles */
 html,
 body {
-    font-family: "Poppins", sans-serif;
-    scroll-behavior: smooth;
-    @apply overflow-x-hidden;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  @apply overflow-x-hidden;
 }
