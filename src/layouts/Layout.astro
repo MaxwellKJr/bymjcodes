@@ -7,6 +7,7 @@ import Navbar from "@/components/navigation/Navbar.astro";
 import ThemeToggler from "@/components/navigation/ThemeToggler";
 import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
 import { SEO } from "astro-seo";
+import { websiteName, websiteDescription, websiteUrl } from "@/exports/strings";
 
 interface Props {
   title: string;
@@ -18,8 +19,8 @@ interface Props {
 
 const {
   title,
-  description = "Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows.",
-  siteUrl = "https://bymjcodes.com",
+  description = websiteDescription,
+  siteUrl = websiteUrl,
   image,
   type = "website"
 } = Astro.props;
@@ -38,11 +39,11 @@ const currentPathArray: string[] = currentPath.split("/");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <SEO
-      title={`${title} | MJ Codes 🚀`}
+      title={`${title} | ${websiteName}`}
       description={description}
       openGraph={{
         basic: {
-          title: `${title} | MJ Codes 🚀`,
+          title: `${title} | ${websiteName}`,
           type: type,
           image: image,
           url: siteUrl
@@ -68,7 +69,7 @@ const currentPathArray: string[] = currentPath.split("/");
             name: "twitter:image",
             content: image
           },
-          { name: "twitter:title", content: `${title} | MJ Codes 🚀` },
+          { name: "twitter:title", content: `${title} | ${websiteName}` },
           { name: "twitter:description", content: description }
         ]
       }}

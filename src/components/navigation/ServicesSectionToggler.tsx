@@ -105,7 +105,7 @@ export default function ServicesToggle() {
   const toggleTab = (index: React.SetStateAction<number>) => setToggle(index);
   return (
     <>
-      <ul className="z-10 flex flex-wrap items-center w-full gap-2 lg:gap-4 mb-10">
+      <ul className="z-10 mb-10 flex w-full flex-wrap items-center gap-2 lg:gap-4">
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}

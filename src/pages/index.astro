@@ -4,10 +4,16 @@ export const prerender = true;
 import Button from "@/components/buttons/Button.astro";
 import Flex from "@/components/layouts/Flex.astro";
 import Heading from "@/components/typography/Heading.astro";
-import Text from "@/components/typography/Text.astro";
 import Layout from "@/layouts/Layout.astro";
+import Text from "@/components/typography/Text.astro";
+import { websiteDescription } from "@/exports/strings";
 
-const occupations = [
+interface Occupation {
+  name?: string;
+  url?: string;
+}
+
+const occupations: Occupation[] = [
   {
     name: "Software Developer 💻",
     url: "https://linkedin.com/in/maxwellkjr"
@@ -25,7 +31,7 @@ const occupations = [
 
 <Layout
   title="Programming and Tech Related Content"
-  description="Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows."
+  description={websiteDescription}
   siteUrl="https://bymjcodes.com"
   image="/mjk.jpg"
 >
@@ -50,15 +56,16 @@ const occupations = [
       <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
       <div class="mx-auto mt-2 flex w-full flex-wrap">
         {
-          occupations.map((occupation) => (
-            <a
-              href={occupation.url}
-              class="text-secondary-white hover:text-primary z-10 mr-4 transition-all duration-500 ease-in-out"
-              target="_blank"
-            >
-              {occupation.name}
-            </a>
-          ))
+          occupations &&
+            occupations.map((occupation: Occupation) => (
+              <a
+                href={occupation.url}
+                class="text-secondary-white hover:text-primary z-10 mr-4 transition-all duration-500 ease-in-out"
+                target="_blank"
+              >
+                {occupation.name}
+              </a>
+            ))
         }
       </div>
       <div class="mt-4">

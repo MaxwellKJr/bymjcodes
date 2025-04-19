@@ -1,23 +1,28 @@
 ---
+export const prerender = true;
+
 import Button from "@/components/buttons/Button.astro";
 import Heading from "@/components/typography/Heading.astro";
 import Text from "@/components/typography/Text.astro";
 import Layout from "@/layouts/Layout.astro";
+import { websiteDescription } from "@/exports/strings";
 
-export const prerender = true;
+const errorMessage: any = "Page Not Found! 😭";
+const errorDescription =
+  "Sorry, the page you are looking for is not available.";
 ---
 
 <Layout
   title="404 | Page Not Found!"
-  description="Maxwell Kapezi Jr's official website to showcase his software development journey and share the few things he knows."
+  description={websiteDescription}
   siteUrl="https://bymjcodes.com"
   image="/mjk.jpg"
 >
   <section
     class="flex h-screen flex-col items-center justify-center lg:h-[80vh]"
   >
-    <Heading text="Page Not Found! 😭" size="xl" color="text-secondary" />
-    <Text text="Sorry, the page you are looking for is not available." />
+    <Heading text={errorMessage} size="xl" color="text-secondary" />
+    <Text text={errorDescription} />
     <Button text="Go Back Home" variant="primary" className="mt-4" link="/" />
   </section>
 </Layout>
