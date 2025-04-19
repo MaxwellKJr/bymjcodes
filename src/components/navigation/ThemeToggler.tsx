@@ -1,32 +1,22 @@
+// src/components/ThemeToggler.jsx
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const ThemeToggle = () => {
+const ThemeToggler = () => {
   const [theme, setTheme] = useState(() => {
-    // Check if we're in a browser environment
-    if (typeof window !== "undefined") {
-      // Check for saved theme preference or system preference
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        return savedTheme;
-      }
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
+    if (typeof window === "undefined") return "dark"; // Default for SSR
+    const savedTheme = localStorage.getItem("theme");
+    return (
+      savedTheme ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
-        : "light";
-    }
-    // Default to light theme if not in browser
-    return "dark";
+        : "light")
+    );
   });
 
   useEffect(() => {
-    // Apply theme to document
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -37,16 +27,16 @@ const ThemeToggle = () => {
     <button
       type="button"
       onClick={toggleTheme}
-      className="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary hover:cursor-pointer"
+      className="dark:bg-secondary-dark bg-background-light dark:border-secondary-dark dark:shadow-primary rounded-xl border-[1px] border-white p-2 shadow-md transition-all duration-400 hover:scale-90 hover:cursor-pointer active:scale-90 lg:ml-4 dark:shadow-md"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? (
-        <Sun className="w-6 h-6 text-primary" />
+        <Sun className="text-primary h-6 w-6" />
       ) : (
-        <Moon className="w-6 h-6 text-secondary-white" />
+        <Moon className="text-secondary-white h-6 w-6" />
       )}
     </button>
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggler;

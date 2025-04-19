@@ -59,13 +59,13 @@ export default function AboutSectionsToggler() {
 
   return (
     <>
-      <ul className="z-10 flex flex-wrap items-center justify-center lg:justify-normal w-full gap-2 lg:gap-4 my-4">
+      <ul className="z-10 my-4 flex w-full flex-wrap items-center justify-center gap-2 lg:justify-normal lg:gap-4">
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}
           onKeyDown={() => toggleTab(1)}
         >
-          Bio
+          General
         </li>
         <li
           className={toggle === 2 ? activeTab : outlineTab}
@@ -79,7 +79,7 @@ export default function AboutSectionsToggler() {
           onClick={() => toggleTab(3)}
           onKeyDown={() => toggleTab(3)}
         >
-          Education Background
+          Education
         </li>
       </ul>
       <AnimatePresence mode="wait">
@@ -107,7 +107,7 @@ export default function AboutSectionsToggler() {
 
 // Helper Components
 const BioSection = () => (
-  <div className="flex flex-col text-sm text-black dark:text-secondary-white-lighter text-center lg:text-left">
+  <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black lg:text-left">
     <p>
       My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of
       professional experience, I specialize in mobile app development using{" "}
@@ -177,12 +177,12 @@ const WorkExperienceCard = ({
   endDate,
   description
 }: WorkExperience) => (
-  <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">
+  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-lg">
+    <h2 className="border-primary border-l-4 px-4 py-2 text-lg font-medium">
       {title}
     </h2>
     <div className="px-4 opacity-50">
-      <div className="border-t-[0.5px] border-secondary-white pt-2">
+      <div className="border-secondary-white border-t-[0.5px] pt-2">
         <h2 className="text-md">@ {company}</h2>
         <small>
           {startDate} - {endDate}
@@ -201,12 +201,12 @@ const SchoolBackgroundCard = ({
   startDate,
   endDate
 }: SchoolBackground) => (
-  <div className="text-left bg-card-light dark:bg-card-dark mb-6 pb-4 shadow-lg rounded-lg">
-    <h2 className="border-l-4 px-4 py-2 border-primary text-lg font-medium">
+  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-lg">
+    <h2 className="border-primary border-l-4 px-4 py-2 text-lg font-medium">
       {degree}
     </h2>
     <div className="px-4 opacity-50">
-      <div className="border-t-[0.5px] border-secondary-white pt-2">
+      <div className="border-secondary-white border-t-[0.5px] pt-2">
         <h2 className="text-md">@ {schoolName}</h2>
         <small>
           {startDate} - {endDate}

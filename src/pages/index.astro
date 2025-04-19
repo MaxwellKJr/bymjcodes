@@ -16,16 +16,20 @@ interface Occupation {
 const occupations: Occupation[] = [
   {
     name: "Software Developer 💻",
-    url: "https://linkedin.com/in/maxwellkjr",
+    url: "https://linkedin.com/in/maxwellkjr"
   },
   {
     name: "Writer ✍️",
-    url: "https://malawianwriter.vercel.app",
+    url: "https://malawianwriter.vercel.app"
   },
   {
     name: "Graphic Designer 🎨",
-    url: "https://instagram.com/maxwellkjnr",
+    url: "https://instagram.com/maxwellkjnr"
   },
+  {
+    name: "Challenge Me ♛",
+    url: "https://lichess.org/@/PlayerOneMw"
+  }
 ];
 ---
 
@@ -60,7 +64,7 @@ const occupations: Occupation[] = [
             occupations.map((occupation: Occupation) => (
               <a
                 href={occupation.url}
-                class="text-secondary-white hover:text-primary z-10 mr-4 transition-all duration-500 ease-in-out"
+                class="text-secondary-white hover:text-primary last:text-primary z-10 mr-4 py-1 transition-all duration-500 ease-in-out last:animate-pulse last:underline"
                 target="_blank"
               >
                 {occupation.name}
