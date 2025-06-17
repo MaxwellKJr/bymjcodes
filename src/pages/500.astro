@@ -1,0 +1,40 @@
+---
+export const prerender = false;
+
+import Button from "@/components/buttons/Button.astro";
+import Heading from "@/components/typography/Heading.astro";
+import Text from "@/components/typography/Text.astro";
+import Layout from "@/layouts/Layout.astro";
+import { websiteDescription } from "@/exports/strings";
+
+const errorMessage: any = "Internal Server Error! 😭";
+const errorDescription =
+  "Sorry, something went wrong on our end. Please try again later.";
+
+interface Props {
+  error: unknown;
+}
+
+// const { error } = Astro.props;
+---
+
+<Layout
+  title="500 | Internal Server Error!"
+  description={websiteDescription}
+  siteUrl="https://bymjcodes.com"
+  image="/mjk.jpg"
+>
+  <section
+    class="flex h-screen flex-col items-center justify-center lg:h-[80vh]"
+  >
+    <Heading text={errorMessage} size="xl" color="text-primary" />
+    <Text text={errorDescription} />
+    <!-- <Text text={error instanceof Error ? error.message : "Unknown error"} /> -->
+    <Button
+      text="Go Back Home 🏠"
+      variant="primary"
+      className="text-primary hover:text-secondary mt-4 animate-pulse underline transition-all duration-400 hover:scale-95 hover:opacity-50"
+      link="/"
+    />
+  </section>
+</Layout>
