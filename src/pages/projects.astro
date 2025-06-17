@@ -1,7 +1,8 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import Card from "@/components/cards/Card.astro";
+import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
@@ -43,7 +44,9 @@ const projects = await loadQuery<Project[]>({
                 projectUrl={project.projectUrl}
                 githubUrl={project.githubUrl}
                 server:defer
-              />
+              >
+                <LoadingSkeleton slot="fallback" />
+              </Card>
             ))
         }
       </ul>

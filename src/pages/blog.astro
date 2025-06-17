@@ -1,5 +1,5 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import Card from "@/components/cards/Card.astro";
 import Heading from "@/components/typography/Heading.astro";
@@ -7,6 +7,7 @@ import Layout from "@/layouts/Layout.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 import type Post from "@/types/Post";
+import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
 
 const posts = await loadQuery<Post[]>({
   query: POSTS_QUERY
@@ -39,7 +40,9 @@ const posts = await loadQuery<Post[]>({
                 href={`/blog/${post.slug.current}`}
                 body={post.body}
                 server:defer
-              />
+              >
+                <LoadingSkeleton slot="fallback" />
+              </Card>
             ))
         }
       </ul>
