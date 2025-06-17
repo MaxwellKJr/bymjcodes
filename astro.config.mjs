@@ -1,10 +1,9 @@
+// @ts-check
+import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import sanity from "@sanity/astro";
-import icon from "astro-icon";
-// @ts-check
-import { defineConfig } from "astro/config";
-
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -34,7 +33,7 @@ export default defineConfig({
   //   // Disable transitions for specific routes
   //   exclude: ['/blog/[slug]']
   // },
-  output: "server",
+  output: "static",
 
   adapter: netlify({
     imageCDN: false

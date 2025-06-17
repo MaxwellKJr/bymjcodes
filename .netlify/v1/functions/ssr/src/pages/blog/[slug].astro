@@ -1,0 +1,110 @@
+---
+export const prerender = false;
+
+import { Image } from "astro:assets";
+import Flex from "@/components/layouts/Flex.astro";
+import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
+import FormattedDate from "@/components/misc/FormattedDate.astro";
+import Pill from "@/components/misc/Pill.astro";
+import PortableText from "@/components/sanity/PortableText.astro";
+import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
+import Heading from "@/components/typography/Heading.astro";
+import Layout from "@/layouts/Layout.astro";
+import { loadQuery } from "@/sanity/lib/load-query";
+import { POST_QUERY } from "@/sanity/lib/queries";
+import { urlForImage } from "@/sanity/lib/urlForImage";
+import type { Category } from "@/types/Category";
+import type Post from "@/types/Post";
+import type { SanityDocument } from "@sanity/client";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const { data: posts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`
+  });
+
+  return posts.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current
+      }
+    };
+  });
+}
+
+const { params } = Astro;
+
+const { data: post }: { data: Post } = await loadQuery({
+  query: POST_QUERY,
+  params
+});
+---
+
+<Layout
+  title={post.title}
+  description={post.description}
+  siteUrl={`https://bymjcodes.com/blog/${post.slug.current}`}
+  image={urlForImage(post.mainImage.asset)}
+  type="article"
+>
+  <article class="relative w-full">
+    <div
+      class="relative m-auto max-w-lg pt-36 pb-64 lg:mx-auto lg:w-[85vw] lg:pt-28 lg:pb-28"
+    >
+      <Image
+        src={urlForImage(post.mainImage.asset)}
+        alt={post.mainImage.alt}
+        width={500}
+        height={500}
+        loading={"lazy"}
+        class="my-4 w-full shadow-lg"
+      />
+      <div class="flex w-full flex-wrap items-center justify-end gap-2">
+        {
+          post.categories &&
+            post.categories.map((category: Category) => (
+              <Pill text={category.title} variant="tertiary" />
+            ))
+        }
+      </div>
+      <div class="hidden lg:block">
+        <FontSettingsButtons client:load />
+      </div>
+      <!-- TODO: Make this stick on scroll rather than fixed -->
+      <div
+        class="dark:bg-background-dark/50 bg-background-light/50 fixed top-0 left-0 z-10 mx-auto w-full p-2 shadow-md backdrop-blur-xl lg:left-1/2 lg:w-1/2 lg:-translate-x-1/2 lg:shadow-none"
+      >
+        <div class="flex items-center gap-4">
+          <a href="/blog">
+            <Icon
+              name={"material-symbols-light:arrow-left-alt-rounded"}
+              size={40}
+              class="text-primary transition-all duration-400 hover:translate-x-3 hover:text-black dark:hover:text-white"
+            />
+          </a>
+
+          <div class="w-full">
+            <Heading
+              text={post.title}
+              size="md"
+              color="text-primary"
+              className="block w-[85%] overflow-hidden text-nowrap text-ellipsis whitespace-nowrap lg:w-full"
+            />
+            <div class="pr-14 lg:pr-0">
+              <Flex direction="row" justify="between" align="center">
+                <FormattedDate unformattedDate={post.publishedAt} />
+                <EstimatedTimeToRead body={post.body} />
+              </Flex>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="portable-text-body">
+        <PortableText portableText={post.body} />
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style></style>
