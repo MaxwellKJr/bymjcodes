@@ -1,20 +1,38 @@
 ---
 import { loadQuery } from "@/sanity/lib/load-query";
-import { POSTS_QUERY } from "@/sanity/lib/queries";
+import { POSTS_QUERY, PROJECTS_QUERY } from "@/sanity/lib/queries";
 import type Post from "@/types/Post";
 import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
 import Card from "@/components/cards/Card.astro";
+import type Project from "@/types/Project";
 
-const posts = await loadQuery<Post[]>({
-  query: POSTS_QUERY
-});
+let posts;
+let projects;
+
+const { pathname } = Astro.url;
+const isBlog = pathname === "/blog";
+const isProjects = pathname === "/projects";
+
+if (isBlog) {
+  posts = await loadQuery<Post[]>({
+    query: POSTS_QUERY
+  });
+}
+
+if (isProjects) {
+  projects = await loadQuery<Project[]>({
+    query: PROJECTS_QUERY
+  });
+}
 ---
 
 <ul
   class="grid grid-cols-1 gap-10 py-4 transition-all duration-400 ease-in-out sm:grid-cols-2"
 >
   {
-    posts.data &&
+    isBlog &&
+      posts &&
+      posts.data &&
       posts.data.map((post: Post) => (
         <Card
           title={post.title}
@@ -24,8 +42,32 @@ const posts = await loadQuery<Post[]>({
           categories={post.categories}
           href={`/blog/${post.slug.current}`}
           body={post.body}
-        />
+          server:defer
+        >
+          <LoadingSkeleton slot="fallback" />
+        </Card>
+      ))
+  }
+
+  {
+    isProjects &&
+      projects &&
+      projects.data &&
+      projects.data.map((project: Project) => (
+        <Card
+          title={project.title}
+          mainImage={project.mainImage}
+          description={project.description}
+          publishedAt={project.publishedAt}
+          categories={project.categories}
+          isProject
+          href={`/projects/${project.slug.current}`}
+          projectUrl={project.projectUrl}
+          githubUrl={project.githubUrl}
+          server:defer
+        >
+          <LoadingSkeleton slot="fallback" />
+        </Card>
       ))
   }
 </ul>
-<LoadingSkeleton slot="fallback" />

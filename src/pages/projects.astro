@@ -1,19 +1,9 @@
 ---
 export const prerender = false;
 
-import Card from "@/components/cards/Card.astro";
-import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
 import Heading from "@/components/typography/Heading.astro";
+import CardsLayout from "@/layouts/CardsLayout.astro";
 import Layout from "@/layouts/Layout.astro";
-import { loadQuery } from "@/sanity/lib/load-query";
-import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import type Project from "@/types/Project";
-
-import { Suspense } from "react";
-
-const projects = await loadQuery<Project[]>({
-  query: PROJECTS_QUERY
-});
 ---
 
 <Layout
@@ -27,29 +17,8 @@ const projects = await loadQuery<Project[]>({
       <div class="text-center lg:text-left">
         <Heading text="My Work" size="lg" />
       </div>
-      <ul
-        class="grid grid-cols-1 gap-10 py-4 transition-all duration-400 ease-in-out sm:grid-cols-2 lg:gap-6"
-      >
-        {
-          projects.data &&
-            projects.data.map((project: Project) => (
-              <Card
-                title={project.title}
-                mainImage={project.mainImage}
-                description={project.description}
-                publishedAt={project.publishedAt}
-                categories={project.categories}
-                isProject
-                href={`/projects/${project.slug.current}`}
-                projectUrl={project.projectUrl}
-                githubUrl={project.githubUrl}
-                server:defer
-              >
-                <LoadingSkeleton slot="fallback" />
-              </Card>
-            ))
-        }
-      </ul>
+
+      <CardsLayout />
     </div>
   </section>
 </Layout>
