@@ -1,9 +1,18 @@
 ---
 export const prerender = false;
 
+import Card from "@/components/cards/Card.astro";
+import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
 import Heading from "@/components/typography/Heading.astro";
 import CardsLayout from "@/layouts/CardsLayout.astro";
 import Layout from "@/layouts/Layout.astro";
+import type Post from "@/types/Post";
+import { loadQuery } from "@/sanity/lib/load-query";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
+
+const posts = await loadQuery<Post[]>({
+  query: POSTS_QUERY
+});
 ---
 
 <Layout
@@ -18,7 +27,25 @@ import Layout from "@/layouts/Layout.astro";
         <Heading text="Read Something" size="lg" />
       </div>
 
-      <CardsLayout />
+      <CardsLayout>
+        {
+          posts.data &&
+            posts.data.map((post: Post) => (
+              <Card
+                title={post.title}
+                mainImage={post.mainImage}
+                description={post.description}
+                publishedAt={post.publishedAt}
+                categories={post.categories}
+                href={`/blog/${post.slug.current}`}
+                body={post.body}
+                server:defer
+              >
+                <LoadingSkeleton slot="fallback" />
+              </Card>
+            ))
+        }
+      </CardsLayout>
     </div>
   </section>
 </Layout>

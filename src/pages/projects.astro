@@ -2,8 +2,17 @@
 export const prerender = false;
 
 import Heading from "@/components/typography/Heading.astro";
-import CardsLayout from "@/layouts/CardsLayout.astro";
 import Layout from "@/layouts/Layout.astro";
+import CardsLayout from "@/layouts/CardsLayout.astro";
+import type Project from "@/types/Project";
+import { loadQuery } from "@/sanity/lib/load-query";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
+import Card from "@/components/cards/Card.astro";
+
+const projects = await loadQuery<Project[]>({
+  query: PROJECTS_QUERY
+});
 ---
 
 <Layout
@@ -17,8 +26,27 @@ import Layout from "@/layouts/Layout.astro";
       <div class="text-center lg:text-left">
         <Heading text="My Work" size="lg" />
       </div>
-
-      <CardsLayout />
+      <CardsLayout>
+        {
+          projects.data &&
+            projects.data.map((project: Project) => (
+              <Card
+                title={project.title}
+                mainImage={project.mainImage}
+                description={project.description}
+                publishedAt={project.publishedAt}
+                categories={project.categories}
+                isProject
+                href={`/projects/${project.slug.current}`}
+                projectUrl={project.projectUrl}
+                githubUrl={project.githubUrl}
+                server:defer
+              >
+                <LoadingSkeleton slot="fallback" />
+              </Card>
+            ))
+        }
+      </CardsLayout>
     </div>
   </section>
 </Layout>
