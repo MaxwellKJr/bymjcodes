@@ -1,5 +1,5 @@
 ---
-export const prerender = true;
+export const prerender = false;
 
 import Heading from "@/components/typography/Heading.astro";
 import BlogCards from "@/layouts/BlogCards.astro";
@@ -17,6 +17,7 @@ import Layout from "@/layouts/Layout.astro";
       <div class="text-center lg:text-left">
         <Heading text="Read Something" size="lg" />
       </div>
+
       <BlogCards />
     </div>
   </section>
