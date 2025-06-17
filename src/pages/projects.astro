@@ -32,20 +32,18 @@ const projects = await loadQuery<Project[]>({
         {
           projects.data &&
             projects.data.map((project: Project) => (
-              <Suspense fallback={"Loading Projects..."}>
-                <Card
-                  title={project.title}
-                  mainImage={project.mainImage}
-                  description={project.description}
-                  publishedAt={project.publishedAt}
-                  categories={project.categories}
-                  isProject
-                  href={`/projects/${project.slug.current}`}
-                  projectUrl={project.projectUrl}
-                  githubUrl={project.githubUrl}
-                  server:defer
-                />
-              </Suspense>
+              <Card
+                title={project.title}
+                mainImage={project.mainImage}
+                description={project.description}
+                publishedAt={project.publishedAt}
+                categories={project.categories}
+                isProject
+                href={`/projects/${project.slug.current}`}
+                projectUrl={project.projectUrl}
+                githubUrl={project.githubUrl}
+                server:defer
+              />
             ))
         }
       </ul>

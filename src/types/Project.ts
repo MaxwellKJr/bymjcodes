@@ -1,5 +1,5 @@
-import type { SanityDocument } from "@sanity/client";
 import type { Category } from "./Category";
+import type { SanityDocument } from "@sanity/client";
 
 export default interface Project extends SanityDocument {
   title: string;
@@ -21,7 +21,6 @@ export default interface Project extends SanityDocument {
   projectUrl: string;
   githubUrl?: string | null;
   categories: Category[];
-  tags?: string[];
   publishedAt: string;
   body: object[];
 }

@@ -74,7 +74,6 @@ export const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)] | orde
     title,
     slug
   },
-  "tags": tags[],
   mainImage {
     asset->{
       _id,

@@ -54,11 +54,6 @@ export const projectType = defineType({
       of: [{ type: "reference", to: { type: "category" } }]
     }),
     defineField({
-      name: "tags",
-      type: "array",
-      of: [{ type: "string" }]
-    }),
-    defineField({
       name: "publishedAt",
       type: "datetime"
     }),
