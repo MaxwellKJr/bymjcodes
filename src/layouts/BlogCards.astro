@@ -1,0 +1,35 @@
+---
+export const prerender = false;
+
+import { loadQuery } from "@/sanity/lib/load-query";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
+import type Post from "@/types/Post";
+import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
+import Card from "@/components/cards/Card.astro";
+
+const posts = await loadQuery<Post[]>({
+  query: POSTS_QUERY
+});
+---
+
+<ul
+  class="grid grid-cols-1 gap-10 py-4 transition-all duration-400 ease-in-out sm:grid-cols-2"
+>
+  {
+    posts.data &&
+      posts.data.map((post: Post) => (
+        <Card
+          title={post.title}
+          mainImage={post.mainImage}
+          description={post.description}
+          publishedAt={post.publishedAt}
+          categories={post.categories}
+          href={`/blog/${post.slug.current}`}
+          body={post.body}
+          server:defer
+        >
+          <LoadingSkeleton slot="fallback" />
+        </Card>
+      ))
+  }
+</ul>
