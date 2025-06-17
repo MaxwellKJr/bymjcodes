@@ -96,4 +96,4 @@ const PROJECTS_QUERY = groq`*[_type == "project" && defined(slug)] | order(publi
   }
 }`;
 
-export { POST_QUERY as P, POSTS_QUERY as a, PROJECTS_QUERY as b, loadQuery as l };
+export { POST_QUERY as P, PROJECTS_QUERY as a, POSTS_QUERY as b, loadQuery as l };

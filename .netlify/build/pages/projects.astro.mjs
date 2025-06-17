@@ -5,7 +5,7 @@ import $$Card from '../chunks/Card_DhEx1tAe.mjs';
 import { $ as $$LoadingSkeleton } from '../chunks/LoadingSkeleton_mYrfM3ay.mjs';
 import { $ as $$Heading } from '../chunks/Heading_C7YNBBUg.mjs';
 import { $ as $$Layout } from '../chunks/Layout_D_eMMPrV.mjs';
-import { l as loadQuery, b as PROJECTS_QUERY } from '../chunks/queries_D-Vdgm4F.mjs';
+import { l as loadQuery, a as PROJECTS_QUERY } from '../chunks/queries_B0Anz8mF.mjs';
 /* empty css                                */
 export { renderers } from '../renderers.mjs';
 

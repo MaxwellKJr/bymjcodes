@@ -1,6 +1,6 @@
 ---
 import Heading from "@/components/typography/Heading.astro";
-import BlogCards from "@/layouts/BlogCards.astro";
+import CardsLayout from "@/layouts/CardsLayout.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -16,7 +16,7 @@ import Layout from "@/layouts/Layout.astro";
         <Heading text="Read Something" size="lg" />
       </div>
 
-      <BlogCards server:defer />
+      <CardsLayout server:defer />
     </div>
   </section>
 </Layout>

@@ -10,7 +10,7 @@ import { LIST_NEST_MODE_HTML, isPortableTextToolkitList, isPortableTextListItemB
 import 'clsx';
 import { $ as $$Layout, F as FontSettingsButtons } from '../../chunks/Layout_D_eMMPrV.mjs';
 import { a as $$Icon, $ as $$Heading } from '../../chunks/Heading_C7YNBBUg.mjs';
-import { l as loadQuery, P as POST_QUERY } from '../../chunks/queries_D-Vdgm4F.mjs';
+import { l as loadQuery, P as POST_QUERY } from '../../chunks/queries_B0Anz8mF.mjs';
 export { renderers } from '../../renderers.mjs';
 
 function isComponent(it) {

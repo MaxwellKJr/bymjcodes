@@ -1,6 +1,4 @@
 ---
-export const prerender = false;
-
 import { loadQuery } from "@/sanity/lib/load-query";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 import type Post from "@/types/Post";
@@ -26,10 +24,8 @@ const posts = await loadQuery<Post[]>({
           categories={post.categories}
           href={`/blog/${post.slug.current}`}
           body={post.body}
-          server:defer
-        >
-          <LoadingSkeleton slot="fallback" />
-        </Card>
+        />
       ))
   }
 </ul>
+<LoadingSkeleton slot="fallback" />
