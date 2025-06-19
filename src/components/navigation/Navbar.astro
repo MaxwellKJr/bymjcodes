@@ -2,7 +2,8 @@
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
 import Footer from "./Footer.astro";
-import { Image } from "astro:assets";
+import { Image } from "@unpic/astro";
+const mjcodesLogo = "@/images/icon.png";
 
 interface Link {
   name: string;
@@ -43,7 +44,6 @@ const links: Link[] = [
     icon: "ri:macbook-line"
   }
 ];
-const mjcodesLogo = "/icon.png";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -59,10 +59,12 @@ const currentPath = Astro.url.pathname;
       class="group dark:bg-secondary-dark bg-se-light hidden w-full flex-col items-center justify-center py-4 lg:flex"
     >
       <Image
-        src={mjcodesLogo}
+        src="./icon.png"
         alt="MJ Codes logo"
         width={40}
         height={40}
+        layout="fixed"
+        placeholder="blurhash"
         loading="eager"
         class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />
