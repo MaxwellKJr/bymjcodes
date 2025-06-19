@@ -30,7 +30,7 @@ console.log(title);
 // Old image ("https://i.ibb.co/QnrcfDX/Screenshot-from-2024-01-04-10-22-56.png");
 
 const currentPath: string = Astro.url.pathname;
-const currentPathArray: string[] = currentPath.split("/");
+// const currentPathArray: string[] = currentPath.split("/");
 ---
 
 <!doctype html>
@@ -85,12 +85,12 @@ const currentPathArray: string[] = currentPath.split("/");
       href="/"
       class="absolute top-4 left-4 h-10 w-10 animate-pulse transition-all duration-400 lg:hidden"
     >
-      <Image
+      <img
         src="/icon.png"
         alt="MJ Codes logo"
-        width={200}
-        height={200}
-        loading={"lazy"}
+        width="40"
+        height="40"
+        loading="lazy"
       />
     </a>
     <div

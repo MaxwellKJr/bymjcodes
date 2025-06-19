@@ -1,5 +1,6 @@
 "use client";
 
+import { ALargeSmall, Type } from "lucide-react";
 import {
   fontSettings,
   initializeFontSettings,
@@ -7,7 +8,6 @@ import {
   updateLineHeight,
   updateTextSize
 } from "@/store/fontSettings";
-import { ALargeSmall, Settings2, Text, Type } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 type FontFamily = "Fira Code" | "Poppins" | "Libre Baskerville";

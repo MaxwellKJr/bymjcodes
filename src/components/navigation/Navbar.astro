@@ -43,7 +43,7 @@ const links: Link[] = [
     icon: "ri:macbook-line"
   }
 ];
-
+const mjcodesLogo = "/icon.png";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -56,13 +56,14 @@ const currentPath = Astro.url.pathname;
     <a
       href="/"
       title="Maxwell Kapezi Jr 🚀"
-      class="group bg-secondary-dark hidden w-full flex-col items-center justify-center py-4 lg:flex"
+      class="group dark:bg-secondary-dark bg-se-light hidden w-full flex-col items-center justify-center py-4 lg:flex"
     >
       <Image
-        src="/icon.png"
+        src={mjcodesLogo}
         alt="MJ Codes logo"
         width={40}
         height={40}
+        loading="eager"
         class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />
       <!-- <small
