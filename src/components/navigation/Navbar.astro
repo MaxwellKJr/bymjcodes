@@ -2,7 +2,7 @@
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
 import Footer from "./Footer.astro";
-import { Image } from "@unpic/astro";
+import { Image } from "astro:assets";
 
 interface Link {
   name: string;
@@ -56,13 +56,14 @@ const currentPath = Astro.url.pathname;
     <a
       href="/"
       title="Maxwell Kapezi Jr 🚀"
-      class="group hidden w-full flex-col items-center justify-center py-4 lg:flex"
+      class="group bg-secondary-dark hidden w-full flex-col items-center justify-center py-4 lg:flex"
     >
       <Image
         src="/icon.png"
         alt="MJ Codes logo"
-        layout="fixed"
-        loading={"eager"}
+        width={40}
+        height={40}
+        inferSize
         class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />
       <!-- <small

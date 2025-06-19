@@ -24,13 +24,13 @@ export default defineConfig({
     react(),
     icon() // https://astro-icon.vercel.app/
   ],
-  experimental: {
-    responsiveImages: true
-  },
+  // experimental: {
+  //   responsiveImages: true
+  // },
   image: {
     domains: ["cdn.sanity.io"],
     remotePatterns: [{ protocol: "https" }],
-    experimentalLayout: "constrained",
+    // experimentalLayout: "constrained",
     service: imageService({
       placeholder: "dominantColor",
       layout: "constrained"
