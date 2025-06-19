@@ -1,7 +1,6 @@
 ---
 import "@/styles/global.css";
 
-import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
 import ThemeToggler from "@/components/navigation/ThemeToggler";
@@ -85,12 +84,12 @@ const currentPath: string = Astro.url.pathname;
       href="/"
       class="absolute top-4 left-4 h-10 w-10 animate-pulse transition-all duration-400 lg:hidden"
     >
-      <Image
+      <img
         src="/icon.png"
         alt="MJ Codes logo"
         width="40"
         height="40"
-        loading="lazy"
+        loading="eager"
       />
     </a>
     <div

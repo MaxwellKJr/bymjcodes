@@ -28,8 +28,8 @@ export default defineConfig({
     domains: ["cdn.sanity.io"],
     remotePatterns: [{ protocol: "https" }],
     service: imageService({
-      placeholder: "dominantColor",
-      layout: "constrained"
+      placeholder: "blurhash",
+      layout: "fixed"
     })
   },
 
