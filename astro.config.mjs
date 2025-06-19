@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
+import { imageService } from "@unpic/astro/service";
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import sanity from "@sanity/astro";
@@ -23,10 +24,17 @@ export default defineConfig({
     react(),
     icon() // https://astro-icon.vercel.app/
   ],
-
+  experimental: {
+    responsiveImages: true
+  },
   image: {
     domains: ["cdn.sanity.io"],
-    remotePatterns: [{ protocol: "https" }]
+    remotePatterns: [{ protocol: "https" }],
+    experimentalLayout: "constrained",
+    service: imageService({
+      placeholder: "dominantColor",
+      layout: "constrained"
+    })
   },
 
   // transition: {

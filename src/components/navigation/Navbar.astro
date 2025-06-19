@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
 import Footer from "./Footer.astro";
+import { Image } from "@unpic/astro";
 
 interface Link {
   name: string;
@@ -61,8 +61,7 @@ const currentPath = Astro.url.pathname;
       <Image
         src="/icon.png"
         alt="MJ Codes logo"
-        width={200}
-        height={200}
+        layout="fixed"
         loading={"eager"}
         class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />

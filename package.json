@@ -21,6 +21,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@unpic/astro": "^1.0.0",
     "astro": "^5.9.3",
     "astro-icon": "^1.1.4",
     "astro-portabletext": "^0.11.1",

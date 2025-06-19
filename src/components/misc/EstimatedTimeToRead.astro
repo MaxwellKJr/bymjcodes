@@ -30,11 +30,13 @@ const estimateReadingTime = (text: string): string => {
 };
 
 // Props passed to the component
-const { body } = Astro.props;
+const { body, className = "" } = Astro.props;
 
 // Extract plain text and calculate reading time
 const plainText = extractPlainText(body);
 const readingTime = estimateReadingTime(plainText);
 ---
 
-<small class="text-secondary-white my-1 text-sm">{readingTime}</small>
+<small class={`${className} text-secondary-white my-1 text-sm`}
+  >{readingTime}</small
+>

@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 
-import { Image } from "astro:assets";
+import { Image } from "@unpic/astro";
 import Flex from "@/components/layouts/Flex.astro";
 import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
 import FormattedDate from "@/components/misc/FormattedDate.astro";
@@ -47,6 +47,8 @@ const { data: post }: { data: Post } = await loadQuery({
   image={urlForImage(post.mainImage.asset)}
   type="article"
 >
+  <!-- !BUG - Apparently adding transition:animate="fade" to the article element is causing blur effect and other styling to not work -->
+
   <article class="relative w-full">
     <div
       class="relative m-auto max-w-lg pt-36 pb-64 lg:mx-auto lg:w-[85vw] lg:pt-28 lg:pb-28"
@@ -54,10 +56,10 @@ const { data: post }: { data: Post } = await loadQuery({
       <Image
         src={urlForImage(post.mainImage.asset)}
         alt={post.mainImage.alt}
-        width={500}
-        height={500}
-        loading={"lazy"}
-        class="my-4 w-full shadow-lg transition-all duration-400"
+        layout="fixed"
+        placeholder="blurhash"
+        loading={"eager"}
+        class="my-4 w-full rounded-xl shadow-lg shadow-black/50 transition-all duration-400"
       />
       <div
         class="flex w-full flex-wrap items-center justify-end gap-2 transition-all duration-400"
@@ -74,7 +76,7 @@ const { data: post }: { data: Post } = await loadQuery({
       </div>
       <!-- TODO: Make this stick on scroll rather than fixed -->
       <div
-        class="dark:bg-background-dark/50 bg-background-light/50 fixed top-0 left-0 z-10 mx-auto w-full p-2 shadow-md backdrop-blur-xl transition-all duration-400 lg:left-1/2 lg:w-1/2 lg:-translate-x-1/2 lg:shadow-none"
+        class="dark:bg-background-dark/50 bg-background-light/50 fixed top-0 left-0 z-10 mx-auto w-full rounded-b-xl p-2 shadow-sm backdrop-blur-xl transition-all duration-400 lg:left-1/2 lg:w-1/2 lg:-translate-x-1/2 lg:shadow-none"
       >
         <div class="flex items-center gap-4">
           <a href="/blog">
@@ -95,7 +97,7 @@ const { data: post }: { data: Post } = await loadQuery({
             <div class="pr-14 lg:pr-0">
               <Flex direction="row" justify="between" align="center">
                 <FormattedDate unformattedDate={post.publishedAt} />
-                <EstimatedTimeToRead body={post.body} />
+                <EstimatedTimeToRead body={post.body} className="pr-2" />
               </Flex>
             </div>
           </div>

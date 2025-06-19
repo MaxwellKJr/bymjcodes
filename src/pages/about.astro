@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "@unpic/astro";
 import Button from "@/components/buttons/Button.astro";
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import Flex from "@/components/layouts/Flex.astro";
@@ -28,15 +28,16 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
           src={maxwellImage}
           title="Maxwell Kapezi Jr. 🚀"
           alt={"Maxwell Kapezi Jr. 🚀"}
-          width={500}
-          height={500}
+          width={250}
+          height={250}
+          layout="fixed"
+          placeholder="blurhash"
           decoding="async"
           loading={"eager"}
-          quality="high"
-          class="h-40 w-40 rounded-full border-2 border-white transition-all duration-400 ease-in-out sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
+          class="flex-1 rounded-full border-2 border-white transition-all duration-400 ease-in-out sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
         />
         <!-- Background -->
-        <div class="text-center lg:text-left">
+        <div class="flex-1/2 text-center lg:text-left">
           <Heading text="About Me" size="lg" />
           <AboutSectionsToggler client:load />
           <Flex

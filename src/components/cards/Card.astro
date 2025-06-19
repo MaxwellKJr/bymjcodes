@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 
-import { Image } from "astro:assets";
+import { Image } from "@unpic/astro";
 import Button from "@/components/buttons/Button.astro";
 import Flex from "@/components/layouts/Flex.astro";
 import EstimatedTimeToRead from "@/components/misc/EstimatedTimeToRead.astro";
@@ -44,6 +44,8 @@ const {
   githubUrl,
   body
 } = Astro.props;
+
+console.log(mainImage);
 ---
 
 <li
@@ -59,12 +61,11 @@ const {
         ? urlForProjectImage(mainImage.asset)
         : urlForPostImage(mainImage.asset)}
       alt={mainImage.alt}
-      width={500}
-      height={250}
+      layout="fixed"
+      placeholder="blurhash"
       loading={"eager"}
       class={isProject ? "w-full" : "rounded-t-xl w-full shadow-xl"}
       title={title}
-      aria-placeholder="blur"
       transition:persist
     />
     <div class="w-full p-4">
