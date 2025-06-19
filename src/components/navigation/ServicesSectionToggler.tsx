@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 
 import { FAQS } from "@/components/cards/FAQS";
-import ServicesCards from "@/components/cards/ServicesCards";
 import type { Service } from "@/types/Service";
+import ServicesCards from "@/components/cards/ServicesCards";
+import { useState } from "react";
 
 // Web Development Services List
 const WebDevelopmentServicesList: Service[] = [

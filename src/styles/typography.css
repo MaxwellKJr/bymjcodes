@@ -2,7 +2,7 @@
 
 /* Base typography styles */
 p {
-    @apply py-2 text-sm text-black opacity-80 lg:text-base dark:text-white;
+    @apply py-2 text-black opacity-80 dark:text-white;
 }
 
 h3 {

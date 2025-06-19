@@ -48,7 +48,7 @@ const occupations: Occupation[] = [
           text="The Developing Developer"
           size="xl"
           color="text-secondary"
-          className="group-hover:animate-glitch-delayed-2 group-hover:after:animate-glitch-delayed-1 group-hover:text-primary transition-all duration-400"
+          className="group-hover:animate-glitch-delayed-2 group-hover:after:animate-glitch-delayed-1 group-hover:text-primary transition-all duration-400 2xl:text-5xl"
         />
       </div>
 
@@ -56,7 +56,7 @@ const occupations: Occupation[] = [
         <hr class="border-secondary animate-line mt-4 w-full border-t-[1px]" />
       </div>
       <!-- TODO: Refactor the Flex component to make it more generic to work with simple lists list this -->
-      <div class="mx-auto mt-2 flex w-full flex-wrap">
+      <div class="mx-auto mt-2 flex w-full flex-wrap 2xl:text-lg">
         {
           occupations &&
             occupations.map((occupation: Occupation) => (
@@ -74,6 +74,7 @@ const occupations: Occupation[] = [
         <Text
           text="A platform to showcase my software development journey and share the few things I know."
           size="md"
+          className="2xl:text-xl"
         />
       </div>
       <Flex

@@ -107,7 +107,7 @@ export default function AboutSectionsToggler() {
 
 // Helper Components
 const BioSection = () => (
-  <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black lg:text-left">
+  <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black lg:text-left 2xl:text-lg">
     <p>
       My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of
       professional experience, I specialize in mobile app development using{" "}

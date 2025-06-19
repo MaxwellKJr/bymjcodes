@@ -53,14 +53,6 @@ const { data: post }: { data: Post } = await loadQuery({
     <div
       class="relative m-auto max-w-lg pt-36 pb-64 lg:mx-auto lg:w-[85vw] lg:pt-28 lg:pb-28"
     >
-      <Image
-        src={urlForImage(post.mainImage.asset)}
-        alt={post.mainImage.alt}
-        layout="fixed"
-        placeholder="blurhash"
-        loading={"eager"}
-        class="my-4 w-full rounded-xl shadow-lg shadow-black/50 transition-all duration-400"
-      />
       <div
         class="flex w-full flex-wrap items-center justify-end gap-2 transition-all duration-400"
       >
@@ -71,6 +63,14 @@ const { data: post }: { data: Post } = await loadQuery({
             ))
         }
       </div>
+      <Image
+        src={urlForImage(post.mainImage.asset)}
+        alt={post.mainImage.alt}
+        layout="fixed"
+        placeholder="blurhash"
+        loading={"eager"}
+        class="my-4 w-full rounded-xl shadow-lg shadow-black/50 transition-all duration-400"
+      />
       <div class="hidden transition-all duration-400 lg:block">
         <FontSettingsButtons client:load />
       </div>
