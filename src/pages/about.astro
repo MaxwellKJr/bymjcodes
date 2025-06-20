@@ -21,34 +21,34 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
       class="container mx-auto flex h-full flex-col items-center justify-center py-24"
     >
       <div
-        class="flex flex-col items-center gap-4 transition-all duration-400 ease-in-out lg:flex-row lg:gap-7 xl:gap-10"
+        class="flex flex-col items-center gap-4 transition-all duration-400 ease-in-out lg:gap-7 xl:flex-row xl:gap-10"
       >
         <!-- Image -->
         <Image
           src={maxwellImage}
           title="Maxwell Kapezi Jr. 🚀"
           alt={"Maxwell Kapezi Jr. 🚀"}
-          width={250}
-          height={250}
-          layout="fixed"
+          width={200}
+          height={200}
+          layout="constrained"
           placeholder="blurhash"
           decoding="async"
           loading={"eager"}
           class="flex-1 rounded-full border-2 border-white transition-all duration-400 ease-in-out sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
         />
         <!-- Background -->
-        <div class="flex-1/2 text-center lg:text-left">
+        <div class="flex-1/2 text-center xl:text-left">
           <Heading text="About Me" size="lg" className="2xl:text-4xl" />
           <AboutSectionsToggler client:load />
           <Flex
             direction="row"
             gap="2"
-            className="my-4 justify-center lg:justify-start"
+            className="my-4 justify-center xl:justify-start"
           >
             <Button
               text="My Skills"
               link="/about/my-skills"
-              variant="primary"
+              variant="secondary"
             />
           </Flex>
 

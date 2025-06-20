@@ -59,7 +59,7 @@ export default function AboutSectionsToggler() {
 
   return (
     <>
-      <ul className="z-10 my-4 flex w-full flex-wrap items-center justify-center gap-2 lg:justify-normal lg:gap-4">
+      <ul className="z-10 my-4 flex w-full flex-wrap items-center justify-center gap-2 xl:justify-normal xl:gap-4">
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}
@@ -107,7 +107,7 @@ export default function AboutSectionsToggler() {
 
 // Helper Components
 const BioSection = () => (
-  <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black lg:text-left 2xl:text-lg">
+  <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black xl:text-left 2xl:text-lg">
     <p>
       My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of
       professional experience, I specialize in mobile app development using{" "}
@@ -177,7 +177,7 @@ const WorkExperienceCard = ({
   endDate,
   description
 }: WorkExperience) => (
-  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-lg">
+  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-sm">
     <h2 className="border-primary border-l-4 px-4 py-2 text-lg font-medium">
       {title}
     </h2>
@@ -201,7 +201,7 @@ const SchoolBackgroundCard = ({
   startDate,
   endDate
 }: SchoolBackground) => (
-  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-lg">
+  <div className="bg-card-light dark:bg-card-dark mb-6 rounded-lg pb-4 text-left shadow-sm">
     <h2 className="border-primary border-l-4 px-4 py-2 text-lg font-medium">
       {degree}
     </h2>
