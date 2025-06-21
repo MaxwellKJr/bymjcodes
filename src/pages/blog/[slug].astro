@@ -68,7 +68,7 @@ const { data: post }: { data: Post } = await loadQuery({
         alt={post.mainImage.alt}
         layout="fixed"
         placeholder="blurhash"
-        loading={"eager"}
+        priority
         class="my-4 w-full rounded-xl shadow-lg shadow-black/50 transition-all duration-400"
       />
       <div class="hidden transition-all duration-400 lg:block">
