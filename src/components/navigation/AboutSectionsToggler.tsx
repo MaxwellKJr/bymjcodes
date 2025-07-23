@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const workExperiences: WorkExperience[] = [
   {
-    title: "Junior Applications Developer",
+    title: "Applications Developer",
     company: "Global Health Informatics Institute",
     location: "Lilongwe, Malawi",
     startDate: "Feb 2024",
