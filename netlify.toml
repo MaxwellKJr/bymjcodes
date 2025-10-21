@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && astro check && astro build"
+  command = "bun install && astro check && astro build"
   publish = "dist"
 
 [build.environment]
