@@ -29,6 +29,14 @@ const occupations: Occupation[] = [
   //   url: "https://lichess.org/?user=PlayerOneMw#friend"
   // }
 ];
+
+const randomHeading = [
+  "The Developing Developer",
+  "The 'Not So Lost' Developer",
+  "The Techie...?"
+];
+
+// const randomHeadingIndex = Math.floor(Math.random() * randomHeading.length);
 ---
 
 <Layout
@@ -41,14 +49,14 @@ const occupations: Occupation[] = [
     <div class="container flex h-full flex-col justify-center">
       <!-- TODO: Fix the half-baked glitch effect -->
       <div
-        class="hover:animate-glitch before:hover:animate-glitch-delayed-1 after:hover:animate-glitch-delayed-2 group hover:text-primary relative hover:cursor-default"
-        data-text={`The Developing Developer`}
+        class="group hover:text-primary relative group-hover:opacity-50 hover:cursor-default"
+        data-text={randomHeading[0]}
       >
         <Heading
-          text="The Developing Developer"
+          text={randomHeading[0]}
           size="xl"
           color="text-secondary"
-          className="group-hover:animate-glitch-delayed-2 group-hover:after:animate-glitch-delayed-1 group-hover:text-primary transition-all duration-400 2xl:text-5xl"
+          className="heading transition-all duration-400 group-hover:opacity-50 2xl:text-5xl"
         />
       </div>
 

@@ -23,6 +23,8 @@
 
   /* Fonts */
   --font-poppins: "Poppins", "sans-serif";
+  --font-libre-baskerville: "Libre Baskerville", "serif";
+  --font-fira-code: "Fira Code", "monospace";
 
   /* Animations */
   --animate-line: line 1s ease-in-out forwards;

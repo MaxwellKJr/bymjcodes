@@ -13,6 +13,10 @@ h4 {
     @apply border-primary mt-4 border-l-4 pl-2 text-xl font-semibold text-black opacity-80 dark:text-white;
 }
 
+.heading {
+    font-family: var(--font-libre-baskerville);
+}
+
 /* Utilities */
 #font-toggle {
     font-family: var(--font-family);
