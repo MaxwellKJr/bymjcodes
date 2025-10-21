@@ -31,8 +31,8 @@ const occupations: Occupation[] = [
 ];
 
 const randomHeading = [
-  "The Developing Developer",
-  "The 'Not So Lost' Developer",
+  "The Developing Developer.",
+  "The 'Not So Lost' Developer.",
   "The Techie...?"
 ];
 
@@ -49,14 +49,14 @@ const randomHeading = [
     <div class="container flex h-full flex-col justify-center">
       <!-- TODO: Fix the half-baked glitch effect -->
       <div
-        class="group hover:text-primary relative group-hover:opacity-50 hover:cursor-default"
-        data-text={randomHeading[0]}
+        class="group hover:text-primary relative hover:cursor-default"
+        data-text="The Developing Developer."
       >
         <Heading
-          text={randomHeading[0]}
+          text="The Developing Developer."
           size="xl"
           color="text-secondary"
-          className="heading transition-all duration-400 group-hover:opacity-50 2xl:text-5xl"
+          className="heading transition-all duration-400 2xl:text-5xl"
         />
       </div>
 
