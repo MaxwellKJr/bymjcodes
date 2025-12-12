@@ -1,11 +1,11 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import icon from "astro-icon";
-import { imageService } from "@unpic/astro/service";
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import sanity from "@sanity/astro";
 import tailwindcss from "@tailwindcss/vite";
+import { imageService } from "@unpic/astro/service";
+import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,6 +44,12 @@ export default defineConfig({
   }),
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ['@sanity/studio'],
+    },
+    ssr: {
+      noExternal: ['@sanity/studio'],
+    },
   }
 });

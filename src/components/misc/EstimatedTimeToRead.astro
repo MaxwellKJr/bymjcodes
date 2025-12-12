@@ -33,8 +33,8 @@ const estimateReadingTime = (text: string): string => {
 const { body, className = "" } = Astro.props;
 
 // Extract plain text and calculate reading time
-const plainText = extractPlainText(body);
-const readingTime = estimateReadingTime(plainText);
+const plainText: string = extractPlainText(body);
+const readingTime: string = estimateReadingTime(plainText);
 ---
 
 <small class={`${className} text-secondary-white my-1 text-sm`}
