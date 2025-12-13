@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 
 import { FAQS } from "@/components/cards/FAQS";
-import type { Service } from "@/types/Service";
 import ServicesCards from "@/components/cards/ServicesCards";
+import type { Service } from "@/types/Service";
 import { useState } from "react";
 
 // Web Development Services List
@@ -179,7 +179,7 @@ function ServiceChoice(toggle: number) {
       );
     case 3:
       return (
-        <div>
+        <div className="lg:w-[80%] lg:flex lg:flex-col">
           <h2 className="text-xl font-bold opacity-75">
             Frequently Asked Questions
           </h2>
