@@ -18,12 +18,10 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
   image="/mjk.jpg"
   type="profile"
 >
-  <section class="w-full lg:h-[89vh]" transition:animate="fade">
-    <div
-      class="container mx-auto flex h-full flex-col items-center justify-center py-24"
-    >
+  <section class="w-full lg:h-[89vh]">
+    <div class="container mx-auto flex h-full flex-col py-24">
       <div
-        class="flex flex-col items-center gap-4 transition-all duration-400 ease-in-out lg:gap-7 xl:flex-row xl:gap-10"
+        class="flex flex-col items-center gap-4 lg:gap-7 xl:flex-row xl:gap-10 2xl:justify-center"
       >
         <!-- Image -->
         <Image
@@ -36,10 +34,10 @@ import AboutSectionsToggler from "@/components/navigation/AboutSectionsToggler";
           placeholder="blurhash"
           decoding="async"
           priority
-          class="flex-1 rounded-full border-2 border-white transition-all duration-400 ease-in-out sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
+          class="rounded-full border-2 border-white sm:h-48 sm:w-48 2xl:h-62 2xl:w-62"
         />
         <!-- Background -->
-        <div class="flex-1/2 text-center xl:text-left">
+        <div class="text-center xl:text-left">
           <Heading text="About Me" size="lg" className="2xl:text-4xl" />
           <AboutSectionsToggler client:load />
           <Flex
