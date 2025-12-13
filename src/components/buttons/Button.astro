@@ -17,6 +17,7 @@ const { text, link, variant, blank = false, icon, className } = Astro.props;
   href={link}
   class={`btn btn-${variant} ${className}`}
   target={blank ? "_blank" : "_self"}
+  data-astro-prefetch={blank ? "false" : "viewport"}
 >
   {text}
   {
