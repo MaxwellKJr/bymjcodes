@@ -63,16 +63,18 @@ const { data: post }: { data: Post } = await loadQuery({
             ))
         }
       </div>
-      <Image
-        src={urlForImage(post.mainImage.asset)}
-        alt={post.mainImage.alt}
-        width={post.mainImage.asset.metadata.dimensions.width}
-        height={post.mainImage.asset.metadata.dimensions.height}
-        layout="constrained"
-        placeholder="blurhash"
-        priority
-        class="my-4 w-full rounded-xl shadow-lg shadow-black/50"
-      />
+      <div class="image-container">
+        <Image
+          src={urlForImage(post.mainImage.asset)}
+          alt={post.mainImage.alt}
+          width={post.mainImage.asset.metadata.dimensions.width}
+          height={post.mainImage.asset.metadata.dimensions.height}
+          layout="constrained"
+          placeholder="blurhash"
+          priority
+          class="my-4 w-full rounded-xl shadow-lg shadow-black/50"
+        />
+      </div>
       <div class="hidden transition-all duration-400 lg:block">
         <FontSettingsButtons client:load />
       </div>
@@ -113,4 +115,13 @@ const { data: post }: { data: Post } = await loadQuery({
   </article>
 </Layout>
 
-<style></style>
+<style>
+  .image-container img {
+    color: transparent;
+    font-size: 0;
+  }
+
+  .image-container img[data-loaded="true"] {
+    color: inherit;
+  }
+</style>
