@@ -66,7 +66,9 @@ const { data: post }: { data: Post } = await loadQuery({
       <Image
         src={urlForImage(post.mainImage.asset)}
         alt={post.mainImage.alt}
-        layout="fixed"
+        width={post.mainImage.asset.metadata.dimensions.width}
+        height={post.mainImage.asset.metadata.dimensions.height}
+        layout="constrained"
         placeholder="blurhash"
         priority
         class="my-4 w-full rounded-xl shadow-lg shadow-black/50"

@@ -16,6 +16,12 @@ export default interface Post extends SanityDocument {
     asset: {
       _id: string;
       url: string;
+    metadata: {
+      dimensions: {
+        width: number;
+        height: number;
+      }
+    }
     };
   };
   categories: Category[];
