@@ -1,5 +1,7 @@
 ---
-export const prerender = true;
+export const prerender = false;
+
+Astro.response.headers.set("Cache-Control", "public, max-age=3600"); // 1 hour
 
 import Heading from "@/components/typography/Heading.astro";
 import Layout from "@/layouts/Layout.astro";

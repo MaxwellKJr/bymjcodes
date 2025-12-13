@@ -1,8 +1,6 @@
 ---
 export const prerender = true;
 
-Astro.response.headers.set("Cache-Control", "public, max-age=3600"); // 1 hour
-
 import { Image } from "@unpic/astro";
 import Button from "@/components/buttons/Button.astro";
 import Flex from "@/components/layouts/Flex.astro";

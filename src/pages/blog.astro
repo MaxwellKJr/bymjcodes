@@ -1,5 +1,7 @@
 ---
-export const prerender = true;
+export const prerender = false;
+
+Astro.response.headers.set("Cache-Control", "public, max-age=3600"); // 1 hour
 
 import Card from "@/components/cards/Card.astro";
 import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
@@ -39,6 +41,7 @@ const posts = await loadQuery<Post[]>({
                 categories={post.categories}
                 href={`/blog/${post.slug.current}`}
                 body={post.body}
+                server:defer
               >
                 <LoadingSkeleton slot="fallback" />
               </Card>
