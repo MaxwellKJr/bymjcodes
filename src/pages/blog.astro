@@ -1,5 +1,5 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import Card from "@/components/cards/Card.astro";
 import LoadingSkeleton from "@/components/misc/LoadingSkeleton.astro";
@@ -39,7 +39,6 @@ const posts = await loadQuery<Post[]>({
                 categories={post.categories}
                 href={`/blog/${post.slug.current}`}
                 body={post.body}
-                server:defer
               >
                 <LoadingSkeleton slot="fallback" />
               </Card>
