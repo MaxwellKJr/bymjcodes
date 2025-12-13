@@ -90,7 +90,7 @@ const currentPath = Astro.url.pathname;
               <a
                 class={`hover:text-primary hover:bg-secondary-light dark:hover:bg-secondary-dark focus:text-primary focus:bg-secondary-light dark:focus:bg-secondary-dark group m-0 flex w-full flex-col items-center justify-center p-4 px-2 text-[11px] capitalize transition-all duration-400 lg:flex-row lg:p-4 lg:text-xs xl:text-[13px] ${isActive ? "text-primary font-medium" : ""}`}
                 href={link.route}
-                data-astro-prefetch="tap"
+                data-astro-prefetch="load"
               >
                 <Icon
                   name={link.icon}
