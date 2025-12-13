@@ -2,7 +2,8 @@
 import SocialLinks from "@/components/contacts/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
 import Footer from "./Footer.astro";
-import { Image } from "astro:assets";
+import mjcodesLogo from "@/images/icon.png";
+import { Image } from "@unpic/astro";
 
 interface Link {
   name: string;
@@ -47,7 +48,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav
-  class="bg-background-light/50 dark:bg-background-dark/50 lg:bg-background-white dark:lg:bg-background-dark border-secondary fixed bottom-0 left-0 z-[1000] w-full flex-1 overflow-hidden border-t-[0.5px] text-black backdrop-blur-xl lg:h-screen lg:min-h-screen lg:w-[12vw] lg:border-t-0 lg:border-r-[0.5px] lg:backdrop-blur-none dark:text-white"
+  class="bg-background-light/50 dark:bg-background-dark/50 lg:bg-background-white dark:lg:bg-background-dark border-secondary fixed bottom-0 left-0 z-1000 w-full flex-1 overflow-hidden border-t-[0.5px] text-black backdrop-blur-xl lg:h-screen lg:min-h-screen lg:w-[12vw] lg:border-t-0 lg:border-r-[0.5px] lg:backdrop-blur-none dark:text-white"
 >
   <div class="flex h-full flex-col items-center justify-between">
     <!-- Logo -->
@@ -58,12 +59,15 @@ const currentPath = Astro.url.pathname;
       class="group border-b-secondary hidden w-full flex-col items-center justify-center border-b-[0.5px] py-4 lg:flex"
     >
       <Image
-        src="/icon.png"
+        src={mjcodesLogo}
         alt="MJ Codes logo"
-        width="40"
-        height="40"
-        loading="eager"
-        class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce md:animate-none"
+        width={40}
+        height={40}
+        layout="constrained"
+        placeholder="blurhash"
+        decoding="async"
+        priority
+        class="group-hover-translate-x-4 h-10 w-10 animate-pulse transition-all duration-400 group-hover:-translate-y-2 hover:animate-bounce"
       />
       <!-- <small
         class="transition-all duration-400 font-odibee text-primary group-hover:opacity-20 group-hover:translate-y-2 group-hover:animate-pulse"

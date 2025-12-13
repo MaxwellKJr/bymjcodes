@@ -1,6 +1,5 @@
 "use client";
 
-import { ALargeSmall, Type } from "lucide-react";
 import {
   fontSettings,
   initializeFontSettings,
@@ -8,6 +7,7 @@ import {
   updateLineHeight,
   updateTextSize
 } from "@/store/fontSettings";
+import { ALargeSmall, Type } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 type FontFamily = "Fira Code" | "Poppins" | "Libre Baskerville";
@@ -158,7 +158,7 @@ export default function FontSettingsButtons() {
             id="font-toggle"
             type="button"
             onClick={fontToggle}
-            className="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+            className="py-1 px-3 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
             title="Toggle font"
           >
             <span>T</span>
@@ -168,7 +168,7 @@ export default function FontSettingsButtons() {
             id="font-size-toggle"
             type="button"
             onClick={fontSizeToggle}
-            className="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border-[1px] dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
+            className="p-2 rounded-xl dark:bg-secondary-dark bg-background-light transition-all duration-400 border dark:border-secondary-dark border-white lg:ml-4 hover:scale-90 active:scale-90 shadow-md dark:shadow-md dark:shadow-primary text-xl text-secondary-white dark:text-secondary-white"
             title="Toggle font size"
           >
             <ALargeSmall className="text-xl text-secondary-white" />

@@ -9,7 +9,7 @@ interface Props {
 
 export default function ServicesCards({ type, services }: Props) {
   const activeTab = `
-   inline-flex rounded-full bg-primary text-white px-3 py-2 text-sm cursor-pointer transition-all duration-400 ease-in-out border-primary border-[1px] mt-6 inline-block flex items-center justify-center gap-2 w-full hover:text-primary hover:bg-secondary-lighter dark:hover:bg-secondary-dark
+   inline-flex rounded-full bg-primary text-white px-3 py-2 text-sm cursor-pointer transition-all duration-400 ease-in-out border-primary border mt-6 inline-block flex items-center justify-center gap-2 w-full hover:text-primary hover:bg-secondary-lighter dark:hover:bg-secondary-dark
 `;
 
   return (
