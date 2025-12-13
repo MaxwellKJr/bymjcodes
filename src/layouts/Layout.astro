@@ -1,7 +1,6 @@
 ---
 import "@/styles/global.css";
 
-import { ClientRouter } from "astro:transitions";
 import Navbar from "@/components/navigation/Navbar.astro";
 import ThemeToggler from "@/components/navigation/ThemeToggler";
 import FontSettingsButtons from "@/components/settings/FontSettingsButtons";
@@ -73,7 +72,6 @@ const currentPath: string = Astro.url.pathname;
         ]
       }}
     />
-    <ClientRouter />
   </head>
 
   <body
