@@ -26,7 +26,7 @@ export default function ServicesCards({ type, services }: Props) {
               </h2>
 
               {service.isRecommended && (
-                <small className="bg-secondary font-regular mx-1 rounded-full px-4 py-[1px] text-center text-black dark:text-white">
+                <small className="bg-secondary font-regular mx-1 rounded-full px-4 py-px text-center text-black dark:text-white">
                   Popular
                 </small>
               )}

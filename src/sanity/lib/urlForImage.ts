@@ -1,14 +1,13 @@
+import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import { sanityClient } from "sanity:client";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityAsset } from "@sanity/image-url/lib/types/types";
 
-export const imageBuilder = imageUrlBuilder(sanityClient);
+export const imageBuilder = createImageUrlBuilder(sanityClient);
 
-export function urlForImage(source: SanityAsset) {
+export function urlForImage(source: SanityImageSource) {
   return imageBuilder.image(source).auto("format").quality(90).url();
 }
 
-export function urlForPostImage(source: SanityAsset) {
+export function urlForPostImage(source: SanityImageSource) {
   return imageBuilder
     .image(source)
     .auto("format")
@@ -19,6 +18,6 @@ export function urlForPostImage(source: SanityAsset) {
     .url();
 }
 
-export function urlForProjectImage(source: SanityAsset) {
+export function urlForProjectImage(source: SanityImageSource) {
   return imageBuilder.image(source).auto("format").quality(50).url();
 }
