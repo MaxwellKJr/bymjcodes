@@ -14,10 +14,10 @@ export function urlForPostImage(source: SanityImageSource) {
     .width(500)
     .height(250)
     .maxHeight(250)
-    .quality(10)
+    .quality(50)
     .url();
 }
 
 export function urlForProjectImage(source: SanityImageSource) {
-  return imageBuilder.image(source).auto("format").quality(20).url();
+  return imageBuilder.image(source).auto("format").quality(40).url();
 }
