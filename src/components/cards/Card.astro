@@ -1,6 +1,8 @@
 ---
 export const prerender = false;
 
+Astro.response.headers.set("Cache-Control", "public, max-age=3600"); // 1 hour
+
 import { Image } from "@unpic/astro";
 import Button from "@/components/buttons/Button.astro";
 import Flex from "@/components/layouts/Flex.astro";
@@ -48,6 +50,7 @@ const {
 
 <li
   class="dark:bg-card-dark bg-card-light hover:border-primary dark:hover:border-primary dark:border-card-dark border-card-light z-10 inline-block h-fit rounded-xl border-[0.5px] transition-all duration-400 hover:scale-95"
+  transition:persist
 >
   <a
     href={isProject ? `${projectUrl}` : `${href}`}
