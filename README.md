@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://bymjcodes.com/">
-    <img alt="MJ Codes logo" src="https://bymjcodes.com/icon.png" width="32" />
+    <img alt="MJ Codes logo" src="https://bymjcodes.com/icon.webp" width="32" />
   </a>
 </p>
 <h2 align="center">MJ Codes Presents:</h2>
