@@ -51,7 +51,10 @@ const activeTab =
   "rounded-full bg-primary px-3 py-1 text-sm cursor-pointer dark:text-white text-white transition-all duration-400 ease-in-out border-primary border";
 
 const outlineTab =
-  "rounded-full px-3 py-1 border dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-95";
+  "rounded-full px-3 py-1 border dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-90";
+
+const outlineTabForMySkills =
+  "rounded-full px-3 py-1 border dark:border-white border-black text-sm cursor-pointer transition-all duration-400 ease-in-out hover:scale-90 hover:text-primary hover:border-primary";
 
 export default function AboutSectionsToggler() {
   const [toggle, setToggle] = useState(1);
@@ -80,6 +83,9 @@ export default function AboutSectionsToggler() {
           onKeyDown={() => toggleTab(3)}
         >
           Education
+        </li>
+        <li className={outlineTabForMySkills}>
+          <a href="/about/my-skills">My Skills</a>
         </li>
       </ul>
       <AnimatePresence mode="wait">
