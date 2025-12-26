@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import type { SchoolBackground } from "@/types/SchoolBackground";
 import type { WorkExperience } from "@/types/WorkExperince";
+import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 const workExperiences: WorkExperience[] = [
@@ -115,36 +116,27 @@ export default function AboutSectionsToggler() {
 const BioSection = () => (
   <div className="dark:text-secondary-white-lighter flex flex-col text-center text-sm text-black xl:text-left 2xl:text-lg">
     <p>
-      My name is Maxwell Kapezi Jr, a Software Developer with over 2 years of
-      professional experience, I specialize in mobile app development using{" "}
+      My name is Maxwell Kapezi Jr, a Software Developer from the Warm Heart of Africa, Malawi 🇲🇼.
+    </p>
+
+    <p>
+      With over 2 years of professional experience, I'm currently focused on iOS development, specializing in building robust native apps using {" "}
       <a
         href="https://www.swift.org/"
         target="_blank"
         rel="noopener noreferrer"
         className="underlined-link"
       >
-        Swift
-      </a>
-      {", "}
-      <a
-        href="http://kotlinlang.org"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underlined-link"
-      >
-        Kotlin
-      </a>
-      {", "}
-      and{" "}
+        Swift <ExternalLink className="inline-block w-4 h-4 mb-1" />
+      </a>, along with cross-platform mobile experiences using {" "}
       <a
         href="http://flutter.dev"
         target="_blank"
         rel="noopener noreferrer"
         className="underlined-link"
       >
-        Flutter
-      </a>
-      .
+        Flutter <ExternalLink className="inline-block w-4 h-4 mb-1" />
+      </a> when needed.
     </p>
 
     <p>
@@ -158,14 +150,8 @@ const BioSection = () => (
     </p>
 
     <p>
-      Whether it’s developing robust mobile applications or creating dynamic web
-      experiences, I am motivated by the impact that well-crafted technology can
-      have. My approach is guided by three core principles:
-    </p>
-
-    <p>
-      Building Things that Work, A Welcoming User Experience, and
-      Appealing/Attractive Design.
+      Whether it’s crafting high-quality iOS applications or dynamic cross-platform solutions, {" "}
+      I am motivated by the impact that well-crafted technology can have. My approach is guided by three core principles: <strong>Building Things that Work</strong>, <strong>A Welcoming User Experience</strong>, and <strong>Appealing/Attractive Design</strong>.
     </p>
 
     <p>
@@ -175,7 +161,7 @@ const BioSection = () => (
   </div>
 );
 
-const WorkExperienceCard = ({
+const WorkExperienceCard: React.FC<WorkExperience> = ({
   title,
   company,
   location,
@@ -200,7 +186,7 @@ const WorkExperienceCard = ({
   </div>
 );
 
-const SchoolBackgroundCard = ({
+const SchoolBackgroundCard: React.FC<SchoolBackground> = ({
   degree,
   schoolName,
   location,
