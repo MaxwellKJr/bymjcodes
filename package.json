@@ -16,6 +16,7 @@
     "@portabletext/types": "4.0.0",
     "@sanity/astro": "^3.2.10",
     "@sanity/client": "7.13.2",
+    "@sentry/astro": "^10.32.1",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
