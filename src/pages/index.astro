@@ -97,8 +97,7 @@ const occupations: Occupation[] = [
         <Button text="Projects" link="/projects" variant="secondary" />
         <button
           id="error-button"
-          type="button"
-          class="bg-primary hover:bg-primary-dark rounded-lg px-4 py-2 text-white transition-colors"
+          class="bg-primary hover:bg-secondary rounded-lg px-4 py-2 text-white transition-colors hover:cursor-pointer"
           >Contact</button
         >
       </Flex>
@@ -107,23 +106,10 @@ const occupations: Occupation[] = [
 </Layout>
 
 <script>
-  import * as Sentry from "@sentry/astro";
   function handleClick() {
-    // Send a log before throwing the error
-    Sentry.logger.info(
-      Sentry.logger.fmt`User ${"sentry-test"} triggered test error button`,
-      {
-        action: "test_error_button_click"
-      }
-    );
-    // Send a test metric before throwing the error
-    Sentry.metrics.count("test_counter", 1);
     throw new Error("This is a test error");
   }
-
-  const errorButton = document.querySelector("#error-button");
-
-  if (errorButton) {
-    errorButton.addEventListener("click", handleClick);
-  }
+  document
+    .querySelector("#error-button")
+    ?.addEventListener("click", handleClick);
 </script>
