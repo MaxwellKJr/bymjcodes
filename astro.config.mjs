@@ -23,7 +23,7 @@ export default defineConfig({
   icon(), sentry({
     project: "javascript-astro",
     org: "maxwell-kapezi-jr",
-    authToken: process.env.SENTRY_AUTH_TOKEN,
+    authToken: import.meta.env.SENTRY_AUTH_TOKEN,
   })
   ],
   image: {
