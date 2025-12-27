@@ -1,7 +1,7 @@
 {
   "name": "bymjcodes",
   "type": "module",
-  "version": "1.10.2",
+  "version": "1.10.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
