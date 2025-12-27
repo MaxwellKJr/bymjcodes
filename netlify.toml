@@ -6,3 +6,4 @@
   NODE_VERSION = "22"
   PUBLIC_SANITY_DATASET = "production"
   PUBLIC_SANITY_PROJECT_ID = "c526691m"
+  NODE_OPTIONS = "--max_old_space_size=4096"
