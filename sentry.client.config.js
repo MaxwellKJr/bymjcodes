@@ -5,4 +5,6 @@ Sentry.init({
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/astro/configuration/options/#sendDefaultPii
   sendDefaultPii: true,
+  // Enable logs to be sent to Sentry
+  enableLogs: true,
 });
