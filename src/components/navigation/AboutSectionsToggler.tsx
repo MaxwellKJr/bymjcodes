@@ -63,7 +63,7 @@ export default function AboutSectionsToggler() {
 
   return (
     <>
-      <ul className="z-10 my-4 grid grid-cols-3 sm:flex w-full sm:flex-wrap items-center sm:justify-center gap-4 xl:justify-normal xl:gap-4">
+      <ul className="z-10 my-4 grid grid-cols-2 sm:flex w-full sm:flex-wrap items-center sm:justify-center gap-4 xl:justify-normal xl:gap-4">
         <li
           className={toggle === 1 ? activeTab : outlineTab}
           onClick={() => toggleTab(1)}
